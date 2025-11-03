@@ -20,18 +20,15 @@
     "@gotpop/tokens": "*"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^8.6.14",
-    "@storybook/addon-interactions": "^8.6.14",
-    "@storybook/addon-links": "^8.6.14",
-    "@storybook/addon-onboarding": "^8.6.14",
-    "@storybook/blocks": "^8.6.14",
-    "@storybook/experimental-nextjs-vite": "^8.6.14",
-    "@storybook/react": "^8.6.14",
-    "@storybook/test": "^8.6.14",
+    "@storybook/addon-links": "^10.0.3",
+    "@storybook/addon-onboarding": "^10.0.3",
+    "@storybook/react": "^10.0.3",
     "next": "^15.0.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "storybook": "^8.6.14",
-    "vite": "^5.0.0"
+    "storybook": "^10.0.3",
+    "vite": "^5.0.0",
+    "@storybook/nextjs-vite": "^10.0.3",
+    "@storybook/addon-docs": "^10.0.3"
   }
 }
