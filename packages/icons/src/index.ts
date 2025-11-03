@@ -1,3 +1,3 @@
-export * from './ArrowRight'
-export * from './Check'
-export * from './X'
+export * from "./ArrowRight"
+export * from "./Check"
+export * from "./X"

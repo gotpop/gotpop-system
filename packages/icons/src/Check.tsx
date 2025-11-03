@@ -1,7 +1,11 @@
-import React from 'react'
-import type { IconProps } from './ArrowRight'
+import React from "react"
+import type { IconProps } from "./ArrowRight"
 
-export function Check({ size = 24, className = '', color = 'currentColor' }: IconProps) {
+export function Check({
+  size = 24,
+  className = "",
+  color = "currentColor",
+}: IconProps) {
   return (
     <svg
       width={size}

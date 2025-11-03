@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 
 export interface IconProps {
   size?: number
@@ -6,7 +6,11 @@ export interface IconProps {
   color?: string
 }
 
-export function ArrowRight({ size = 24, className = '', color = 'currentColor' }: IconProps) {
+export function ArrowRight({
+  size = 24,
+  className = "",
+  color = "currentColor",
+}: IconProps) {
   return (
     <svg
       width={size}

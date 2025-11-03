@@ -1,8 +1,8 @@
-import type { Metadata } from 'next'
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'Gotpop Design System',
-  description: 'A comprehensive design system for gotpop projects',
+  title: "Gotpop Design System",
+  description: "A comprehensive design system for gotpop projects",
 }
 
 export default function RootLayout({
