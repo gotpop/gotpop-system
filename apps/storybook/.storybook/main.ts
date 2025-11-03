@@ -4,10 +4,7 @@ import type { StorybookConfig } from "@storybook/nextjs-vite"
 
 const config: StorybookConfig = {
   stories: [
-    "../../../packages/ui/src/**/*.stories.@(js|jsx|ts|tsx|mdx)",
     "../../../packages/server/src/**/*.stories.@(js|jsx|ts|tsx|mdx)",
-    "../../../packages/icons/src/**/*.stories.@(js|jsx|ts|tsx|mdx)",
-    "../../../packages/tokens/src/**/*.stories.@(js|jsx|ts|tsx|mdx)",
   ],
 
   addons: [
@@ -37,6 +34,6 @@ const config: StorybookConfig = {
 
 export default config
 
-function getAbsolutePath(value: string): any {
+function getAbsolutePath(value: string): string {
   return dirname(fileURLToPath(import.meta.resolve(`${value}/package.json`)))
 }
