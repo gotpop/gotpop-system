@@ -17,7 +17,8 @@ gotpop-system/
 │   └── themes/                # Theme configurations
 ├── apps/
 │   ├── storybook/             # Component documentation
-│   └── playground/            # Development testing environment
+│   ├── playground/            # Development testing environment
+│   └── website/               # Public design system website (Netlify)
 ├── tools/
 │   ├── build/                 # Build configurations
 │   └── eslint-config/         # Shared ESLint config
@@ -102,7 +103,7 @@ gotpop-system/
 
 ## 🚀 Technology Stack
 
-- **Build System**: Turbo + Rollup/Vite
+- **Build System**: Turborepo + Vite
 - **TypeScript**: Strict configuration with shared tsconfig
 - **Styling**: CSS custom properties + colocated CSS files
 - **Testing**: Vitest + Testing Library
@@ -110,6 +111,96 @@ gotpop-system/
 - **Linting**: Biome (consistent with blog)
 - **Package Manager**: Yarn workspaces
 - **Publishing**: GitHub Packages
+- **Website Hosting**: Netlify (design system showcase)
+
+## 🌐 Design System Website
+
+### Public Website (`apps/website/`)
+**Purpose**: Standalone showcase of the design system hosted on Netlify
+
+**Features**:
+- **Component Gallery** - Interactive examples of all components
+- **Design Tokens** - Color palettes, typography, spacing reference
+- **Usage Guidelines** - How to implement components correctly
+- **Code Examples** - Copy/paste code snippets
+- **Migration Guides** - How to upgrade between versions
+- **Download Center** - Access to packages and resources
+
+**Technology Stack**:
+- **Framework**: Next.js 16 (static export for Netlify)
+- **Styling**: Same CSS system as packages
+- **Components**: Uses the actual design system packages
+- **Content**: MDX for documentation pages
+- **Search**: Algolia DocSearch or simple client-side search
+
+**Site Structure**:
+```
+apps/website/
+├── pages/
+│   ├── index.tsx              # Homepage with overview
+│   ├── components/
+│   │   ├── typography.tsx     # Typography showcase
+│   │   ├── buttons.tsx        # Button variants
+│   │   └── icons.tsx          # Icon library
+│   ├── tokens/
+│   │   ├── colors.tsx         # Color palette
+│   │   ├── spacing.tsx        # Spacing system
+│   │   └── typography.tsx     # Type scale
+│   ├── guides/
+│   │   ├── installation.tsx   # Getting started
+│   │   ├── migration.tsx      # Version migration
+│   │   └── theming.tsx        # Customization guide
+│   └── changelog.tsx          # Version history
+├── components/
+│   ├── ComponentShowcase.tsx  # Reusable demo component
+│   ├── CodeBlock.tsx          # Syntax highlighted code
+│   ├── ColorSwatch.tsx        # Color documentation
+│   └── Layout.tsx             # Site layout
+└── content/
+    └── docs/                  # MDX documentation files
+```
+
+**Deployment**:
+- **Automatic deploys** from main branch via Netlify
+- **Preview deploys** for pull requests
+- **Custom domain**: `system.gotpop.io` (subdomain via Route 53)
+- **CDN distribution** for fast global access
+
+**Content Strategy**:
+- **Live examples** using actual components
+- **Interactive playground** for testing props
+- **Copy-to-clipboard** code examples
+- **Version picker** for different releases
+- **Search functionality** across all documentation
+
+### Development Workflow
+```bash
+# Start local development
+yarn dev:website              # Next.js dev server
+
+# Build for production
+yarn build:website             # Static export for Netlify
+
+# Content editing
+yarn dev:content              # MDX with hot reload
+```
+
+### Netlify Configuration
+```toml
+# netlify.toml
+[build]
+  base = "apps/website"
+  command = "yarn build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[redirects]]
+  from = "/storybook/*"
+  to = "https://storybook.gotpop.io/:splat"
+  status = 200
+```
 
 ## 📋 Migration Plan - Phase 1 (Components Only)
 
@@ -179,22 +270,75 @@ packages/ui/src/Button/
 
 ## 🧪 Development Workflow
 
-### Local Development
+### Local Development with Live Blog Updates
+```bash
+# 1. Start design system in watch mode
+cd gotpop-system
+yarn dev:packages    # Builds packages in watch mode
+
+# 2. Link packages to blog (in separate terminal)
+cd ../gotpop-blog
+yarn link:design-system   # Links local packages
+
+# 3. Start blog dev server
+yarn dev             # Blog now uses live design system packages
+```
+
+**Result**: Edit a component in `gotpop-system` → See changes instantly in `gotpop-blog`
+
+### Development Commands
 ```bash
 # Install dependencies
 yarn install
 
-# Start Storybook
-yarn dev:storybook
+# Watch mode for package development
+yarn dev:packages    # Rebuilds packages on changes
 
-# Run playground app
-yarn dev:playground
+# Start Storybook for component testing
+yarn dev:storybook   # Isolated component development
+
+# Run playground app for integration testing
+yarn dev:playground  # Full app testing environment
 
 # Build all packages
 yarn build
 
 # Test all packages  
 yarn test
+```
+
+### Integrated Development Experience
+
+**Workflow 1: Component Development**
+1. Edit component in `packages/ui/src/Button/Button.tsx`
+2. See changes instantly in:
+   - Storybook (component isolation)
+   - Playground app (integration testing)
+   - Blog app (real usage)
+
+**Workflow 2: Blog Integration**
+1. Work on component in design system
+2. Changes automatically appear in blog
+3. No manual rebuilding or republishing needed
+4. Perfect for rapid iteration
+
+### Package Linking Strategy
+```json
+// gotpop-blog/package.json
+{
+  "scripts": {
+    "link:design-system": "yarn link ../gotpop-system/packages/ui && yarn link ../gotpop-system/packages/server && yarn link ../gotpop-system/packages/icons",
+    "unlink:design-system": "yarn unlink @gotpop/ui @gotpop/server @gotpop/icons"
+  }
+}
+
+// gotpop-system/package.json  
+{
+  "scripts": {
+    "dev:packages": "turbo watch build --filter='@gotpop/*'",
+    "prepare:link": "turbo build && yarn workspaces foreach run link"
+  }
+}
 ```
 
 ### Testing Strategy
