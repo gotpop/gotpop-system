@@ -2,10 +2,11 @@ import type { Meta, StoryObj } from "@storybook/react"
 import { LogoDefault } from "./LogoDefault"
 
 const meta = {
-  title: "UI/LogoDefault",
+  title: "Server/LogoDefault",
   component: LogoDefault,
   parameters: {
     layout: "centered",
+    react: { rsc: true }, // Enable React Server Components for this story
     docs: {
       description: {
         component: `
@@ -36,6 +37,8 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     blok: {
+      component: "logo_default",
+      _uid: "test-logo-default",
       link: {
         linktype: "story",
         cached_url: "/",
@@ -51,6 +54,8 @@ export const Default: Story = {
 export const ExternalLink: Story = {
   args: {
     blok: {
+      component: "logo_default",
+      _uid: "test-logo-external",
       link: {
         linktype: "url",
         url: "https://gotpop.com",
