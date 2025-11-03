@@ -15,24 +15,22 @@
   },
   "dependencies": {
     "@gotpop/ui": "*",
+    "@gotpop/server": "*",
     "@gotpop/icons": "*",
-    "@gotpop/tokens": "*",
-    "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "@gotpop/tokens": "*"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.6.0",
-    "@storybook/addon-interactions": "^7.6.0",
-    "@storybook/addon-links": "^7.6.0",
-    "@storybook/blocks": "^7.6.0",
-    "@storybook/react": "^7.6.0",
-    "@storybook/react-vite": "^7.6.0",
-    "@storybook/testing-library": "^0.2.0",
-    "@types/react": "19.2.2",
-    "@types/react-dom": "19.2.2",
-    "serve": "^14.0.0",
-    "storybook": "^7.6.0",
-    "typescript": "^5",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/addon-interactions": "^8.6.14",
+    "@storybook/addon-links": "^8.6.14",
+    "@storybook/addon-onboarding": "^8.6.14",
+    "@storybook/blocks": "^8.6.14",
+    "@storybook/experimental-nextjs-vite": "^8.6.14",
+    "@storybook/react": "^8.6.14",
+    "@storybook/test": "^8.6.14",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "storybook": "^8.6.14",
     "vite": "^5.0.0"
   }
 }
