@@ -2,36 +2,17 @@
   "name": "@gotpop/utils",
   "version": "0.1.0",
   "description": "Utility functions for gotpop design system",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
-  "files": [
-    "dist"
-  ],
+  "main": "src/index.ts",
+  "types": "src/index.ts",
   "scripts": {
-    "build": "vite build",
-    "dev": "vite build --watch",
     "lint": "npx biome lint src/",
     "format:check": "npx biome check src/",
     "format:fix": "npx biome check --write src/",
-    "type-check": "tsc --noEmit",
-    "clean": "rm -rf dist"
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.6",
     "prettier": "^3.6.2",
-    "typescript": "^5",
-    "vite": "^5.0.0",
-    "vite-plugin-dts": "^3.6.0"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "typescript": "^5"
   }
 }

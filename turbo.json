@@ -1,10 +1,5 @@
 {
   "pipeline": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**", "build/**"],
-      "env": ["NODE_ENV"]
-    },
     "dev": {
       "cache": false,
       "persistent": true
@@ -19,15 +14,14 @@
       "cache": false
     },
     "type-check": {
-      "dependsOn": ["^build"],
       "outputs": []
     },
     "test": {
-      "dependsOn": ["^build"],
       "outputs": ["coverage/**"]
     },
-    "clean": {
-      "cache": false
+    "build": {
+      "dependsOn": [],
+      "outputs": [".next/**", "storybook-static/**"]
     }
   }
 }
