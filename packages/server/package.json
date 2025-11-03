@@ -1,0 +1,45 @@
+{
+  "name": "@gotpop/server",
+  "version": "0.1.0",
+  "description": "Server-only React components for gotpop design system",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "lint": "npx biome lint src/",
+    "format:check": "npx biome check src/",
+    "format:fix": "npx biome check --write src/",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "react": "19.2.0",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.6",
+    "@types/react": "19.2.2",
+    "prettier": "^3.6.2",
+    "typescript": "^5",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.6.0"
+  },
+  "peerDependencies": {
+    "react": ">=19.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}

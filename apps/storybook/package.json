@@ -1,0 +1,38 @@
+{
+  "name": "storybook",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Storybook for gotpop design system components",
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build",
+    "preview": "serve storybook-static",
+    "lint": "echo 'lint: no linting configured for storybook'",
+    "format:check": "echo 'format:check: no formatting configured for storybook'",
+    "format:fix": "echo 'format:fix: no formatting configured for storybook'",
+    "type-check": "echo 'type-check: no type checking configured for storybook'",
+    "clean": "rm -rf storybook-static"
+  },
+  "dependencies": {
+    "@gotpop/ui": "*",
+    "@gotpop/icons": "*",
+    "@gotpop/tokens": "*",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.0",
+    "@storybook/addon-interactions": "^7.6.0",
+    "@storybook/addon-links": "^7.6.0",
+    "@storybook/blocks": "^7.6.0",
+    "@storybook/react": "^7.6.0",
+    "@storybook/react-vite": "^7.6.0",
+    "@storybook/testing-library": "^0.2.0",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "serve": "^14.0.0",
+    "storybook": "^7.6.0",
+    "typescript": "^5",
+    "vite": "^5.0.0"
+  }
+}
