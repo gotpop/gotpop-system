@@ -3,9 +3,7 @@ import { fileURLToPath } from "node:url"
 import type { StorybookConfig } from "@storybook/nextjs-vite"
 
 const config: StorybookConfig = {
-  stories: [
-    "../../../packages/server/src/**/*.stories.@(js|jsx|ts|tsx|mdx)",
-  ],
+  stories: ["../../../packages/server/src/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
 
   addons: [
     getAbsolutePath("@storybook/addon-links"),
