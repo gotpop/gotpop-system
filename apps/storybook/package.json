@@ -14,21 +14,18 @@
     "clean": "rm -rf storybook-static"
   },
   "dependencies": {
-    "@gotpop/ui": "*",
-    "@gotpop/server": "*",
-    "@gotpop/icons": "*",
-    "@gotpop/tokens": "*"
+    "@gotpop/server": "*"
   },
   "devDependencies": {
-    "@storybook/addon-links": "^10.0.3",
-    "@storybook/addon-onboarding": "^10.0.3",
-    "@storybook/react": "^10.0.3",
-    "next": "^15.0.0",
+    "@storybook/addon-links": "^10.0.4",
+    "@storybook/addon-onboarding": "^10.0.4",
+    "@storybook/react": "^10.0.4",
+    "next": "^16.0.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "storybook": "^10.0.3",
+    "storybook": "^10.0.4",
     "vite": "^5.0.0",
-    "@storybook/nextjs-vite": "^10.0.3",
-    "@storybook/addon-docs": "^10.0.3"
+    "@storybook/nextjs-vite": "^10.0.4",
+    "@storybook/addon-docs": "^10.0.4"
   }
 }
