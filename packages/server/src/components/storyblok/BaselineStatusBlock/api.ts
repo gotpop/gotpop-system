@@ -30,9 +30,9 @@ export async function fetchFeatureData(
       headers: {
         "User-Agent": "gotpop-blog-baseline-status/1.0",
       },
-      // Cache for 24 hours
+      // Cache for 24 hours (Next.js specific)
       next: { revalidate: 86400 },
-    })
+    } as RequestInit & { next?: { revalidate: number } })
 
     if (!response.ok) {
       console.warn(

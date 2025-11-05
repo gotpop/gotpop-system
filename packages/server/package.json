@@ -4,6 +4,26 @@
   "description": "Server-only React components for gotpop design system",
   "main": "src/index.ts",
   "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./components/*": "./src/components/*/index.ts",
+    "./utils/*": "./src/utils/*/index.ts",
+    "./types/*": "./src/types/*",
+    "./lib/*": "./src/lib/*"
+  },
+  "files": [
+    "src/**/*",
+    "package.json",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gotpop/gotpop-system.git",
+    "directory": "packages/server"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "lint": "npx biome lint src/",
     "format:check": "npx biome check src/",
@@ -14,6 +34,7 @@
     "@next/font": "^14.2.15",
     "@storyblok/react": "^5.4.18",
     "react": "19.2.0",
+    "react-icons": "^5.4.0",
     "server-only": "^0.0.1",
     "storyblok-rich-text-react-renderer": "^3.0.1"
   },

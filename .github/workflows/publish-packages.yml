@@ -1,0 +1,38 @@
+name: Publish Packages
+
+on:
+  push:
+    branches: [main]
+    paths: ['packages/**']
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@gotpop'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build and test
+        run: |
+          yarn lint
+          yarn type-check
+
+      - name: Publish @gotpop/server package
+        run: yarn workspace @gotpop/server publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
