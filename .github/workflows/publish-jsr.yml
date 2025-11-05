@@ -2,8 +2,10 @@ name: Publish to JSR
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - master
+    paths:
+      - 'packages/system/**'
   workflow_dispatch:
 
 jobs:
@@ -13,7 +15,8 @@ jobs:
       contents: read
       id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
