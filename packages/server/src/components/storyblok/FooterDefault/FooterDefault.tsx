@@ -1,6 +1,6 @@
 import type { FooterDefaultStoryblok } from "../../../types/storyblok-components"
-import { fetchStoryByUuid"../../../utils../utils/storyblok-fetch/storyblok-fetch"
-import { StoryblokServerComponentomponent rom ".
+import { fetchStoryByUuid } from "../../../utils/storyblok-fetch"
+import { StoryblokServerComponent } from "../../"
 import { Typography } from "../Typography"
 
 // Only import CSS when not in JSR/Deno environment
@@ -17,12 +17,12 @@ export async function FooterDefault({ blok, uuid }: FooterDefaultProps): Promise
   let footerData = blok
 
   if (uuid && !blok) {
-    const story = await fetchStoryByUuid(uuid)
+    const story = await fetchStoryByUuid(uuid) as { content?: FooterDefaultStoryblok } | null
     footerData = story?.content
   }
 
   if (!footerData) {
-    return null
+    return <footer className="footer" />
   }
 
   const { logo, nav } = footerData

@@ -4,7 +4,7 @@ export function useClickOutside(
   navId: string,
   isActive: boolean = true,
   onClickOutside?: () => void
-) {
+): void {
   useEffect(() => {
     if (!isActive) return
 
