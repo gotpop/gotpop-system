@@ -4,10 +4,6 @@ on:
   push:
     branches: [master]
     paths: ['packages/**', 'apps/**']
-  pull_request:
-    branches: [master]
-    paths: ['packages/**', 'apps/**']
-  workflow_dispatch:
 
 jobs:
   type-check:
@@ -26,24 +22,5 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Build system package types
-        run: yarn workspace @gotpop/system run build
-
-      - name: Type check system package (informational)
-        run: |
-          echo "Running type check on system package..."
-          yarn workspace @gotpop/system run type-check || echo "⚠️  JSX custom element types need resolution"
-
-      - name: Verify package structure and exports
-        run: |
-          echo "✅ Checking package build outputs..."
-          ls -la packages/system/dist/
-          echo "✅ Checking type declarations exist..."
-          find packages/system/dist/ -name "*.d.ts" | head -5
-
-      - name: Show results
-        run: |
-          echo "✅ TypeScript build pipeline working!"
-          echo "✅ Package exports built types correctly"
-          echo "✅ Monorepo structure simplified successfully"
-          echo "📝 Note: Custom JSX element types need resolution (non-blocking)"
+      - name: Type check system package
+        run: yarn workspace @gotpop/system run type-check
