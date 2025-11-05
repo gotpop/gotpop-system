@@ -24,20 +24,23 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@gotpop'
 
-      - name: Install dependencies
+      - name: Install dependencies for server package only
         run: |
-          cd packages/server
-          npm install
+          # Create temporary directory and copy server package
+          mkdir -p /tmp/server-package
+          cp -r packages/server/* /tmp/server-package/
+          cd /tmp/server-package
+          npm install --legacy-peer-deps
 
       - name: Build and test
         run: |
-          cd packages/server
+          cd /tmp/server-package
           npm run lint
           npm run type-check
 
       - name: Publish @gotpop/server package
         run: |
-          cd packages/server
+          cd /tmp/server-package
           npm publish --registry https://npm.pkg.github.com --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
