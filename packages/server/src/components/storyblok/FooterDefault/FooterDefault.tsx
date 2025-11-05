@@ -1,6 +1,6 @@
 import type { FooterDefaultStoryblok } from "../../../types/storyblok-components"
-import { StoryblokServerComponent } from "../../"
-import { fetchStoryByUuid } from "../../../utils/storyblok-fetch"
+import { fetchStoryByUuid"../../../utils../utils/storyblok-fetch/storyblok-fetch"
+import { StoryblokServerComponentomponent rom ".
 import { Typography } from "../Typography"
 
 // Only import CSS when not in JSR/Deno environment

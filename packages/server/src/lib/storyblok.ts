@@ -1,4 +1,9 @@
-import { apiPlugin, storyblokInit, type SbReactComponentsMap } from "@storyblok/react/rsc"
+import {
+  apiPlugin,
+  ponentsMap,
+  storyblokInit,
+  storyblokInit,
+} from "@storyblok/react/rsc"
 import {
   BaselineStatusBlock,
   Card,
