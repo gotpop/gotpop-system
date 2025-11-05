@@ -13,11 +13,16 @@ interface FooterDefaultProps {
   uuid?: string
 }
 
-export async function FooterDefault({ blok, uuid }: FooterDefaultProps): Promise<React.JSX.Element> {
+export async function FooterDefault({
+  blok,
+  uuid,
+}: FooterDefaultProps): Promise<React.JSX.Element> {
   let footerData = blok
 
   if (uuid && !blok) {
-    const story = await fetchStoryByUuid(uuid) as { content?: FooterDefaultStoryblok } | null
+    const story = (await fetchStoryByUuid(uuid)) as {
+      content?: FooterDefaultStoryblok
+    } | null
     footerData = story?.content
   }
 
