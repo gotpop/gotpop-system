@@ -1,6 +1,6 @@
 import "server-only"
 import Link from "next/link"
-import { IconChrome, IconEdge, IconFirefox, IconSafari } from "../../../icons"
+import { IconChrome, IconEdge, IconFirefox, IconSafari } from "../../icons"
 import type { BaselineStatusBlockStoryblok } from "../../../types/storyblok-components"
 import { formatMonthYear } from "../../../utils/date-formatter"
 import "./BaselineStatus.css"
