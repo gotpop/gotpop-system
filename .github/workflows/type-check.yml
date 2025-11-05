@@ -28,21 +28,20 @@ jobs:
           mkdir -p /tmp/type-check-env
           cd /tmp/type-check-env
           
-          # Initialize with same dependencies as gotpop-blog
+          # Initialize with same dependencies as gotpop-blog (exact versions)
           npm init -y
           npm install --legacy-peer-deps \
             next@16.0.0 \
             react@19.2.0 \
             react-dom@19.2.0 \
             typescript@^5 \
-            @types/node@^20.0.0 \
-            @types/react@19.2.2 \
-            @types/react-dom@19.2.2 \
-            @next/font@^14.2.15 \
-            @storyblok/react@^5.4.18 \
-            react-icons@^5.4.0 \
-            server-only@^0.0.1 \
-            storyblok-rich-text-react-renderer@^3.0.1
+            "@types/node@^20" \
+            "@types/react@19.2.2" \
+            "@types/react-dom@19.2.2" \
+            "@storyblok/react@^5.4.17" \
+            "react-icons@^5.5.0" \
+            "server-only@^0.0.1" \
+            "storyblok-rich-text-react-renderer@^3.0.1"
 
       - name: Copy package source and create blog-like tsconfig
         run: |
@@ -107,6 +106,8 @@ jobs:
               "types": ["node"]
             },
             "include": [
+              "next-env.d.ts",
+              "global.d.ts",
               "src/types/css-raw.d.ts",
               "**/*.ts",
               "**/*.tsx"
@@ -124,6 +125,15 @@ jobs:
         run: |
           cd /tmp/type-check-env
           
+          # Create next-env.d.ts (critical for Next.js types)
+          cat > next-env.d.ts << 'EOF'
+          /// <reference types="next" />
+          /// <reference types="next/image-types/global" />
+
+          // NOTE: This file should not be edited
+          // see https://nextjs.org/docs/basic-features/typescript for more information.
+          EOF
+          
           # Create css-raw types (from blog)
           mkdir -p src/types
           cat > src/types/css-raw.d.ts << 'EOF'
@@ -133,28 +143,64 @@ jobs:
           }
           EOF
           
-          # Create custom elements declaration for layout tags
-          cat > src/types/custom-elements.d.ts << 'EOF'
-          declare namespace JSX {
-            interface IntrinsicElements {
-              "box-grid": React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
-              "box-crosshatch": React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
-              "baseline-status": React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
-              "link-list": React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
-              "logo-main": React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
-              "main-content": React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
-              "code-block": React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
-              "snippet-block": React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
-              "button-toggle": React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
-              "icon-hamburger": React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
-              "page-layout": React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+          # Create global type declarations that include custom elements
+          cat > global.d.ts << 'EOF'
+          import type { DetailedHTMLProps, HTMLAttributes, ButtonHTMLAttributes } from "react"
+
+          declare global {
+            namespace JSX {
+              interface IntrinsicElements {
+                "box-grid": DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
+                  "auto-columns"?: boolean;
+                };
+                "box-crosshatch": DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+                "baseline-status": DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
+                  "data-status"?: string;
+                };
+                "link-list": DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+                "logo-main": DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+                "main-content": DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+                "code-block": DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+                "snippet-block": DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+                "button-toggle": DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
+                "icon-hamburger": DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+                "page-layout": DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+              }
             }
           }
+
+          // Fix react-icons types to include className
+          declare module "react-icons/lib" {
+            import { ComponentType } from "react"
+            
+            export interface IconBaseProps {
+              children?: React.ReactNode;
+              size?: string | number;
+              color?: string;
+              title?: string;
+              className?: string;
+              style?: React.CSSProperties;
+              attr?: React.SVGAttributes<SVGElement>;
+            }
+            
+            export type IconType = ComponentType<IconBaseProps>;
+          }
+
+          export {}
           EOF
 
       - name: Run TypeScript type checking
         run: |
           cd /tmp/type-check-env
+          
+          # Debug: Check React version and type definitions
+          echo "=== React version ==="
+          npm list react @types/react
+          
+          echo "=== TypeScript config ==="
+          cat tsconfig.json
+          
+          echo "=== Running type check ==="
           npx tsc --noEmit --pretty
 
       - name: Show type check results
