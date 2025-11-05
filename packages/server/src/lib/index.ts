@@ -1,2 +1,2 @@
-export * from "./storyblok-utils"
 export * from "./storyblok"
+export * from "./storyblok-utils"
