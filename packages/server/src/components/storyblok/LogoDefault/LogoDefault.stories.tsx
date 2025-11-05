@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import type tyLogoDefaultStoryblokfaultStory.b../../types/storyblok-components'../../../types/storyblok-components'
-import oDLogoDefaultoDefault'LogoDefault
+import { LogoDefault } from './LogoDefault'
+import type { LogoDefaultStoryblok } from '../../../types/storyblok-components'
 
 const meta: Meta<typeof LogoDefault> = {
   title: 'Storyblok/LogoDefault',

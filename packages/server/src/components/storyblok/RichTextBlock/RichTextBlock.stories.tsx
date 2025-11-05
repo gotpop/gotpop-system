@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import type tyRichTextBlockStoryblokBlockStory.b../../types/storyblok-components./../../types/storyblok-components'
-import hTRichTextBlockhTextBloc'RichTextBlock
+import { RichTextBlock } from './RichTextBlock'
+import type { RichTextBlockStoryblok } from '../../../types/storyblok-components'
 
 const meta: Meta<typeof RichTextBlock> = {
   title: 'Storyblok/RichTextBlock',

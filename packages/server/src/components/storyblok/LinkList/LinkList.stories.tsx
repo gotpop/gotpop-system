@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import type tyLinkListStoryblokkListStory.b../../types/storyblok-componentsom '../../../types/storyblok-components'
-import kLLinkListkList'LinkList
+import { LinkList } from './LinkList'
+import type { LinkListStoryblok } from '../../../types/storyblok-components'
 
 const meta: Meta<typeof LinkList> = {
   title: 'Storyblok/LinkList',

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import type tyHeroDefaultStoryblokfaultStory./../typesbstoryblok-components'../../types/storyblok-components'
-import oDHeroDefaultoDefault'HeroDefault
+import { HeroDefault } from './HeroDefault'
+import type { HeroDefaultStoryblok } from '../../types/storyblok-components'
 
 const meta: Meta<typeof HeroDefault> = {
   title: 'Storyblok/HeroDefault',
