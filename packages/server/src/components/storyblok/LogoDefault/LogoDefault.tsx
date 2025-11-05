@@ -1,6 +1,6 @@
-import { IconLogoSVG } from "../../icons"
 import type { LogoDefaultStoryblok } from "../../../types/storyblok-components"
 import { getStoryblokLinkProps } from "../../../utils/storyblok"
+import { IconLogoSVG } from "../../icons"
 import "./LogoDefault.css"
 
 interface LogoDefaultProps {
