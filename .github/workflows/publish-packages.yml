@@ -25,14 +25,19 @@ jobs:
           scope: '@gotpop'
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: |
+          cd packages/server
+          yarn install
 
       - name: Build and test
         run: |
+          cd packages/server
           yarn lint
           yarn type-check
 
       - name: Publish @gotpop/server package
-        run: yarn workspace @gotpop/server publish --access public
+        run: |
+          cd packages/server
+          yarn publish --registry https://npm.pkg.github.com --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
