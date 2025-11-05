@@ -1,13 +1,13 @@
-import { dirname } from "node:path"
-import { fileURLToPath } from "node:url"
+import { dirname, join } from "node:path"
 import type { StorybookConfig } from "@storybook/nextjs-vite"
 
 const config: StorybookConfig = {
   stories: ["../../../packages/server/src/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
 
   addons: [
-    getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@storybook/addon-docs"),
+    "@storybook/addon-links",
+    "@storybook/addon-docs",
+    "@storybook/addon-essentials",
   ],
 
   framework: {
@@ -28,10 +28,19 @@ const config: StorybookConfig = {
         prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
     },
   },
+
+  async viteFinal(config) {
+    config.resolve = config.resolve || {}
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@": join(__dirname, "../../../packages/server/src"),
+    }
+    return config
+  },
 }
 
 export default config
 
 function getAbsolutePath(value: string): string {
-  return dirname(fileURLToPath(import.meta.resolve(`${value}/package.json`)))
+  return dirname(require.resolve(join(value, "package.json")))
 }

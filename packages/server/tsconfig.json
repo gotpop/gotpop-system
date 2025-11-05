@@ -5,8 +5,22 @@
     "rootDir": "src",
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "target": "ES2017",
+    "jsx": "react-jsx",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/icons": ["./src/components/icons"],
+      "@/icons/*": ["./src/components/icons/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/storyblok": ["./src/components/storyblok"],
+      "@/storyblok/*": ["./src/components/storyblok/*"],
+      "@/types/*": ["./src/types/*"],
+      "@/ui/*": ["./src/components/ui/*"],
+      "@/utils/*": ["./src/utils/*"]
+    }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/types/*.d.ts"],
   "exclude": ["dist", "node_modules", "**/*.test.*", "**/*.spec.*"]
 }

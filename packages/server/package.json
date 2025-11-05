@@ -11,8 +11,11 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@next/font": "^14.2.15",
+    "@storyblok/react": "^5.4.18",
     "react": "19.2.0",
-    "server-only": "^0.0.1"
+    "server-only": "^0.0.1",
+    "storyblok-rich-text-react-renderer": "^3.0.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.6",

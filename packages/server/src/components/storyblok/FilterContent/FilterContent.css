@@ -1,0 +1,39 @@
+@scope (main) {
+  & {
+    row-gap: var(--spacing-base);
+  }
+
+  .filter-header {
+    grid-column: content;
+    text-align: center;
+  }
+
+  .filters-with-output {
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-column: content;
+    grid-template-columns: subgrid;
+    row-gap: var(--spacing-lg);
+
+    box-grid[auto-columns] {
+      --column-gap: var(--spacing-md);
+      --columns: repeat(auto-fit, minmax(5rem, 12rem));
+      --direction: row;
+    }
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: content;
+    row-gap: var(--spacing-md);
+
+    box-grid {
+      --grid-offset: left;
+
+      @media screen and (width >= 1480px) {
+        --grid-column: span 3;
+      }
+    }
+  }
+}
