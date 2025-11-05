@@ -1,3 +1,5 @@
+import "server-only"
+
 export interface BaselineData {
   name?: string
   description?: string

@@ -10,7 +10,7 @@ import type {
   RichtextStoryblok,
   SnippetBlockStoryblok,
 } from "../../../types/storyblok-components"
-import { BaselineStatusBlock } from "../../storyblok/BaselineStatusBlock/BaselineStatus"
+import { BaselineStatusBlock } from "../../storyblok/BaselineStatusBlock"
 import { Card, Cards } from "../../storyblok/Cards"
 import { FilterContent } from "../../storyblok/FilterContent"
 import { HeroDefault } from "../../storyblok/HeroDefault"

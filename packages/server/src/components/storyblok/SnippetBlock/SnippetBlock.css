@@ -10,14 +10,4 @@
     overflow-y: hidden;
     padding: var(--spacing-lg) 0;
   }
-
-  .snippet-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: var(--spacing-base);
-    color: var(--dark-300);
-    font-style: italic;
-  }
 }

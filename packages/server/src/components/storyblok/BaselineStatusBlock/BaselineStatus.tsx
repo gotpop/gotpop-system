@@ -1,4 +1,6 @@
+import "server-only"
 import Link from "next/link"
+import { IconChrome, IconEdge, IconFirefox, IconSafari } from "../../../icons"
 import type { BaselineStatusBlockStoryblok } from "../../../types/storyblok-components"
 import { formatMonthYear } from "../../../utils/date-formatter"
 import "./BaselineStatus.css"
@@ -40,22 +42,18 @@ export async function BaselineStatusBlock({ blok }: BaselineStatusBlockProps) {
     {
       key: "chrome" as keyof typeof browserImpl,
       label: "Chrome",
-      Icon: () => <span>Chrome</span>, // Placeholder for missing icon
+      Icon: IconChrome,
     },
-    {
-      key: "edge" as keyof typeof browserImpl,
-      label: "Edge",
-      Icon: () => <span>Edge</span>, // Placeholder for missing icon
-    },
+    { key: "edge" as keyof typeof browserImpl, label: "Edge", Icon: IconEdge },
     {
       key: "firefox" as keyof typeof browserImpl,
       label: "Firefox",
-      Icon: () => <span>Firefox</span>, // Placeholder for missing icon
+      Icon: IconFirefox,
     },
     {
       key: "safari" as keyof typeof browserImpl,
       label: "Safari",
-      Icon: () => <span>Safari</span>, // Placeholder for missing icon
+      Icon: IconSafari,
     },
   ]
 

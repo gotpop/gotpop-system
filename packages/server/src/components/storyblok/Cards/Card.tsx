@@ -1,11 +1,14 @@
-import { Typography } from "../Typography"
+// import Link from "next/link"
+import { getStoryPath } from "../../../lib/storyblok-utils"
 import type { CardStoryblok } from "../../../types/storyblok-components"
+import { fetchStoryByUuid } from "../../../utils/storyblok-fetch"
+import { Typography } from "../Typography"
 
 interface CardProps {
   blok: CardStoryblok
 }
 
-export function Card({ blok }: CardProps) {
+export async function Card({ blok }: CardProps) {
   const { cards } = blok
   const card = cards?.[0]
 
@@ -13,18 +16,32 @@ export function Card({ blok }: CardProps) {
     return null
   }
 
-  // Simplified version without async data fetching for now
+  const story = await fetchStoryByUuid(card)
+
+  if (!story) {
+    return null
+  }
+
+  const { full_slug, content, name } = story
+  const linkPath = getStoryPath(full_slug)
+  const title = content?.Heading || name
+  const description = content?.description || ""
+
   return (
-    <box-grid>
+    <box-grid
+      style={{
+        viewTransitionName: story.content.view_transition_name,
+      }}
+    >
       <Typography tag="h3" variant="text-xl" shade="dark">
-        Card Title
+        {title}
       </Typography>
       <Typography tag="p" variant="text-base" shade="charcoal">
-        Card description placeholder
+        {description}
       </Typography>
-      <span className="link-simple">
+      <a href={linkPath} className="link-simple">
         Read more
-      </span>
+      </a>
     </box-grid>
   )
 }

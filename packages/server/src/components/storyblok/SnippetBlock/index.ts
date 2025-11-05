@@ -1,1 +1,1 @@
-export { SnippetBlock } from "./SnippetBlock"
+export * from "./SnippetBlock"

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react"
+import { cn } from "../../utils/cn"
 
 type ValidTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "small" | "time"
 
@@ -43,10 +44,6 @@ interface TypographyProps {
   className?: string
   id?: string
   dateTime?: string
-}
-
-function cn(...classes: (string | undefined)[]): string {
-  return classes.filter(Boolean).join(" ")
 }
 
 export function Typography({
