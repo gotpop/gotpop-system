@@ -41,9 +41,9 @@
       "@/*": ["./src/*"]
     },
 
-  // Node.js and React types
-  // Include react/react-dom so @types/react is available during CI builds
-  "types": ["node", "react", "react-dom"]
+    // Node.js and React types
+    // Include react/react-dom so @types/react is available during CI builds
+    "types": ["node", "react", "react-dom"]
   },
   "include": ["src/**/*", "src/types/*.d.ts"],
   "exclude": [
