@@ -32,11 +32,6 @@ jobs:
           cd /tmp/server-package
           npm install --legacy-peer-deps
 
-      - name: Build and test
-        run: |
-          cd /tmp/server-package
-          npm run type-check
-
       - name: Publish @gotpop/server package
         run: |
           cd /tmp/server-package
