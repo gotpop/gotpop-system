@@ -12,16 +12,40 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+      
+      - name: Auto-bump patch version
+        run: |
+          cd packages/system
+          # Get current version
+          current_version=$(cat jsr.json | grep '"version"' | cut -d'"' -f4)
+          echo "Current version: $current_version"
+          
+          # Bump patch version (0.1.2 -> 0.1.3)
+          new_version=$(echo $current_version | awk -F. '{$NF = $NF + 1;} 1' | sed 's/ /./g')
+          echo "New version: $new_version"
+          
+          # Update jsr.json
+          sed -i.bak "s/\"version\": \"$current_version\"/\"version\": \"$new_version\"/" jsr.json
+          rm jsr.json.bak
+          
+          # Commit the version bump
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add jsr.json
+          git commit -m "chore: bump version to $new_version [skip ci]" || exit 0
+          git push
       
       - name: Publish to JSR
         run: npx jsr publish
