@@ -1,0 +1,27 @@
+name: Publish to JSR
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Publish to JSR
+        run: npx jsr publish
+        working-directory: ./packages/system
+        env:
+          JSR_AUTH_TOKEN: ${{ secrets.JSR_AUTH_TOKEN }}
