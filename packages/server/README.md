@@ -81,3 +81,7 @@ export default function MyPage({ logoData }: MyPageProps) {
 ## Development
 
 This package is part of the gotpop-system monorepo. See the main README for development instructions.
+
+## Test Publishing
+
+This line added to trigger workflow via packages/ change.
