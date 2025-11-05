@@ -1,82 +1,87 @@
 # @gotpop/system
 
-React design system components for gotpop projects.
+A TypeScript-first design system and component library built for Next.js applications with Storyblok CMS integration.
+
+## Features
+
+- 🎯 **TypeScript-first** - Raw TypeScript distribution, no compilation needed
+- ⚛️ **React Server Components** - Built for Next.js App Router
+- 🎨 **Storyblok Ready** - Pre-built components for Storyblok CMS
+- 📱 **Responsive Design** - Mobile-first approach with semantic HTML
+- 🎭 **Storybook Integration** - Comprehensive component documentation
+- 🚀 **JSR Published** - Modern package distribution
 
 ## Installation
 
-### Setup GitHub Packages Authentication
-
-Create or update `.npmrc` in your consuming project:
-
-```
-@gotpop:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
-```
-
-### Install Package
-
 ```bash
-yarn add @gotpop/system
-# or
+# Using JSR (recommended)
+npx jsr add @gotpop/system
+
+# Using npm
 npm install @gotpop/system
+
+# Using yarn
+yarn add @gotpop/system
+
+# Using pnpm
+pnpm add @gotpop/system
 ```
 
 ## Usage
 
-### Import Components
-
-```typescript
-```tsx
-import { LogoDefault, HeroDefault, components } from "@gotpop/system"
-
-// Component usage
-import { LogoDefault } from "@gotpop/system"
-
-// Utility functions
-import { getStoryblokLinkProps } from "@gotpop/system"
-```
-
-### Component Registration for Storyblok
+### Components
 
 ```tsx
-import { components } from "@gotpop/system"
-```
+import { Typography, LogoDefault } from "@gotpop/system/components"
 
-### Storyblok Integration
-
-```typescript
-// Register components for Storyblok
-import { components } from "@gotpop/server"
-import { storyblokInit } from "@storyblok/react/rsc"
-
-storyblokInit({
-  accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
-  components,
-})
-```
-
-### Component Usage
-
-```tsx
-import type { LogoDefaultStoryblok } from "@gotpop/system"
-import { LogoDefault } from "@gotpop/system"
-
-interface MyPageProps {
-  logoData: LogoDefaultStoryblok
-}
-
-export default function MyPage({ logoData }: MyPageProps) {
-  return <LogoDefault blok={logoData} />
+export function MyComponent() {
+  return (
+    <div>
+      <Typography variant="hero" tag="h1">
+        Hello World
+      </Typography>
+      <LogoDefault />
+    </div>
+  )
 }
 ```
 
-## Features
+### Storyblok Components
 
-- ✅ Server Components optimized
-- ✅ TypeScript types included
-- ✅ CSS imports handled
-- ✅ Storyblok CMS integration
-- ✅ Next.js 15+ compatible
+```tsx
+import { HeroDefault, FooterDefault } from "@gotpop/system/components"
+import type { HeroDefaultStoryblok } from "@gotpop/system/types"
+
+export function StoryblokPage({ blok }: { blok: HeroDefaultStoryblok }) {
+  return <HeroDefault blok={blok} />
+}
+```
+
+### Utilities
+
+```tsx
+import { fetchStoryByUuid, cn } from "@gotpop/system/utils"
+import { useMediaQuery } from "@gotpop/system/hooks"
+
+// Storyblok data fetching
+const story = await fetchStoryByUuid("uuid-here")
+
+// CSS class utilities
+const className = cn("base-class", { "conditional-class": true })
+
+// React hooks
+const isMobile = useMediaQuery("(max-width: 768px)")
+```
+
+## Package Exports
+
+- `@gotpop/system` - Main entry point
+- `@gotpop/system/components` - React components
+- `@gotpop/system/utils` - Utility functions
+- `@gotpop/system/types` - TypeScript types
+- `@gotpop/system/lib` - Core libraries
+- `@gotpop/system/hooks` - React hooks
+- `@gotpop/system/constants` - Constants and tokens
 
 ## Requirements
 
@@ -84,10 +89,14 @@ export default function MyPage({ logoData }: MyPageProps) {
 - Next.js 15+
 - TypeScript (recommended)
 
-## Development
+## Documentation
 
-This package is part of the gotpop-system monorepo. See the main README for development instructions.
+Visit [Storybook documentation](https://storybook.gotpop.dev) for comprehensive component examples and API documentation.
 
-## Test Publishing
+## License
 
-This line added to trigger workflow via packages/ change.
+MIT - see [LICENSE](https://github.com/gotpop/gotpop-system/blob/master/LICENSE) for details.
+
+## Contributing
+
+This package is part of the [gotpop-system monorepo](https://github.com/gotpop/gotpop-system). See the main repository for contribution guidelines.
