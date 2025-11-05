@@ -27,17 +27,17 @@ jobs:
       - name: Install dependencies
         run: |
           cd packages/server
-          yarn install
+          npm install
 
       - name: Build and test
         run: |
           cd packages/server
-          yarn lint
-          yarn type-check
+          npm run lint
+          npm run type-check
 
       - name: Publish @gotpop/server package
         run: |
           cd packages/server
-          yarn publish --registry https://npm.pkg.github.com --access public
+          npm publish --registry https://npm.pkg.github.com --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
