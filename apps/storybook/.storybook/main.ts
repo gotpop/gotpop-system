@@ -34,6 +34,7 @@ const config: StorybookConfig = {
     config.resolve.alias = {
       ...config.resolve.alias,
       "@": join(__dirname, "../../../packages/server/src"),
+      "@storybook-components": join(__dirname, "../src/components"),
     }
     return config
   },

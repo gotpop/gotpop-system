@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import type { LogoDefaultStoryblok } from "../../../types/storyblok-components"
+import { StorybookBackground } from "../../../utils/storybook"
 import { LogoDefault } from "./LogoDefault"
 
 const meta: Meta<typeof LogoDefault> = {
@@ -9,6 +10,13 @@ const meta: Meta<typeof LogoDefault> = {
     layout: "centered",
   },
   tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <StorybookBackground variant="secondary-700">
+        <Story />
+      </StorybookBackground>
+    ),
+  ],
   argTypes: {
     blok: {
       description: "The Storyblok blok data for the logo component",
