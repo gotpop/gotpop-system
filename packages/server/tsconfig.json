@@ -1,26 +1,25 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    // Build output
     "outDir": "dist",
     "rootDir": "src",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "target": "ES2017",
-    "jsx": "react-jsx",
+
+    // Path resolution for package
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@/components/*": ["./src/components/*"],
-      "@/icons": ["./src/components/icons"],
-      "@/icons/*": ["./src/components/icons/*"],
-      "@/lib/*": ["./src/lib/*"],
-      "@/storyblok": ["./src/components/storyblok"],
-      "@/storyblok/*": ["./src/components/storyblok/*"],
-      "@/types/*": ["./src/types/*"],
-      "@/ui/*": ["./src/components/ui/*"],
-      "@/utils/*": ["./src/utils/*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src/**/*", "src/types/*.d.ts"],
-  "exclude": ["dist", "node_modules", "**/*.test.*", "**/*.spec.*"]
+  "exclude": [
+    "dist",
+    "node_modules",
+    "**/*.test.*",
+    "**/*.spec.*",
+    "**/*.stories.*"
+  ]
 }
