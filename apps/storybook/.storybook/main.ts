@@ -2,7 +2,7 @@ import { dirname, join } from "node:path"
 import type { StorybookConfig } from "@storybook/nextjs-vite"
 
 const config: StorybookConfig = {
-  stories: ["../../../packages/server/src/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
+  stories: ["../../../packages/system/src/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
 
   addons: [
     "@storybook/addon-links",
@@ -33,7 +33,7 @@ const config: StorybookConfig = {
     config.resolve = config.resolve || {}
     config.resolve.alias = {
       ...config.resolve.alias,
-      "@": join(__dirname, "../../../packages/server/src"),
+      "@": join(__dirname, "../../../packages/system/src"),
       "@storybook-components": join(__dirname, "../src/components"),
     }
     return config

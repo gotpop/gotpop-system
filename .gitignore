@@ -19,6 +19,9 @@ build/
 .vercel/
 .turbo/
 
+# TypeScript
+*.tsbuildinfo
+
 # Environment files
 .env*.local
 .env

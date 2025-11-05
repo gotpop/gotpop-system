@@ -37,9 +37,9 @@ jobs:
       - name: Verify package structure and exports
         run: |
           echo "✅ Checking package build outputs..."
-          ls -la packages/server/dist/
+          ls -la packages/system/dist/
           echo "✅ Checking type declarations exist..."
-          find packages/server/dist/ -name "*.d.ts" | head -5
+          find packages/system/dist/ -name "*.d.ts" | head -5
 
       - name: Show results
         run: |

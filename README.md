@@ -35,10 +35,6 @@ yarn lint
 ## Structure
 
 - `packages/system` - **Main package published to JSR** 🚀
-- `packages/ui` - Shared UI components
-- `packages/icons` - Icon components  
-- `packages/tokens` - Design tokens
-- `packages/utils` - Shared utilities
 - `apps/storybook` - Component documentation
 
 ## Development

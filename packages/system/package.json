@@ -35,10 +35,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/gotpop/gotpop-system.git",
-    "directory": "packages/server"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "directory": "packages/system"
   },
   "scripts": {
     "build": "tsc --noCheck",

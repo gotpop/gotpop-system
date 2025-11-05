@@ -4,15 +4,15 @@
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "@gotpop/system": ["../../packages/server/src"],
-      "@gotpop/system/*": ["../../packages/server/src/*"]
+      "@gotpop/system": ["../../packages/system/src"],
+      "@gotpop/system/*": ["../../packages/system/src/*"]
     },
     "types": ["node"]
   },
   "include": [
     "src/**/*",
     ".storybook/**/*",
-    "../../packages/server/src/**/*.stories.*"
+    "../../packages/system/src/**/*.stories.*"
   ],
   "exclude": ["node_modules", "storybook-static", "**/*.test.*", "**/*.spec.*"]
 }

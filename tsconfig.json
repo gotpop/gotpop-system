@@ -5,8 +5,8 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@gotpop/system": ["./packages/server/src"],
-      "@gotpop/system/*": ["./packages/server/src/*"]
+      "@gotpop/system": ["./packages/system/src"],
+      "@gotpop/system/*": ["./packages/system/src/*"]
     }
   },
   "include": ["packages/*/src/**/*", "apps/*/src/**/*"],
