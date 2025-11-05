@@ -38,7 +38,7 @@ jobs:
           npm version patch --no-git-tag-version
           echo "New version: $(node -p "require('./package.json').version")"
 
-      - name: Publish @gotpop/server package
+      - name: Publish @gotpop/system package
         run: |
           cd /tmp/server-package
           npm publish --registry https://npm.pkg.github.com --access public

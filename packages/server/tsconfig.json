@@ -1,51 +1,21 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    // Modern module resolution for package builds
-    "moduleResolution": "bundler",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-
-    // React & JSX configuration
-    "jsx": "react-jsx",
-    "jsxImportSource": "react",
-
-    // Module system
-    "module": "ESNext",
-    "target": "ES2020",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-
-    // Type checking
-    "strict": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "exactOptionalPropertyTypes": false,
-
-    // Build output
     "outDir": "dist",
     "rootDir": "src",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "noEmit": true,
-
-    // Resolution
-    "resolveJsonModule": true,
-    "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
+    "noEmit": false,
     "isolatedModules": true,
-
-    // Path resolution for package
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
-
-    // Node.js and React types
-    // Include react/react-dom so @types/react is available during CI builds
-    "types": ["node", "react", "react-dom"]
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   },
-  "include": ["src/**/*", "src/types/*.d.ts"],
+  "include": ["src/**/*", "src/types/css-modules.d.ts"],
   "exclude": [
     "dist",
     "node_modules",

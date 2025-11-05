@@ -1,14 +1,18 @@
 import type { LinkListStoryblok } from "../../../types/storyblok-components"
 import { Typography } from "../Typography"
-import "./LinkList.css"
+
+// Only import CSS when not in JSR/Deno environment  
+if (typeof window !== "undefined") {
+  await import("./LinkList.css")
+}
 
 interface LinkListProps {
   blok: LinkListStoryblok
 }
 
-export function LinkList({ blok }: LinkListProps) {
+export function LinkList({ blok }: LinkListProps): unknown {
   return (
-    <link-list>
+    <div>
       <div className="link-list-heading">
         <Typography tag="h4" variant="text-xl" shade="light">
           {blok.heading}
@@ -26,6 +30,6 @@ export function LinkList({ blok }: LinkListProps) {
           ))}
         </ul>
       )}
-    </link-list>
+    </div>
   )
 }

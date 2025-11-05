@@ -1,0 +1,27 @@
+{
+  "name": "@gotpop/system",
+  "version": "0.1.0",
+  "license": "MIT",
+  "exports": {
+    ".": "./packages/server/src/index.ts",
+    "./components": "./packages/server/src/components/index.ts",
+    "./utils": "./packages/server/src/utils/index.ts",
+    "./types": "./packages/server/src/types/index.ts",
+    "./lib": "./packages/server/src/lib/index.ts",
+    "./hooks": "./packages/server/src/hooks/index.ts",
+    "./constants": "./packages/server/src/constants/index.ts"
+  },
+  "include": [
+    "packages/server/src/**/*.ts",
+    "packages/server/src/**/*.tsx"
+  ],
+  "exclude": [
+    "packages/server/src/**/*.test.ts",
+    "packages/server/src/**/*.test.tsx",
+    "packages/server/src/**/*.spec.ts",
+    "packages/server/src/**/*.spec.tsx",
+    "packages/server/src/**/*.stories.ts",
+    "packages/server/src/**/*.stories.tsx",
+    "packages/server/src/**/*.css"
+  ]
+}

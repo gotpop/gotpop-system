@@ -1,6 +1,9 @@
-import "./SnippetTextAlignB.css"
+// Only import CSS when not in JSR/Deno environment
+if (typeof window !== "undefined") {
+  await import("./SnippetTextAlignB.css")
+}
 
-export function SnippetTextAlignB() {
+export function SnippetTextAlignB(): unknown {
   return (
     <div className="snippet-text-align-b">
       <div className="wrapper">

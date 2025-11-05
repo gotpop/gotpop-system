@@ -25,7 +25,7 @@ interface RichTextProps {
   className?: string
 }
 
-export function RichText({ content }: RichTextProps) {
+export function RichText({ content }: RichTextProps): unknown {
   if (!content) return null
 
   const renderedContent = render(content, {

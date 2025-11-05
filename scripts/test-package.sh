@@ -3,7 +3,7 @@
 # Test package publishing locally
 # This script helps test the package before publishing to GitHub Packages
 
-echo "🧪 Testing @gotpop/server package..."
+echo "🧪 Testing @gotpop/system package..."
 
 # Check if we're in the right directory
 if [ ! -f "packages/server/package.json" ]; then
@@ -13,8 +13,8 @@ fi
 
 # Run linting and type checking
 echo "📋 Running lint and type checks..."
-yarn workspace @gotpop/server lint
-yarn workspace @gotpop/server type-check
+yarn workspace @gotpop/system lint
+yarn workspace @gotpop/system type-check
 
 if [ $? -ne 0 ]; then
   echo "❌ Lint or type check failed"
@@ -36,7 +36,7 @@ echo ""
 echo "📝 Next steps:"
 echo "1. Commit and push changes to main branch"
 echo "2. GitHub Actions will automatically publish the package"
-echo "3. Add to gotpop-blog with: yarn add @gotpop/server"
+echo "3. Add to gotpop-blog with: yarn add @gotpop/system"
 echo ""
 echo "🔗 Package will be available at:"
 echo "   https://github.com/gotpop/gotpop-system/packages"

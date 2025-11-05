@@ -1,7 +1,10 @@
 "use client"
 
 import { useId } from "react"
-import "./ClientSidePostsFilter.css"
+// Only import CSS when not in JSR/Deno environment
+if (typeof window !== "undefined") {
+  await import("./ClientSidePostsFilter.css")
+}
 
 interface TagEntry {
   name: string

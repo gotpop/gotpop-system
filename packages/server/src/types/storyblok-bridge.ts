@@ -21,8 +21,5 @@ export interface StoryblokBridgeAPI {
   enterEditmode: () => void
 }
 
-declare global {
-  interface Window {
-    storyblok?: StoryblokBridgeAPI
-  }
-}
+// Note: Global Window interface augmentation removed for JSR compatibility
+// If needed, consumers can augment Window interface in their own projects

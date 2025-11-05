@@ -1,19 +1,12 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    // Monorepo-specific settings
     "noEmit": true,
     "incremental": true,
-
-    // Monorepo-specific path mappings
     "baseUrl": ".",
     "paths": {
-      "@gotpop/server": ["./packages/server/src"],
-      "@gotpop/server/*": ["./packages/server/src/*"],
-      "@gotpop/ui": ["./packages/ui/src"],
-      "@gotpop/icons": ["./packages/icons/src"],
-      "@gotpop/tokens": ["./packages/tokens/src"],
-      "@gotpop/utils": ["./packages/utils/src"]
+      "@gotpop/system": ["./packages/server/src"],
+      "@gotpop/system/*": ["./packages/server/src/*"]
     }
   },
   "include": ["packages/*/src/**/*", "apps/*/src/**/*"],
@@ -22,6 +15,7 @@
     "**/dist",
     "**/node_modules",
     "**/*.test.*",
-    "**/*.spec.*"
+    "**/*.spec.*",
+    "**/*.stories.*"
   ]
 }

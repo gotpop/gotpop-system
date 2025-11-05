@@ -2,7 +2,10 @@ import { getStoryPath } from "../../../lib/storyblok-utils"
 import { formatDate } from "../../../utils/date-formatter"
 import type { PostStory } from "../../../utils/tags"
 import { Typography } from "../Typography"
-import "./ClientSidePostCard.css"
+// Only import CSS when not in JSR/Deno environment
+if (typeof window !== "undefined") {
+  await import("./ClientSidePostCard.css")
+}
 
 interface PostCardProps {
   post: PostStory
@@ -24,7 +27,7 @@ export default function PostCard({ post }: PostCardProps) {
   ))
 
   return (
-    <box-grid
+    <div
       style={{
         viewTransitionName: `post-${post.uuid}`,
       }}
@@ -52,6 +55,6 @@ export default function PostCard({ post }: PostCardProps) {
       <a href={linkPath} className="link-simple">
         Read more
       </a>
-    </box-grid>
+    </div>
   )
 }

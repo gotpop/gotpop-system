@@ -1,6 +1,6 @@
-# @gotpop/server
+# @gotpop/system
 
-Server-only React components for the gotpop design system, optimized for Next.js Server Components and Storyblok CMS
+React design system components for gotpop projects.
 
 ## Installation
 
@@ -16,9 +16,9 @@ Create or update `.npmrc` in your consuming project:
 ### Install Package
 
 ```bash
-yarn add @gotpop/server
+yarn add @gotpop/system
 # or
-npm install @gotpop/server
+npm install @gotpop/system
 ```
 
 ## Usage
@@ -26,14 +26,20 @@ npm install @gotpop/server
 ### Import Components
 
 ```typescript
-// Import all components
-import { LogoDefault, HeroDefault, components } from "@gotpop/server"
+```tsx
+import { LogoDefault, HeroDefault, components } from "@gotpop/system"
 
-// Import specific components
-import { LogoDefault } from "@gotpop/server"
+// Component usage
+import { LogoDefault } from "@gotpop/system"
 
-// Import utilities
-import { getStoryblokLinkProps } from "@gotpop/server"
+// Utility functions
+import { getStoryblokLinkProps } from "@gotpop/system"
+```
+
+### Component Registration for Storyblok
+
+```tsx
+import { components } from "@gotpop/system"
 ```
 
 ### Storyblok Integration
@@ -52,8 +58,8 @@ storyblokInit({
 ### Component Usage
 
 ```tsx
-import type { LogoDefaultStoryblok } from "@gotpop/server"
-import { LogoDefault } from "@gotpop/server"
+import type { LogoDefaultStoryblok } from "@gotpop/system"
+import { LogoDefault } from "@gotpop/system"
 
 interface MyPageProps {
   logoData: LogoDefaultStoryblok

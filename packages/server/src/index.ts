@@ -1,4 +1,4 @@
-// Main entry point for @gotpop/server package
+// Main entry point for @gotpop/system package
 // Re-export all components, utilities, types, and other modules
 
 export * from "./components"

@@ -8,7 +8,7 @@ interface PostHeaderProps {
   style?: React.CSSProperties
 }
 
-export function PostHeader({ heading, publishedDate, style }: PostHeaderProps) {
+export function PostHeader({ heading, publishedDate, style }: PostHeaderProps): unknown {
   const id = useId()
 
   if (!publishedDate || !heading) return null
@@ -16,7 +16,7 @@ export function PostHeader({ heading, publishedDate, style }: PostHeaderProps) {
   const formattedDate = formatDate(publishedDate)
 
   return (
-    <box-grid aria-labelledby={id} style={style}>
+    <div aria-labelledby={id} style={style}>
       <Typography tag="h1" variant="text-xl" shade="dark" id={id}>
         {heading}
       </Typography>
@@ -28,6 +28,6 @@ export function PostHeader({ heading, publishedDate, style }: PostHeaderProps) {
       >
         {formattedDate}
       </Typography>
-    </box-grid>
+    </div>
   )
 }

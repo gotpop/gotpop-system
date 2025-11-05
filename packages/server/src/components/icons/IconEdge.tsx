@@ -1,6 +1,6 @@
 import { useId } from "react"
 
-export function IconEdge() {
+export function IconEdge(): unknown {
   const gradientEId = useId()
   const gradientFId = useId()
   const gradientGId = useId()

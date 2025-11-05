@@ -1,4 +1,4 @@
-import { apiPlugin, storyblokInit } from "@storyblok/react/rsc"
+import { apiPlugin, storyblokInit, type SbReactComponentsMap } from "@storyblok/react/rsc"
 import {
   BaselineStatusBlock,
   Card,
@@ -19,7 +19,7 @@ import {
   SnippetBlock,
 } from "../components/storyblok"
 
-const components = {
+const components: SbReactComponentsMap = {
   baseline_status_block: BaselineStatusBlock,
   card: Card,
   cards: Cards,
@@ -40,7 +40,7 @@ const components = {
 }
 
 // Server-side initialization
-export const getStoryblokApi = storyblokInit({
+export const getStoryblokApi: ReturnType<typeof storyblokInit> = storyblokInit({
   accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
   use: [apiPlugin],
   components,

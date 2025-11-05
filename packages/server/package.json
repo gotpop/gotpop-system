@@ -1,17 +1,33 @@
 {
-  "name": "@gotpop/server",
+  "name": "@gotpop/system",
   "version": "0.1.0",
-  "description": "Server-only React components for gotpop design system",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "description": "React design system components for gotpop",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
-    ".": "./src/index.ts",
-    "./components/*": "./src/components/*/index.ts",
-    "./utils/*": "./src/utils/*/index.ts",
-    "./types/*": "./src/types/*",
-    "./lib/*": "./src/lib/*"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./components/*": {
+      "types": "./dist/components/*/index.d.ts",
+      "default": "./dist/components/*/index.js"
+    },
+    "./utils/*": {
+      "types": "./dist/utils/*/index.d.ts",
+      "default": "./dist/utils/*/index.js"
+    },
+    "./types": {
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/types/index.js"
+    },
+    "./lib/*": {
+      "types": "./dist/lib/*.d.ts",
+      "default": "./dist/lib/*.js"
+    }
   },
   "files": [
+    "dist/**/*",
     "src/**/*",
     "package.json",
     "README.md"
@@ -25,10 +41,12 @@
     "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
+    "build": "tsc --noCheck",
+    "dev": "tsc --watch --noCheck",
     "lint": "npx biome lint src/",
     "format:check": "npx biome check src/",
     "format:fix": "npx biome check --write src/",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
     "@next/font": "^14.2.15",

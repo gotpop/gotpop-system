@@ -1,7 +1,10 @@
 import type { ReactNode } from "react"
 import { FooterDefault } from "../../storyblok/FooterDefault/FooterDefault"
 import { HeaderDefault } from "../../storyblok/HeaderDefault/HeaderDefault"
-import "./PageLayout.css"
+// Only import CSS when not in JSR/Deno environment
+if (typeof window !== "undefined") {
+  await import("./PageLayout.css")
+}
 
 interface PageLayoutProps {
   children?: ReactNode
@@ -10,14 +13,14 @@ interface PageLayoutProps {
   footer?: string
 }
 
-export function PageLayout({ children, header, footer }: PageLayoutProps) {
+export function PageLayout({ children, header, footer }: PageLayoutProps): unknown {
   return (
-    <page-layout className="page-layout">
+    <div className="page-layout">
       <HeaderDefault uuid={header} />
       <main>
-        <box-crosshatch className="box-crosshatch">{children}</box-crosshatch>
+        <div className="box-crosshatch">{children}</div>
       </main>
       <FooterDefault uuid={footer} />
-    </page-layout>
+    </div>
   )
 }

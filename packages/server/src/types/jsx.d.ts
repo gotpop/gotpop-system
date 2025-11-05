@@ -1,9 +1,4 @@
-// Allow custom element names used in the codebase (e.g. <box-grid>, <baseline-status>, etc.)
-// This keeps type checking permissive for web-component-like tags used as layout wrappers.
-declare namespace JSX {
-  interface IntrinsicElements {
-    [elemName: string]: any
-  }
-}
+// This file is intentionally empty - custom JSX elements are declared in custom-elements.d.ts
+// to match the pattern used in the working gotpop-blog project.
 
 export {}

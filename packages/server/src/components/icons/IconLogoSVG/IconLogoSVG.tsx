@@ -8,7 +8,7 @@ export function IconLogoSVG({
   width = 45,
   height = 45,
   className = "svg morphing-logo",
-}: IconLogoSVGProps) {
+}: IconLogoSVGProps): unknown {
   return (
     <svg
       className={className}

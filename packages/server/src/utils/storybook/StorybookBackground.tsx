@@ -1,5 +1,8 @@
 import type { ReactNode } from "react"
-import "./StorybookBackground.css"
+// Only import CSS when not in JSR/Deno environment
+if (typeof window !== "undefined") {
+  await import("./StorybookBackground.css")
+}
 
 interface StorybookBackgroundProps {
   children: ReactNode

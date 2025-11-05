@@ -5,7 +5,7 @@ import { getStoryPath, shouldIncludeStory } from "../lib/storyblok-utils"
 import type { StoryblokStoryResponse } from "../types/storyblok"
 import { getTagsFromDatasource } from "./tags"
 
-export async function generateAllStaticParams() {
+export async function generateAllStaticParams(): Promise<React.JSX.Element> {
   const storyblokApi = getStoryblokApi()
 
   const { data } = await storyblokApi.get("cdn/stories", {

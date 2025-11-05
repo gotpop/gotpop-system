@@ -1,6 +1,9 @@
 import type { HeaderDefaultStoryblok } from "../../../types/storyblok-components"
 import { StoryblokServerComponent } from "../../"
-import "./HeaderDefault.css"
+// Only import CSS when not in JSR/Deno environment
+if (typeof window !== "undefined") {
+  await import("./HeaderDefault.css")
+}
 import { fetchStoryByUuid } from "../../../utils/storyblok-fetch"
 
 interface HeaderDefaultProps {
@@ -8,7 +11,7 @@ interface HeaderDefaultProps {
   uuid?: string
 }
 
-export async function HeaderDefault({ blok, uuid }: HeaderDefaultProps) {
+export async function HeaderDefault({ blok, uuid }: HeaderDefaultProps): Promise<React.JSX.Element> {
   let headerData = blok
 
   if (uuid && !blok) {

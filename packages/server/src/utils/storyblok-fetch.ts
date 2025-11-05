@@ -10,7 +10,7 @@ import { getStoryblokApi } from "../lib/storyblok"
 export async function fetchStoryByUuid(
   uuid: string,
   version: "draft" | "published" = "draft"
-) {
+): Promise<React.JSX.Element> {
   if (!uuid) {
     console.log("fetchStoryByUuid: No UUID provided")
     return null
@@ -46,7 +46,7 @@ export async function fetchStoryByUuid(
 export async function fetchStoriesByUuids(
   uuids: string[],
   version: "draft" | "published" = "draft"
-) {
+): Promise<React.JSX.Element> {
   if (!uuids || uuids.length === 0) {
     console.log("fetchStoriesByUuids: No UUIDs provided")
     return []

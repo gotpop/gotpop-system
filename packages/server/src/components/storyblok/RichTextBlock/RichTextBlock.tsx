@@ -5,8 +5,8 @@ interface RichTextBlockProps {
   blok: RichTextBlockStoryblok
 }
 
-export function RichTextBlock({ blok }: RichTextBlockProps) {
+export function RichTextBlock({ blok }: RichTextBlockProps): React.JSX.Element {
   const { content } = blok
 
-  return <box-grid>{content && <RichText content={content} />}</box-grid>
+  return <div>{content && <RichText content={content} />}</div>
 }

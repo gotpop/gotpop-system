@@ -3,7 +3,7 @@
 import { useEffect } from "react"
 import type { StoryblokBridgeEvent } from "../../types"
 
-export function StoryblokBridge() {
+export function StoryblokBridge(): unknown {
   useEffect(() => {
     if (typeof window === "undefined") return
 

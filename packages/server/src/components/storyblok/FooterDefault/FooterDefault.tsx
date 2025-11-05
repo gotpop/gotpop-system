@@ -1,15 +1,19 @@
 import type { FooterDefaultStoryblok } from "../../../types/storyblok-components"
 import { StoryblokServerComponent } from "../../"
-import "./FooterDefault.css"
 import { fetchStoryByUuid } from "../../../utils/storyblok-fetch"
 import { Typography } from "../Typography"
+
+// Only import CSS when not in JSR/Deno environment
+if (typeof window !== "undefined") {
+  await import("./FooterDefault.css")
+}
 
 interface FooterDefaultProps {
   blok?: FooterDefaultStoryblok | null
   uuid?: string
 }
 
-export async function FooterDefault({ blok, uuid }: FooterDefaultProps) {
+export async function FooterDefault({ blok, uuid }: FooterDefaultProps): Promise<React.JSX.Element> {
   let footerData = blok
 
   if (uuid && !blok) {
@@ -33,7 +37,7 @@ export async function FooterDefault({ blok, uuid }: FooterDefaultProps) {
         {hasNav && (
           <nav className="footer-nav">
             {nav.map((navItem) => (
-              <StoryblokServerComponent key={navItem._uid} blok={navItem} />
+              <StoryblokServerComponent key={navItem._huid} blok={navItem} />
             ))}
           </nav>
         )}

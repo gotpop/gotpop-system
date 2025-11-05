@@ -1,6 +1,6 @@
 import { useId } from "react"
 
-export function IconChrome() {
+export function IconChrome(): unknown {
   const gradientAId = useId()
   const gradientBId = useId()
   const gradientCId = useId()

@@ -3,7 +3,10 @@ import Link from "next/link"
 import type { BaselineStatusBlockStoryblok } from "../../../types/storyblok-components"
 import { formatMonthYear } from "../../../utils/date-formatter"
 import { IconChrome, IconEdge, IconFirefox, IconSafari } from "../../icons"
-import "./BaselineStatus.css"
+// Only import CSS when not in JSR/Deno environment
+if (typeof window !== "undefined") {
+  await import("./BaselineStatus.css")
+}
 import { Typography } from "../Typography"
 import { fetchFeatureData } from "./api"
 import { BaselineIcon } from "./BaselineIcon"
@@ -14,7 +17,7 @@ interface BaselineStatusBlockProps {
   blok: BaselineStatusBlockStoryblok
 }
 
-export async function BaselineStatusBlock({ blok }: BaselineStatusBlockProps) {
+export async function BaselineStatusBlock({ blok }: BaselineStatusBlockProps): Promise<React.JSX.Element> {
   const featureId = blok.feature
 
   if (!featureId) return null
@@ -69,7 +72,7 @@ export async function BaselineStatusBlock({ blok }: BaselineStatusBlockProps) {
   }
 
   return (
-    <baseline-status className="baseline-status" data-status={status}>
+    <div className="baseline-status" data-status={status}>
       <details>
         <summary>
           <div className="title">
@@ -125,6 +128,6 @@ export async function BaselineStatusBlock({ blok }: BaselineStatusBlockProps) {
           </Link>
         </div>
       </details>
-    </baseline-status>
+    </div>
   )
 }

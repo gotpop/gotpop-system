@@ -8,7 +8,7 @@ interface CardProps {
   blok: CardStoryblok
 }
 
-export async function Card({ blok }: CardProps) {
+export async function Card({ blok }: CardProps): Promise<React.JSX.Element> {
   const { cards } = blok
   const card = cards?.[0]
 
@@ -28,7 +28,7 @@ export async function Card({ blok }: CardProps) {
   const description = content?.description || ""
 
   return (
-    <box-grid
+    <div
       style={{
         viewTransitionName: story.content.view_transition_name,
       }}
@@ -42,6 +42,6 @@ export async function Card({ blok }: CardProps) {
       <a href={linkPath} className="link-simple">
         Read more
       </a>
-    </box-grid>
+    </div>
   )
 }

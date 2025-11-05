@@ -7,12 +7,12 @@ interface HeroDefaultProps {
   blok: HeroDefaultStoryblok
 }
 
-export function HeroDefault({ blok }: HeroDefaultProps) {
+export function HeroDefault({ blok }: HeroDefaultProps): unknown {
   const { heading, subheading } = blok
   const id = useId()
 
   return (
-    <box-grid aria-labelledby={id}>
+    <div aria-labelledby={id}>
       <Typography
         className="hero-home-heading"
         id={id}
@@ -23,6 +23,6 @@ export function HeroDefault({ blok }: HeroDefaultProps) {
         {heading}
       </Typography>
       {subheading && <RichText content={subheading} />}
-    </box-grid>
+    </div>
   )
 }

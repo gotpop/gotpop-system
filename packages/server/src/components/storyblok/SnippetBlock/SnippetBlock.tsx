@@ -1,7 +1,10 @@
 import type { SnippetBlockStoryblok } from "../../../types/storyblok-components"
 import { SnippetTextAlignA } from "../../snippets/SnippetTextAlignA/SnippetTextAlignA"
 import { SnippetTextAlignB } from "../../snippets/SnippetTextAlignB/SnippetTextAlignB"
-import "./SnippetBlock.css"
+// Only import CSS when not in JSR/Deno environment
+if (typeof window !== "undefined") {
+  await import("./SnippetBlock.css")
+}
 
 interface SnippetBlockProps {
   blok: SnippetBlockStoryblok
@@ -22,8 +25,8 @@ function renderSnippet(snippetType?: string) {
   }
 }
 
-export function SnippetBlock({ blok }: SnippetBlockProps) {
+export function SnippetBlock({ blok }: SnippetBlockProps): React.JSX.Element {
   const { snippet } = blok
 
-  return <snippet-block>{renderSnippet(snippet)}</snippet-block>
+  return <div>{renderSnippet(snippet)}</div>
 }

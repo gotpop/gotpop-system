@@ -4,7 +4,6 @@
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
 
     // React & JSX
     "jsx": "react-jsx",
@@ -15,15 +14,20 @@
     "target": "ES2020",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
 
-    // Type checking
+    // Type checking - strict for development
     "strict": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "exactOptionalPropertyTypes": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
 
     // Resolution
     "resolveJsonModule": true,
-    "allowJs": true,
+    "allowJs": false,
     "forceConsistentCasingInFileNames": true,
 
     // Node.js types

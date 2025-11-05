@@ -6,7 +6,7 @@ export const BREAKPOINTS = {
   xlarge: 1920,
 } as const
 
-export const MEDIA_QUERIES = {
+export const MEDIA_QUERIES: Record<BreakpointKey, string> = {
   mobile: `(width >= ${BREAKPOINTS.mobile}px)`,
   tablet: `(width >= ${BREAKPOINTS.tablet}px)`,
   desktop: `(width >= ${BREAKPOINTS.desktop}px)`,
