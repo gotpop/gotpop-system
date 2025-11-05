@@ -1,6 +1,6 @@
 # @gotpop/server
 
-Server-only React components for the gotpop design system, optimized for Next.js Server Components and Storyblok CMS
+Server-only React components for the gotpop design system, optimized for Next.js Server Components and Storyblok CMS.
 
 ## Installation
 

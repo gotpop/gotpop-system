@@ -32,11 +32,6 @@ jobs:
           cd /tmp/server-package
           npm install --legacy-peer-deps
 
-      - name: Type check
-        run: |
-          cd /tmp/server-package
-          npm run type-check
-
       - name: Auto-bump version (patch)
         run: |
           cd /tmp/server-package

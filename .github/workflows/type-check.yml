@@ -1,0 +1,163 @@
+name: Type Check
+
+on:
+  push:
+    branches: [master]
+    paths: ['packages/**']
+  pull_request:
+    branches: [master]
+    paths: ['packages/**']
+  workflow_dispatch:
+
+jobs:
+  type-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Create blog-like environment for type checking
+        run: |
+          # Create a temporary Next.js project that mimics gotpop-blog setup
+          mkdir -p /tmp/type-check-env
+          cd /tmp/type-check-env
+          
+          # Initialize with same dependencies as gotpop-blog
+          npm init -y
+          npm install --legacy-peer-deps \
+            next@16.0.0 \
+            react@19.2.0 \
+            react-dom@19.2.0 \
+            typescript@^5 \
+            @types/node@^20.0.0 \
+            @types/react@19.2.2 \
+            @types/react-dom@19.2.2 \
+            @next/font@^14.2.15 \
+            @storyblok/react@^5.4.18 \
+            react-icons@^5.4.0 \
+            server-only@^0.0.1 \
+            storyblok-rich-text-react-renderer@^3.0.1
+
+      - name: Copy package source and create blog-like tsconfig
+        run: |
+          cd /tmp/type-check-env
+          
+          # Copy the package source
+          cp -r $GITHUB_WORKSPACE/packages/server/src ./src
+          
+          # Create tsconfig that matches gotpop-blog exactly
+          cat > tsconfig.json << 'EOF'
+          {
+            "compilerOptions": {
+              // Modern module resolution (matches @gotpop/server package)
+              "moduleResolution": "bundler",
+              "allowSyntheticDefaultImports": true,
+              "esModuleInterop": true,
+              "skipLibCheck": true,
+              
+              // React & JSX (matches @gotpop/server package)
+              "jsx": "react-jsx",
+              "jsxImportSource": "react",
+              
+              // Module system (matches @gotpop/server package)
+              "module": "ESNext",
+              "target": "ES2020",
+              "lib": ["ES2020", "DOM", "DOM.Iterable"],
+              
+              // Type checking (matches @gotpop/server package)
+              "strict": true,
+              "noUnusedLocals": false,
+              "noUnusedParameters": false,
+              "exactOptionalPropertyTypes": false,
+              
+              // Next.js specific
+              "noEmit": true,
+              "incremental": true,
+              "plugins": [{ "name": "next" }],
+              "isolatedModules": true,
+              
+              // Resolution (matches @gotpop/server package)
+              "resolveJsonModule": true,
+              "allowJs": true,
+              "forceConsistentCasingInFileNames": true,
+              
+              // Path mappings for blog-like setup
+              "baseUrl": ".",
+              "paths": {
+                "@/*": ["./src/*"],
+                "@/components/*": ["./src/components/*"],
+                "@/icons": ["./src/components/icons"],
+                "@/icons/*": ["./src/components/icons/*"],
+                "@/lib/*": ["./src/lib/*"],
+                "@/storyblok": ["./src/components/storyblok"],
+                "@/storyblok/*": ["./src/components/storyblok/*"],
+                "@/styles/*": ["./src/styles/*"],
+                "@/types/*": ["./src/types/*"],
+                "@/ui/*": ["./src/components/ui/*"],
+                "@/utils/*": ["./src/utils/*"]
+              },
+              
+              // Node.js types (matches @gotpop/server package)
+              "types": ["node"]
+            },
+            "include": [
+              "src/types/css-raw.d.ts",
+              "**/*.ts",
+              "**/*.tsx"
+            ],
+            "exclude": [
+              "node_modules",
+              "**/*.test.*",
+              "**/*.spec.*",
+              "**/*.stories.*"
+            ]
+          }
+          EOF
+
+      - name: Create missing type declarations (blog environment)
+        run: |
+          cd /tmp/type-check-env
+          
+          # Create css-raw types (from blog)
+          mkdir -p src/types
+          cat > src/types/css-raw.d.ts << 'EOF'
+          declare module "*.css" {
+            const content: string;
+            export default content;
+          }
+          EOF
+          
+          # Create custom elements declaration for layout tags
+          cat > src/types/custom-elements.d.ts << 'EOF'
+          declare namespace JSX {
+            interface IntrinsicElements {
+              "box-grid": React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+              "box-crosshatch": React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+              "baseline-status": React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+              "link-list": React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+              "logo-main": React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+              "main-content": React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+              "code-block": React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+              "snippet-block": React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+              "button-toggle": React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
+              "icon-hamburger": React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+              "page-layout": React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+            }
+          }
+          EOF
+
+      - name: Run TypeScript type checking
+        run: |
+          cd /tmp/type-check-env
+          npx tsc --noEmit --pretty
+
+      - name: Show type check results
+        run: |
+          echo "✅ Type checking completed successfully!"
+          echo "Package source is compatible with Next.js + React 19 environment"
