@@ -1,8 +1,5 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-// Only import CSS when not in JSR/Deno environment
-if (typeof window !== "undefined") {
-    await import("./SnippetTextAlignB.css");
-}
+import "./SnippetTextAlignB.css";
 export function SnippetTextAlignB() {
     return (_jsxs("div", { className: "snippet-text-align-b", children: [_jsxs("div", { className: "wrapper", children: [_jsxs("article", { className: "article article-1", children: [_jsx("h3", { children: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem" }), _jsx("p", { children: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga." })] }), _jsxs("article", { className: "article article-2", children: [_jsx("h3", { children: "At vero eos et accusamus et iusto odio" }), _jsx("p", { children: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt." })] })] }), _jsx("div", { className: "container-row", children: _jsxs("label", { className: "checkbox-container", children: [_jsx("input", { type: "checkbox" }), _jsx("span", { className: "text", children: "Deactivate CSS text box" })] }) })] }));
 }

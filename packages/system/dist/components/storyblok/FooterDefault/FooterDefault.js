@@ -2,10 +2,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { fetchStoryByUuid } from "../../../utils/storyblok-fetch";
 import { StoryblokServerComponent } from "../../";
 import { Typography } from "../Typography";
-// Only import CSS when not in JSR/Deno environment
-if (typeof window !== "undefined") {
-    await import("./FooterDefault.css");
-}
+import "./FooterDefault.css";
 export async function FooterDefault({ blok, uuid, }) {
     let footerData = blok;
     if (uuid && !blok) {

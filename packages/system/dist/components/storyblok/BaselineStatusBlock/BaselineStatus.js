@@ -3,15 +3,12 @@ import "server-only";
 import Link from "next/link";
 import { formatMonthYear } from "../../../utils/date-formatter";
 import { IconChrome, IconEdge, IconFirefox, IconSafari } from "../../icons";
-// Only import CSS when not in JSR/Deno environment
-if (typeof window !== "undefined") {
-    await import("./BaselineStatus.css");
-}
 import { Typography } from "../Typography";
 import { fetchFeatureData } from "./api";
 import { BaselineIcon } from "./BaselineIcon";
 import { SupportStatusIcon } from "./SupportStatusIcon";
 import { getStatusDisplay, normalizeFeatureName } from "./utils";
+import "./BaselineStatus.css";
 export async function BaselineStatusBlock({ blok, }) {
     const featureId = blok.feature;
     if (!featureId)

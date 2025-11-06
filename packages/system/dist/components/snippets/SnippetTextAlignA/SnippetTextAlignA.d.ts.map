@@ -1,1 +1,1 @@
-{"version":3,"file":"SnippetTextAlignA.d.ts","sourceRoot":"","sources":["../../../../src/components/snippets/SnippetTextAlignA/SnippetTextAlignA.tsx"],"names":[],"mappings":"AAKA,wBAAgB,iBAAiB,IAAI,KAAK,CAAC,GAAG,CAAC,OAAO,CAMrD"}
+{"version":3,"file":"SnippetTextAlignA.d.ts","sourceRoot":"","sources":["../../../../src/components/snippets/SnippetTextAlignA/SnippetTextAlignA.tsx"],"names":[],"mappings":"AAAA,OAAO,yBAAyB,CAAA;AAEhC,wBAAgB,iBAAiB,IAAI,KAAK,CAAC,GAAG,CAAC,OAAO,CAMrD"}

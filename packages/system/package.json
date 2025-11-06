@@ -44,7 +44,7 @@
     "format:check": "npx biome check src/",
     "format:fix": "npx biome check --write src/",
     "type-check": "tsc --noEmit",
-    "jsr:publish": "yarn build && npx jsr publish --allow-slow-types",
+    "jsr:publish": "yarn build && npx jsr publish --allow-slow-types --allow-dirty",
     "jsr:publish:dry": "yarn build && npx jsr publish --dry-run --allow-slow-types"
   },
   "dependencies": {

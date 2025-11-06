@@ -2,10 +2,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { getStoryPath } from "../../../lib/storyblok-utils";
 import { formatDate } from "../../../utils/date-formatter";
 import { Typography } from "../Typography";
-// Only import CSS when not in JSR/Deno environment
-if (typeof window !== "undefined") {
-    await import("./ClientSidePostCard.css");
-}
+import "./ClientSidePostCard.css";
 export default function PostCard({ post }) {
     const { full_slug, name, published_at, content } = post;
     const { Heading, description, published_date, tags = [] } = content || {};

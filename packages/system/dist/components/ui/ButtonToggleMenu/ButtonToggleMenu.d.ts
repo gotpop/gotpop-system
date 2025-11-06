@@ -1,3 +1,4 @@
+import "./ButtonToggleMenu.css";
 interface ButtonToggleMenuClientProps {
     navId: string;
 }

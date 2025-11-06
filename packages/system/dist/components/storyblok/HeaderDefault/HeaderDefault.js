@@ -1,10 +1,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { StoryblokServerComponent } from "../../";
-// Only import CSS when not in JSR/Deno environment
-if (typeof window !== "undefined") {
-    await import("./HeaderDefault.css");
-}
 import { fetchStoryByUuid } from "../../../utils/storyblok-fetch";
+import { StoryblokServerComponent } from "../../";
+import "./HeaderDefault.css";
 export async function HeaderDefault({ blok, uuid, }) {
     let headerData = blok;
     if (uuid && !blok) {

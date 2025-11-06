@@ -1,4 +1,5 @@
 import type { NavDefaultStoryblok } from "../../../types/storyblok-components";
+import "./NavDefault.css";
 interface NavDefaultProps {
     blok: NavDefaultStoryblok;
 }

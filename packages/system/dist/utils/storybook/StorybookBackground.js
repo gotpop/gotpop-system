@@ -1,8 +1,5 @@
 import { jsx as _jsx } from "react/jsx-runtime";
-// Only import CSS when not in JSR/Deno environment
-if (typeof window !== "undefined") {
-    await import("./StorybookBackground.css");
-}
+import "./StorybookBackground.css";
 /**
  * Reusable background component for Storybook tests
  * Provides consistent background styling for component testing

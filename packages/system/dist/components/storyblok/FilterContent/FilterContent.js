@@ -1,11 +1,8 @@
 import { jsx as _jsx } from "react/jsx-runtime";
 import { Suspense } from "react";
-// Only import CSS when not in JSR/Deno environment
-if (typeof window !== "undefined") {
-    await import("./FilterContent.css");
-}
 import { getAllPostsWithTags, getTagsFromDatasource } from "../../../utils/tags";
 import ClientSidePostsApp from "./ClientSidePostsApp";
+import "./FilterContent.css";
 export async function FilterContent() {
     const [posts, availableTags] = await Promise.all([
         getAllPostsWithTags(),
