@@ -13,14 +13,19 @@
       "@/*": ["./src/*"]
     },
     "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsxImportSource": "react",
+    "skipLibCheck": true
   },
-  "include": ["src/**/*", "src/types/css-modules.d.ts"],
+  "include": ["src/**/*"],
   "exclude": [
     "dist",
     "node_modules",
+    "**/node_modules/**",
+    "../../node_modules/**",
     "**/*.test.*",
     "**/*.spec.*",
-    "**/*.stories.*"
+    "**/*.stories.*",
+    ".turbo",
+    "storybook-static"
   ]
 }
