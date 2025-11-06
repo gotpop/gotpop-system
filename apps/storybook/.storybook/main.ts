@@ -1,6 +1,32 @@
 import { dirname, join } from "node:path"
 import type { StorybookConfig } from "@storybook/nextjs-vite"
 
+interface StorybookFramework {
+  name: string
+  options: Record<string, unknown>
+}
+
+interface StorybookFeatures {
+  experimentalRSC: boolean
+}
+
+interface TypeScriptOptions {
+  shouldExtractLiteralValuesFromEnum: boolean
+  propFilter: (prop: { parent?: { fileName: string } }) => boolean
+}
+
+interface StorybookTypeScript {
+  check: boolean
+  reactDocgen: string
+  reactDocgenTypescriptOptions: TypeScriptOptions
+}
+
+interface ViteConfig {
+  resolve?: {
+    alias?: Record<string, string>
+  }
+}
+
 const config: StorybookConfig = {
   stories: ["../../../packages/system/src/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
 
@@ -13,23 +39,23 @@ const config: StorybookConfig = {
   framework: {
     name: getAbsolutePath("@storybook/nextjs-vite"),
     options: {},
-  },
+  } satisfies StorybookFramework,
 
   features: {
     experimentalRSC: true,
-  },
+  } satisfies StorybookFeatures,
 
   typescript: {
     check: false,
     reactDocgen: "react-docgen-typescript",
     reactDocgenTypescriptOptions: {
       shouldExtractLiteralValuesFromEnum: true,
-      propFilter: (prop) =>
+      propFilter: (prop: { parent?: { fileName: string } }) =>
         prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
     },
-  },
+  } satisfies StorybookTypeScript,
 
-  async viteFinal(config) {
+  async viteFinal(config: ViteConfig): Promise<ViteConfig> {
     config.resolve = config.resolve || {}
     config.resolve.alias = {
       ...config.resolve.alias,
