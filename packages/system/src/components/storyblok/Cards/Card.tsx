@@ -26,7 +26,11 @@ export async function Card({
 
   const { full_slug, content, name } = story as {
     full_slug: string
-    content: { Heading?: string; description?: string; view_transition_name?: string }
+    content: {
+      Heading?: string
+      description?: string
+      view_transition_name?: string
+    }
     name: string
   }
   const linkPath = getStoryPath(full_slug)

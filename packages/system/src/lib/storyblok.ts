@@ -1,7 +1,4 @@
-import {
-  apiPlugin,
-  storyblokInit,
-} from "@storyblok/react/rsc"
+import { apiPlugin, storyblokInit } from "@storyblok/react/rsc"
 import {
   BaselineStatusBlock,
   Card,
