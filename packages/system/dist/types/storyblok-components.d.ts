@@ -1,0 +1,165 @@
+import type { SbBlokData } from "@storyblok/react";
+export interface AssetStoryblok {
+    filename: string;
+    alt?: string;
+    title?: string;
+    focus?: string;
+    name?: string;
+    [k: string]: any;
+}
+export interface MultilinkStoryblok {
+    cached_url?: string;
+    linktype?: string;
+    url?: string;
+    target?: string;
+    [k: string]: any;
+}
+export interface RichtextStoryblok {
+    type: string;
+    content?: RichtextStoryblok[];
+    marks?: RichtextStoryblok[];
+    attrs?: any;
+    text?: string;
+    [k: string]: any;
+}
+export type StoryblokComponent = PageFilterStoryblok | FilterContentStoryblok | PageDefaultStoryblok | HeroDefaultStoryblok | CardsStoryblok | CardStoryblok | ConfigStoryblok | FooterDefaultStoryblok | LinkListStoryblok | LinkListItemStoryblok | LogoDefaultStoryblok | PagePostStoryblok | RichTextBlockStoryblok | SnippetBlockStoryblok | RichTextCodeBlockStoryblok | BaselineStatusBlockStoryblok | HeaderDefaultStoryblok | NavDefaultStoryblok | NavItemDefaultStoryblok;
+export interface PageFilterStoryblok extends SbBlokData {
+    component: "page_filter";
+    body?: StoryblokComponent[];
+    Footer?: string;
+    Header?: string;
+    _uid: string;
+    [k: string]: any;
+}
+export interface FilterContentStoryblok extends SbBlokData {
+    component: "filter_content";
+    heading?: string;
+    subheading?: string;
+    _uid: string;
+    [k: string]: any;
+}
+export interface PageDefaultStoryblok extends SbBlokData {
+    component: "page_default";
+    body?: StoryblokComponent[];
+    Footer?: string;
+    Header?: string;
+    _uid: string;
+    [k: string]: any;
+}
+export interface HeroDefaultStoryblok extends SbBlokData {
+    component: "hero_default";
+    heading?: string;
+    subheading?: RichtextStoryblok;
+    _uid: string;
+    [k: string]: any;
+}
+export interface CardsStoryblok extends SbBlokData {
+    component: "cards";
+    cards?: StoryblokComponent[];
+    _uid: string;
+    [k: string]: any;
+}
+export interface CardStoryblok extends SbBlokData {
+    component: "card";
+    cards?: string[];
+    type?: string;
+    _uid: string;
+    [k: string]: any;
+}
+export interface ConfigStoryblok extends SbBlokData {
+    component: "Config";
+    app_name?: string;
+    _uid: string;
+    [k: string]: any;
+}
+export interface FooterDefaultStoryblok extends SbBlokData {
+    component: "footer_default";
+    nav?: StoryblokComponent[];
+    logo?: StoryblokComponent[];
+    _uid: string;
+    [k: string]: any;
+}
+export interface LinkListStoryblok extends SbBlokData {
+    component: "link_list";
+    links?: StoryblokComponent[];
+    heading?: string;
+    _uid: string;
+    [k: string]: any;
+}
+export interface LinkListItemStoryblok extends SbBlokData {
+    component: "link_list_item";
+    link?: MultilinkStoryblok;
+    type?: string;
+    link_text?: string;
+    _uid: string;
+    [k: string]: any;
+}
+export interface LogoDefaultStoryblok extends SbBlokData {
+    component: "logo_default";
+    link?: MultilinkStoryblok;
+    type?: string;
+    _uid: string;
+    [k: string]: any;
+}
+export interface PagePostStoryblok extends SbBlokData {
+    component: "page_post";
+    body?: StoryblokComponent[];
+    tags?: string[];
+    Footer?: string;
+    Header?: string;
+    Heading?: string;
+    content?: any[];
+    description?: string;
+    published_date?: string;
+    view_transition_name?: string;
+    _uid: string;
+    [k: string]: any;
+}
+export interface RichTextBlockStoryblok extends SbBlokData {
+    component: "rich_text_block";
+    content?: RichtextStoryblok;
+    _uid: string;
+    [k: string]: any;
+}
+export interface SnippetBlockStoryblok extends SbBlokData {
+    component: "snippet_block";
+    snippet?: string;
+    _uid: string;
+    [k: string]: any;
+}
+export interface RichTextCodeBlockStoryblok extends SbBlokData {
+    component: "rich_text_code_block";
+    content?: RichtextStoryblok;
+    _uid: string;
+    [k: string]: any;
+}
+export interface BaselineStatusBlockStoryblok extends SbBlokData {
+    component: "baseline_status_block";
+    feature?: string;
+    _uid: string;
+    [k: string]: any;
+}
+export interface HeaderDefaultStoryblok extends SbBlokData {
+    component: "header_default";
+    nav?: StoryblokComponent[];
+    logo?: StoryblokComponent[];
+    _uid: string;
+    [k: string]: any;
+}
+export interface NavDefaultStoryblok extends SbBlokData {
+    component: "nav_default";
+    type?: string;
+    nav_items?: StoryblokComponent[];
+    _uid: string;
+    [k: string]: any;
+}
+export interface NavItemDefaultStoryblok extends SbBlokData {
+    component: "nav_item_default";
+    icon?: string;
+    link?: MultilinkStoryblok;
+    text?: string;
+    type?: string;
+    _uid: string;
+    [k: string]: any;
+}
+//# sourceMappingURL=storyblok-components.d.ts.map

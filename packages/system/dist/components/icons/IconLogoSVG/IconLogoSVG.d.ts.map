@@ -1,0 +1,1 @@
+{"version":3,"file":"IconLogoSVG.d.ts","sourceRoot":"","sources":["../../../../src/components/icons/IconLogoSVG/IconLogoSVG.tsx"],"names":[],"mappings":"AAAA,UAAU,gBAAgB;IACxB,KAAK,CAAC,EAAE,MAAM,CAAA;IACd,MAAM,CAAC,EAAE,MAAM,CAAA;IACf,SAAS,CAAC,EAAE,MAAM,CAAA;CACnB;AAED,wBAAgB,WAAW,CAAC,EAC1B,KAAU,EACV,MAAW,EACX,SAA+B,GAChC,EAAE,gBAAgB,GAAG,KAAK,CAAC,GAAG,CAAC,OAAO,CAuEtC"}

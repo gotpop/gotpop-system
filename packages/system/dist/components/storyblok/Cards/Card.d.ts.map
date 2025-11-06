@@ -1,0 +1,1 @@
+{"version":3,"file":"Card.d.ts","sourceRoot":"","sources":["../../../../src/components/storyblok/Cards/Card.tsx"],"names":[],"mappings":"AAEA,OAAO,KAAK,EAAE,aAAa,EAAE,MAAM,qCAAqC,CAAA;AAIxE,UAAU,SAAS;IACjB,IAAI,EAAE,aAAa,CAAA;CACpB;AAED,wBAAsB,IAAI,CAAC,EACzB,IAAI,GACL,EAAE,SAAS,GAAG,OAAO,CAAC,KAAK,CAAC,GAAG,CAAC,OAAO,GAAG,IAAI,CAAC,CA4C/C"}

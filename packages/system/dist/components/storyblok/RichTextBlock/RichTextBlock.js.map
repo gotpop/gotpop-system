@@ -1,0 +1,1 @@
+{"version":3,"file":"RichTextBlock.js","sourceRoot":"","sources":["../../../../src/components/storyblok/RichTextBlock/RichTextBlock.tsx"],"names":[],"mappings":";AACA,OAAO,EAAE,QAAQ,EAAE,MAAM,mBAAmB,CAAA;AAM5C,MAAM,UAAU,aAAa,CAAC,EAAE,IAAI,EAAsB;IACxD,MAAM,EAAE,OAAO,EAAE,GAAG,IAAI,CAAA;IAExB,OAAO,wBAAM,OAAO,IAAI,KAAC,QAAQ,IAAC,OAAO,EAAE,OAAO,GAAI,GAAO,CAAA;AAC/D,CAAC"}

@@ -13,7 +13,8 @@ node_modules/
 .pnp.js
 
 # Build outputs
-dist/
+# Note: dist/ is committed for JSR publishing (JSR publishes from git)
+# dist/
 build/
 .next/
 .vercel/

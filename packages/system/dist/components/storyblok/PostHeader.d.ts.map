@@ -1,0 +1,1 @@
+{"version":3,"file":"PostHeader.d.ts","sourceRoot":"","sources":["../../../src/components/storyblok/PostHeader.tsx"],"names":[],"mappings":"AAIA,UAAU,eAAe;IACvB,OAAO,CAAC,EAAE,MAAM,CAAA;IAChB,aAAa,CAAC,EAAE,MAAM,CAAA;IACtB,KAAK,CAAC,EAAE,KAAK,CAAC,aAAa,CAAA;CAC5B;AAED,wBAAgB,UAAU,CAAC,EACzB,OAAO,EACP,aAAa,EACb,KAAK,GACN,EAAE,eAAe,GAAG,KAAK,CAAC,GAAG,CAAC,OAAO,GAAG,IAAI,CAsB5C"}
