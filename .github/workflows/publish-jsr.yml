@@ -1,0 +1,72 @@
+name: Publish to JSR
+
+on:
+  push:
+    branches: [master]
+    paths: ['packages/system/**']
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Type check
+        run: yarn workspace @gotpop/system run type-check
+
+      - name: Auto-increment version
+        run: |
+          cd packages/system
+          # Get current version from jsr.json
+          CURRENT_VERSION=$(node -p "require('./jsr.json').version")
+          echo "Current version: $CURRENT_VERSION"
+          
+          # Parse version parts
+          IFS='.' read -ra VERSION_PARTS <<< "$CURRENT_VERSION"
+          MAJOR=${VERSION_PARTS[0]}
+          MINOR=${VERSION_PARTS[1]}
+          PATCH=${VERSION_PARTS[2]}
+          
+          # Increment patch version
+          NEW_PATCH=$((PATCH + 1))
+          NEW_VERSION="$MAJOR.$MINOR.$NEW_PATCH"
+          echo "New version: $NEW_VERSION"
+          
+          # Update jsr.json
+          node -e "
+            const fs = require('fs');
+            const config = JSON.parse(fs.readFileSync('jsr.json', 'utf8'));
+            config.version = '$NEW_VERSION';
+            fs.writeFileSync('jsr.json', JSON.stringify(config, null, 2) + '\n');
+          "
+          
+          # Update package.json
+          node -e "
+            const fs = require('fs');
+            const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+            pkg.version = '$NEW_VERSION';
+            fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\n');
+          "
+          
+          echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+
+      - name: Publish to JSR
+        run: |
+          cd packages/system
+          npx jsr publish

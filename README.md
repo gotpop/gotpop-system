@@ -45,10 +45,32 @@ See individual package READMEs for specific development instructions.
 
 The main package is published to **JSR** (JavaScript Registry) for modern TypeScript distribution:
 
+### Manual Publishing
+
 ```bash
-# Publish to JSR (from packages/system directory)
+# From root directory
+yarn jsr:publish
+
+# Or from packages/system directory
 cd packages/system
 npx jsr publish
+
+# Dry run to test
+yarn jsr:publish:dry
 ```
+
+### Automated Publishing
+
+Publishing happens automatically via GitHub Actions when:
+- Changes are pushed to `master` branch in `packages/system/`
+- Version is auto-incremented (patch version)
+- Package is published to JSR after successful type checking
+
+### JSR Features
+
+- **Raw TypeScript**: No build step required, consume directly from TypeScript source
+- **Tree-shaking**: Import only what you need
+- **Type safety**: Full TypeScript support with strict checking
+- **Modern imports**: ESM-first with proper exports mapping
 
 Visit [@gotpop/system on JSR](https://jsr.io/@gotpop/system) for the published package.

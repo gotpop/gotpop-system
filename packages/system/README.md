@@ -100,3 +100,33 @@ MIT - see [LICENSE](https://github.com/gotpop/gotpop-system/blob/master/LICENSE)
 ## Contributing
 
 This package is part of the [gotpop-system monorepo](https://github.com/gotpop/gotpop-system). See the main repository for contribution guidelines.
+
+## Publishing
+
+### JSR Publishing (Recommended)
+
+This package is published to JSR (JavaScript Registry) for modern TypeScript distribution:
+
+```bash
+# Manual publish from package directory
+npm run jsr:publish
+
+# Dry run to test
+npm run jsr:publish:dry
+
+# From monorepo root
+yarn jsr:publish
+```
+
+### Automated Publishing
+
+- **Trigger**: Push to `master` branch with changes in `packages/system/`
+- **Process**: Type check → Auto-increment version → Publish to JSR
+- **Registry**: [jsr.io/@gotpop/system](https://jsr.io/@gotpop/system)
+
+### JSR Benefits
+
+- **Raw TypeScript**: No build step, consume source directly
+- **Better Tree-shaking**: Import exactly what you need
+- **Type Safety**: Full TypeScript support with strict checking
+- **Modern Standards**: ESM-first with proper exports

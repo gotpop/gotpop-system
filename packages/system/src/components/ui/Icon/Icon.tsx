@@ -56,7 +56,7 @@ interface IconProps {
   className?: string
 }
 
-export function Icon({ name, size = 24, color, className }: IconProps): React.JSX.Element {
+export function Icon({ name, size = 24, color, className }: IconProps): React.JSX.Element | null {
   if (!name) {
     console.log("Invalid icon name:", JSON.stringify({ name }, null, 2))
     return null
@@ -70,8 +70,16 @@ export function Icon({ name, size = 24, color, className }: IconProps): React.JS
       JSON.stringify({ name, availableIcons: AVAILABLE_ICONS }, null, 2)
     )
     // render a safe fallback so consumers still get an icon
-    return <FaQuestionCircle size={size} color={color} className={className} />
+    return (
+      <span className={className}>
+        <FaQuestionCircle size={size} color={color} />
+      </span>
+    )
   }
 
-  return <IconComponent size={size} color={color} className={className} />
+  return (
+    <span className={className}>
+      <IconComponent size={size} color={color} />
+    </span>
+  )
 }
