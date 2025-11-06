@@ -1,1 +1,0 @@
-{"version":3,"file":"NavDefault.d.ts","sourceRoot":"","sources":["../../../../src/components/storyblok/NavDefault/NavDefault.tsx"],"names":[],"mappings":"AACA,OAAO,KAAK,EAAE,mBAAmB,EAAE,MAAM,qCAAqC,CAAA;AAM9E,UAAU,eAAe;IACvB,IAAI,EAAE,mBAAmB,CAAA;CAC1B;AAED,wBAAgB,UAAU,CAAC,EAAE,IAAI,EAAE,EAAE,eAAe,GAAG,KAAK,CAAC,GAAG,CAAC,OAAO,CAavE"}

@@ -1,7 +1,0 @@
-export * from "./IconChrome";
-export * from "./IconEdge";
-export * from "./IconFirefox";
-export * from "./IconLogo";
-export * from "./IconLogoSVG";
-export * from "./IconSafari";
-//# sourceMappingURL=index.d.ts.map

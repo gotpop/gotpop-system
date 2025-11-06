@@ -1,5 +1,0 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-export function StoryNotFound({ path, errorMessage, availableStories = [], }) {
-    return (_jsxs("div", { style: { padding: "2rem", fontFamily: "monospace" }, children: [_jsx("h1", { children: "Story not found" }), _jsxs("p", { children: ["Looking for: ", _jsx("code", { children: path })] }), _jsxs("p", { children: ["Error: ", errorMessage] }), availableStories.length > 0 && (_jsxs("div", { style: { marginTop: "2rem" }, children: [_jsx("h2", { children: "Available stories in your blog folder:" }), _jsx("ul", { children: availableStories.map((slug) => (_jsx("li", { children: _jsx("code", { children: slug }) }, slug))) })] })), _jsx("p", { style: { marginTop: "2rem" }, children: "Make sure you have a story at this path in your Storyblok space under the \"blog\" folder." })] }));
-}
-//# sourceMappingURL=StoryNotFound.js.map

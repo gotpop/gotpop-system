@@ -1,1 +1,0 @@
-{"version":3,"file":"route-detection.d.ts","sourceRoot":"","sources":["../../src/utils/route-detection.ts"],"names":[],"mappings":"AAAA,wBAAgB,WAAW,CAAC,QAAQ,EAAE,MAAM,EAAE,IAAI,CAAC,EAAE,MAAM,EAAE,GAAG,OAAO,CAEtE;AAED,wBAAgB,SAAS,CAAC,IAAI,CAAC,EAAE,MAAM,EAAE,GAAG;IAC1C,SAAS,EAAE,OAAO,CAAA;IAClB,OAAO,CAAC,EAAE,MAAM,CAAA;CACjB,CAKA"}

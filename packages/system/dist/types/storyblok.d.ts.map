@@ -1,1 +1,0 @@
-{"version":3,"file":"storyblok.d.ts","sourceRoot":"","sources":["../../src/types/storyblok.ts"],"names":[],"mappings":"AAEA,MAAM,WAAW,sBAAsB;IACrC,SAAS,EAAE,MAAM,CAAA;IACjB,IAAI,EAAE,MAAM,CAAA;IACZ,OAAO,EAAE,OAAO,CAAA;CACjB;AAED,MAAM,WAAW,wBAAwB;IACvC,OAAO,EAAE,sBAAsB,EAAE,CAAA;CAClC"}

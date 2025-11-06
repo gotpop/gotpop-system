@@ -1,1 +1,0 @@
-{"version":3,"file":"StoryblokServerComponent.d.ts","sourceRoot":"","sources":["../../../src/components/utils/StoryblokServerComponent.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,UAAU,EAAE,MAAM,sBAAsB,CAAA;AAGtD,UAAU,6BAA6B;IACrC,IAAI,EAAE,UAAU,GAAG,IAAI,GAAG,SAAS,CAAA;CACpC;AAED,wBAAgB,wBAAwB,CAAC,EACvC,IAAI,GACL,EAAE,6BAA6B,GAAG,KAAK,CAAC,GAAG,CAAC,OAAO,GAAG,IAAI,CAoB1D"}
