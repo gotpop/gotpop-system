@@ -16,7 +16,9 @@
     "type-check": "turbo run type-check",
     "test": "turbo run test",
     "clean": "turbo run clean",
-    "publish-packages": "turbo run build && changeset publish",
+    "changeset": "changeset",
+    "changeset:version": "changeset version",
+    "changeset:publish": "turbo run build && changeset publish",
     "jsr:publish": "yarn workspace @gotpop/system run jsr:publish",
     "jsr:publish:dry": "yarn workspace @gotpop/system run jsr:publish:dry"
   },
