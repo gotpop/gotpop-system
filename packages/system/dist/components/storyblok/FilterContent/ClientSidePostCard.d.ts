@@ -1,5 +1,4 @@
 import type { PostStory } from "../../../utils/tags";
-import "./ClientSidePostCard.css";
 interface PostCardProps {
     post: PostStory;
 }

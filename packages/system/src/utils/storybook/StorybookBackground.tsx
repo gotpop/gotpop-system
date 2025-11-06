@@ -1,5 +1,6 @@
 import type { ReactNode } from "react"
-import "./StorybookBackground.css"
+
+import("./StorybookBackground.css")
 
 interface StorybookBackgroundProps {
   children: ReactNode

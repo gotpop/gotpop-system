@@ -1,5 +1,4 @@
 import type { LinkListStoryblok } from "../../../types/storyblok-components";
-import "./LinkList.css";
 interface LinkListProps {
     blok: LinkListStoryblok;
 }

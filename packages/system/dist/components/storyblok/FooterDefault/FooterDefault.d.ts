@@ -1,5 +1,4 @@
 import type { FooterDefaultStoryblok } from "../../../types/storyblok-components";
-import "./FooterDefault.css";
 interface FooterDefaultProps {
     blok?: FooterDefaultStoryblok | null;
     uuid?: string;

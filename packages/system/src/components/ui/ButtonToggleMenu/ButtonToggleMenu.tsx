@@ -3,7 +3,8 @@
 import { useId } from "react"
 import { useClickOutside } from "../../../hooks/useClickOutside"
 import { useNavigationToggle } from "./useNavigationToggle"
-import "./ButtonToggleMenu.css"
+
+import("./ButtonToggleMenu.css")
 
 interface ButtonToggleMenuClientProps {
   navId: string

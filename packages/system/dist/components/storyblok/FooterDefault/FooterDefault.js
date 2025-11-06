@@ -2,7 +2,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { fetchStoryByUuid } from "../../../utils/storyblok-fetch";
 import { StoryblokServerComponent } from "../../";
 import { Typography } from "../Typography";
-import "./FooterDefault.css";
+import("./FooterDefault.css");
 export async function FooterDefault({ blok, uuid, }) {
     let footerData = blok;
     if (uuid && !blok) {

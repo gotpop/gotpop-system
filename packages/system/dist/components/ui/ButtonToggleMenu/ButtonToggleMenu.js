@@ -3,7 +3,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useId } from "react";
 import { useClickOutside } from "../../../hooks/useClickOutside";
 import { useNavigationToggle } from "./useNavigationToggle";
-import "./ButtonToggleMenu.css";
+import("./ButtonToggleMenu.css");
 export function ButtonToggleMenu({ navId, }) {
     const { isExpanded, toggleMenu, closeMenu } = useNavigationToggle(navId);
     const id = useId();

@@ -1,7 +1,8 @@
 import type { ReactNode } from "react"
 import { FooterDefault } from "../../storyblok/FooterDefault/FooterDefault"
 import { HeaderDefault } from "../../storyblok/HeaderDefault/HeaderDefault"
-import "./PageLayout.css"
+
+import("./PageLayout.css")
 
 interface PageLayoutProps {
   children?: ReactNode

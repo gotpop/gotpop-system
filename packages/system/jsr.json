@@ -22,7 +22,8 @@
       "dist/**/*.test.*",
       "dist/**/*.spec.*",
       "dist/**/*.stories.*",
-      "dist/**/*.map"
+      "dist/**/*.map",
+      "dist/**/*.css"
     ]
   }
 }

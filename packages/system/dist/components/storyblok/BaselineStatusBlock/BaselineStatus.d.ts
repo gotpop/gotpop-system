@@ -1,6 +1,5 @@
 import "server-only";
 import type { BaselineStatusBlockStoryblok } from "../../../types/storyblok-components";
-import "./BaselineStatus.css";
 interface BaselineStatusBlockProps {
     blok: BaselineStatusBlockStoryblok;
 }

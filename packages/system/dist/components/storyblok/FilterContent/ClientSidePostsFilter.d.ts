@@ -1,4 +1,3 @@
-import "./ClientSidePostsFilter.css";
 interface TagEntry {
     name: string;
     value: string;

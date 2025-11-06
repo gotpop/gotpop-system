@@ -1,7 +1,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { SnippetTextAlignA } from "../../snippets/SnippetTextAlignA/SnippetTextAlignA";
 import { SnippetTextAlignB } from "../../snippets/SnippetTextAlignB/SnippetTextAlignB";
-import "./SnippetBlock.css";
+import("./SnippetBlock.css");
 function renderSnippet(snippetType) {
     switch (snippetType) {
         case "text-align-a":

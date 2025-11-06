@@ -2,7 +2,8 @@ import type { FooterDefaultStoryblok } from "../../../types/storyblok-components
 import { fetchStoryByUuid } from "../../../utils/storyblok-fetch"
 import { StoryblokServerComponent } from "../../"
 import { Typography } from "../Typography"
-import "./FooterDefault.css"
+
+import("./FooterDefault.css")
 
 interface FooterDefaultProps {
   blok?: FooterDefaultStoryblok | null

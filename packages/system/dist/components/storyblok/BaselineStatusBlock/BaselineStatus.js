@@ -8,7 +8,7 @@ import { fetchFeatureData } from "./api";
 import { BaselineIcon } from "./BaselineIcon";
 import { SupportStatusIcon } from "./SupportStatusIcon";
 import { getStatusDisplay, normalizeFeatureName } from "./utils";
-import "./BaselineStatus.css";
+import("./BaselineStatus.css");
 export async function BaselineStatusBlock({ blok, }) {
     const featureId = blok.feature;
     if (!featureId)

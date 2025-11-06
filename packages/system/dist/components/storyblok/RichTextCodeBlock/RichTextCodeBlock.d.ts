@@ -1,5 +1,4 @@
 import type { RichTextCodeBlockStoryblok } from "../../../types/storyblok-components";
-import "./RichTextCodeBlock.css";
 interface RichTextCodeBlockProps {
     blok: RichTextCodeBlockStoryblok;
 }

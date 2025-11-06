@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import "./StorybookBackground.css";
 interface StorybookBackgroundProps {
     children: ReactNode;
     variant?: "secondary-700" | "primary" | "dark" | "light";
