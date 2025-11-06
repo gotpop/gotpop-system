@@ -1,6 +1,7 @@
 import type { SnippetBlockStoryblok } from "../../../types/storyblok-components"
 import { SnippetTextAlignA } from "../../snippets/SnippetTextAlignA/SnippetTextAlignA"
 import { SnippetTextAlignB } from "../../snippets/SnippetTextAlignB/SnippetTextAlignB"
+
 // Only import CSS when not in JSR/Deno environment
 if (typeof window !== "undefined") {
   await import("./SnippetBlock.css")

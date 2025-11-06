@@ -1,4 +1,5 @@
 import type { ReactNode } from "react"
+
 // Only import CSS when not in JSR/Deno environment
 if (typeof window !== "undefined") {
   await import("./StorybookBackground.css")

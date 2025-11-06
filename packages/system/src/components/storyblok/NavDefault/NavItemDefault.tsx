@@ -8,7 +8,9 @@ interface NavItemDefaultProps {
   blok: NavItemDefaultStoryblok
 }
 
-export function NavItemDefault({ blok }: NavItemDefaultProps): React.JSX.Element {
+export function NavItemDefault({
+  blok,
+}: NavItemDefaultProps): React.JSX.Element {
   const linkProps = getStoryblokLinkProps(blok.link)
   const { href, target, rel } = linkProps
 

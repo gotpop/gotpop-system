@@ -5,7 +5,9 @@ interface PostsPageProps {
   currentTag?: string
 }
 
-export async function PostsPage({ currentTag = "all" }: PostsPageProps): Promise<React.JSX.Element> {
+export async function PostsPage({
+  currentTag = "all",
+}: PostsPageProps): Promise<React.JSX.Element> {
   const posts = await getAllPostsWithTags()
 
   const filteredPosts =

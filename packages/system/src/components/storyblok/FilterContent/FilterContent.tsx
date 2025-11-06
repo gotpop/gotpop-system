@@ -1,8 +1,10 @@
 import { Suspense } from "react"
+
 // Only import CSS when not in JSR/Deno environment
 if (typeof window !== "undefined") {
   await import("./FilterContent.css")
 }
+
 import { getAllPostsWithTags, getTagsFromDatasource } from "../../../utils/tags"
 import ClientSidePostsApp from "./ClientSidePostsApp"
 

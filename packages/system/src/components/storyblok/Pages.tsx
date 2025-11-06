@@ -28,19 +28,31 @@ async function BasePage({ Header, Footer, body, children }: BasePageProps) {
   )
 }
 
-export async function PageDefault({ blok }: { blok: PageDefaultStoryblok }): Promise<React.JSX.Element> {
+export async function PageDefault({
+  blok,
+}: {
+  blok: PageDefaultStoryblok
+}): Promise<React.JSX.Element> {
   const { Header, Footer, body } = blok
 
   return <BasePage Header={Header} Footer={Footer} body={body} />
 }
 
-export async function PageFilter({ blok }: { blok: PageFilterStoryblok }): Promise<React.JSX.Element> {
+export async function PageFilter({
+  blok,
+}: {
+  blok: PageFilterStoryblok
+}): Promise<React.JSX.Element> {
   const { Header, Footer, body } = blok
 
   return <BasePage Header={Header} Footer={Footer} body={body} />
 }
 
-export async function PagePost({ blok }: { blok: PagePostStoryblok }): Promise<React.JSX.Element> {
+export async function PagePost({
+  blok,
+}: {
+  blok: PagePostStoryblok
+}): Promise<React.JSX.Element> {
   const {
     Header,
     Footer,
