@@ -2,7 +2,7 @@
 
 [![JSR](https://jsr.io/badges/@gotpop/system)](https://jsr.io/@gotpop/system) [![JSR Score](https://jsr.io/badges/@gotpop/system/score)](https://jsr.io/@gotpop/system)
 
-Design system monorepo for gotpop projects with TypeScript-first distribution via JSR.
+Design system monorepo for gotpop projects with TypeScript-first distribution via JSR
 
 ## 📦 Published Package
 
