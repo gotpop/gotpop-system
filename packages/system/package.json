@@ -1,9 +1,12 @@
 {
   "name": "@gotpop/system",
-  "version": "0.1.4",
+  "version": "0.1.8",
   "description": "React design system components for gotpop",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -44,8 +47,7 @@
     "format:check": "npx biome check src/",
     "format:fix": "npx biome check --write src/",
     "type-check": "tsc --noEmit",
-    "jsr:publish": "yarn build && npx jsr publish --allow-slow-types --allow-dirty",
-    "jsr:publish:dry": "yarn build && npx jsr publish --dry-run --allow-slow-types"
+    "publish:github": "yarn build && npm publish"
   },
   "dependencies": {
     "@next/font": "^14.2.15",

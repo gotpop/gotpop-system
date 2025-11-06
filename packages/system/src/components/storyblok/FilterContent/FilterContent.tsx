@@ -1,8 +1,7 @@
 import { Suspense } from "react"
 import { getAllPostsWithTags, getTagsFromDatasource } from "../../../utils/tags"
 import ClientSidePostsApp from "./ClientSidePostsApp"
-
-import("./FilterContent.css")
+import "./FilterContent.css"
 
 export async function FilterContent(): Promise<React.JSX.Element> {
   const [posts, availableTags] = await Promise.all([

@@ -13,8 +13,7 @@ node_modules/
 .pnp.js
 
 # Build outputs
-# Note: dist/ is committed for JSR publishing (JSR publishes from git)
-# dist/
+dist/
 build/
 .next/
 .vercel/
@@ -26,6 +25,9 @@ build/
 # Environment files
 .env*.local
 .env
+
+# npm config with auth tokens
+.npmrc
 
 # IDE files
 .vscode/

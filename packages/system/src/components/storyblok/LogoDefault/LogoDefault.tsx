@@ -2,8 +2,7 @@ import type { ReactNode } from "react"
 import type { LogoDefaultStoryblok } from "../../../types/storyblok-components"
 import { getStoryblokLinkProps } from "../../../utils/storyblok"
 import { IconLogoSVG } from "../../icons"
-
-import("./LogoDefault.css")
+import "./LogoDefault.css"
 
 type ValidTag = "section" | "logo-main"
 

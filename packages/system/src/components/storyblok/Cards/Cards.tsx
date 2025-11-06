@@ -1,7 +1,6 @@
 import type { CardsStoryblok } from "../../../types/storyblok-components"
 import { StoryblokServerComponent } from "../../utils/StoryblokServerComponent"
-
-import("./Cards.css")
+import "./Cards.css"
 
 interface CardsProps {
   blok: CardsStoryblok

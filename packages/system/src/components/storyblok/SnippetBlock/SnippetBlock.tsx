@@ -1,8 +1,7 @@
 import type { SnippetBlockStoryblok } from "../../../types/storyblok-components"
 import { SnippetTextAlignA } from "../../snippets/SnippetTextAlignA/SnippetTextAlignA"
 import { SnippetTextAlignB } from "../../snippets/SnippetTextAlignB/SnippetTextAlignB"
-
-import("./SnippetBlock.css")
+import "./SnippetBlock.css"
 
 interface SnippetBlockProps {
   blok: SnippetBlockStoryblok

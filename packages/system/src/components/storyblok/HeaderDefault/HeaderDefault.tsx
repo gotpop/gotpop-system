@@ -1,8 +1,7 @@
 import type { HeaderDefaultStoryblok } from "../../../types/storyblok-components"
 import { fetchStoryByUuid } from "../../../utils/storyblok-fetch"
 import { StoryblokServerComponent } from "../../"
-
-import("./HeaderDefault.css")
+import "./HeaderDefault.css"
 
 interface HeaderDefaultProps {
   blok?: HeaderDefaultStoryblok | null

@@ -1,7 +1,6 @@
 import type { LinkListStoryblok } from "../../../types/storyblok-components"
 import { Typography } from "../Typography"
-
-import("./LinkList.css")
+import "./LinkList.css"
 
 interface LinkListProps {
   blok: LinkListStoryblok

@@ -1,4 +1,4 @@
-import("./IconLogo.css")
+import "./IconLogo.css"
 
 export function IconLogo(): React.JSX.Element {
   return (

@@ -1,4 +1,4 @@
-import("./SnippetTextAlignA.css")
+import "./SnippetTextAlignA.css"
 
 export function SnippetTextAlignA(): React.JSX.Element {
   return (

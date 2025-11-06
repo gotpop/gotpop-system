@@ -1,7 +1,6 @@
 import type { RichTextCodeBlockStoryblok } from "../../../types/storyblok-components"
 import { RichText } from "../../ui/RichText"
-
-import("./RichTextCodeBlock.css")
+import "./RichTextCodeBlock.css"
 
 interface RichTextCodeBlockProps {
   blok: RichTextCodeBlockStoryblok
