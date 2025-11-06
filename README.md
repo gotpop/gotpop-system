@@ -2,6 +2,8 @@
 
 [![JSR](https://jsr.io/badges/@gotpop/system)](https://jsr.io/@gotpop/system) [![JSR Score](https://jsr.io/badges/@gotpop/system/score)](https://jsr.io/@gotpop/system)
 
+[![Lint](https://github.com/gotpop/gotpop-system/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/gotpop/gotpop-system/actions/workflows/lint.yml) [![Format Check](https://github.com/gotpop/gotpop-system/actions/workflows/format-check.yml/badge.svg?branch=main)](https://github.com/gotpop/gotpop-system/actions/workflows/format-check.yml) [![Type Check](https://github.com/gotpop/gotpop-system/actions/workflows/type-check.yml/badge.svg?branch=main)](https://github.com/gotpop/gotpop-system/actions/workflows/type-check.yml)
+
 Design system monorepo for gotpop projects with TypeScript-first distribution via JSR
 
 ## 📦 Published Package
