@@ -38,7 +38,7 @@
     "directory": "packages/system"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && rsync -a --include='*/' --include='*.css' --exclude='*' src/ dist/",
     "dev": "tsc --watch",
     "lint": "npx biome lint src/",
     "format:check": "npx biome check src/",
