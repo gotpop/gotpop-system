@@ -1,11 +1,7 @@
 import type { ReactNode } from "react"
 import { FooterDefault } from "../../storyblok/FooterDefault/FooterDefault"
 import { HeaderDefault } from "../../storyblok/HeaderDefault/HeaderDefault"
-
-// Only import CSS when not in JSR/Deno environment
-if (typeof window !== "undefined") {
-  await import("./PageLayout.css")
-}
+import "./PageLayout.css"
 
 interface PageLayoutProps {
   children?: ReactNode

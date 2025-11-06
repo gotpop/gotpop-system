@@ -1,7 +1,4 @@
-// Only import CSS when not in JSR/Deno environment
-if (typeof window !== "undefined") {
-  await import("./SnippetTextAlignB.css")
-}
+import "./SnippetTextAlignB.css"
 
 export function SnippetTextAlignB(): React.JSX.Element {
   return (

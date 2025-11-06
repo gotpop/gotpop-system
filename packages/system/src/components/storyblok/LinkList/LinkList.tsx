@@ -1,10 +1,6 @@
 import type { LinkListStoryblok } from "../../../types/storyblok-components"
 import { Typography } from "../Typography"
-
-// Only import CSS when not in JSR/Deno environment
-if (typeof window !== "undefined") {
-  await import("./LinkList.css")
-}
+import "./LinkList.css"
 
 interface LinkListProps {
   blok: LinkListStoryblok

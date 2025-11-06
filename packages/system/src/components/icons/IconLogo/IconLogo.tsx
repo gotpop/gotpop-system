@@ -1,7 +1,4 @@
-// Only import CSS when not in JSR/Deno environment
-if (typeof window !== "undefined") {
-  await import("./IconLogo.css")
-}
+import "./IconLogo.css"
 
 export function IconLogo(): React.JSX.Element {
   return (

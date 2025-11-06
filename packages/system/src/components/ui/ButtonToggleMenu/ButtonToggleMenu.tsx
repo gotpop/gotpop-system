@@ -3,11 +3,7 @@
 import { useId } from "react"
 import { useClickOutside } from "../../../hooks/useClickOutside"
 import { useNavigationToggle } from "./useNavigationToggle"
-
-// Only import CSS when not in JSR/Deno environment
-if (typeof window !== "undefined") {
-  await import("./ButtonToggleMenu.css")
-}
+import "./ButtonToggleMenu.css"
 
 interface ButtonToggleMenuClientProps {
   navId: string

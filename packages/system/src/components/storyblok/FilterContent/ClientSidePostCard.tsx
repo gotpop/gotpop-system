@@ -2,11 +2,7 @@ import { getStoryPath } from "../../../lib/storyblok-utils"
 import { formatDate } from "../../../utils/date-formatter"
 import type { PostStory } from "../../../utils/tags"
 import { Typography } from "../Typography"
-
-// Only import CSS when not in JSR/Deno environment
-if (typeof window !== "undefined") {
-  await import("./ClientSidePostCard.css")
-}
+import "./ClientSidePostCard.css"
 
 interface PostCardProps {
   post: PostStory

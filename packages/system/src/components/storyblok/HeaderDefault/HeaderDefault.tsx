@@ -1,12 +1,7 @@
 import type { HeaderDefaultStoryblok } from "../../../types/storyblok-components"
-import { StoryblokServerComponent } from "../../"
-
-// Only import CSS when not in JSR/Deno environment
-if (typeof window !== "undefined") {
-  await import("./HeaderDefault.css")
-}
-
 import { fetchStoryByUuid } from "../../../utils/storyblok-fetch"
+import { StoryblokServerComponent } from "../../"
+import "./HeaderDefault.css"
 
 interface HeaderDefaultProps {
   blok?: HeaderDefaultStoryblok | null

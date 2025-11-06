@@ -3,17 +3,12 @@ import Link from "next/link"
 import type { BaselineStatusBlockStoryblok } from "../../../types/storyblok-components"
 import { formatMonthYear } from "../../../utils/date-formatter"
 import { IconChrome, IconEdge, IconFirefox, IconSafari } from "../../icons"
-
-// Only import CSS when not in JSR/Deno environment
-if (typeof window !== "undefined") {
-  await import("./BaselineStatus.css")
-}
-
 import { Typography } from "../Typography"
 import { fetchFeatureData } from "./api"
 import { BaselineIcon } from "./BaselineIcon"
 import { SupportStatusIcon } from "./SupportStatusIcon"
 import { getStatusDisplay, normalizeFeatureName } from "./utils"
+import "./BaselineStatus.css"
 
 interface BaselineStatusBlockProps {
   blok: BaselineStatusBlockStoryblok

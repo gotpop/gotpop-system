@@ -1,10 +1,6 @@
 import type { RichTextCodeBlockStoryblok } from "../../../types/storyblok-components"
 import { RichText } from "../../ui/RichText"
-
-// Only import CSS when not in JSR/Deno environment
-if (typeof window !== "undefined") {
-  await import("./RichTextCodeBlock.css")
-}
+import "./RichTextCodeBlock.css"
 
 interface RichTextCodeBlockProps {
   blok: RichTextCodeBlockStoryblok

@@ -2,11 +2,7 @@ import type { FooterDefaultStoryblok } from "../../../types/storyblok-components
 import { fetchStoryByUuid } from "../../../utils/storyblok-fetch"
 import { StoryblokServerComponent } from "../../"
 import { Typography } from "../Typography"
-
-// Only import CSS when not in JSR/Deno environment
-if (typeof window !== "undefined") {
-  await import("./FooterDefault.css")
-}
+import "./FooterDefault.css"
 
 interface FooterDefaultProps {
   blok?: FooterDefaultStoryblok | null
