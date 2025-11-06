@@ -17,6 +17,12 @@
   },
   "publish": {
     "include": ["dist/"],
-    "exclude": ["!dist/", "dist/**/*.test.*", "dist/**/*.spec.*", "dist/**/*.stories.*", "dist/**/*.map"]
+    "exclude": [
+      "!dist/",
+      "dist/**/*.test.*",
+      "dist/**/*.spec.*",
+      "dist/**/*.stories.*",
+      "dist/**/*.map"
+    ]
   }
 }
