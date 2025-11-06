@@ -1,6 +1,6 @@
 import { useId } from "react"
 
-export function IconSafari(): unknown {
+export function IconSafari(): React.JSX.Element {
   const linearGradientId = useId()
   const radialGradientId = useId()
   const filterId = useId()

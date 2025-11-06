@@ -3,10 +3,12 @@ import Link from "next/link"
 import type { BaselineStatusBlockStoryblok } from "../../../types/storyblok-components"
 import { formatMonthYear } from "../../../utils/date-formatter"
 import { IconChrome, IconEdge, IconFirefox, IconSafari } from "../../icons"
+
 // Only import CSS when not in JSR/Deno environment
 if (typeof window !== "undefined") {
   await import("./BaselineStatus.css")
 }
+
 import { Typography } from "../Typography"
 import { fetchFeatureData } from "./api"
 import { BaselineIcon } from "./BaselineIcon"
@@ -17,7 +19,9 @@ interface BaselineStatusBlockProps {
   blok: BaselineStatusBlockStoryblok
 }
 
-export async function BaselineStatusBlock({ blok }: BaselineStatusBlockProps): Promise<React.JSX.Element> {
+export async function BaselineStatusBlock({
+  blok,
+}: BaselineStatusBlockProps): Promise<React.JSX.Element | null> {
   const featureId = blok.feature
 
   if (!featureId) return null

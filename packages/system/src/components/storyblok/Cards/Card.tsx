@@ -8,7 +8,9 @@ interface CardProps {
   blok: CardStoryblok
 }
 
-export async function Card({ blok }: CardProps): Promise<React.JSX.Element> {
+export async function Card({
+  blok,
+}: CardProps): Promise<React.JSX.Element | null> {
   const { cards } = blok
   const card = cards?.[0]
 
@@ -22,15 +24,19 @@ export async function Card({ blok }: CardProps): Promise<React.JSX.Element> {
     return null
   }
 
-  const { full_slug, content, name } = story
+  const { full_slug, content, name } = story as {
+    full_slug: string
+    content: { Heading?: string; description?: string; view_transition_name?: string }
+    name: string
+  }
   const linkPath = getStoryPath(full_slug)
-  const title = content?.Heading || name
+  const title = content?.Heading || name || ""
   const description = content?.description || ""
 
   return (
     <div
       style={{
-        viewTransitionName: story.content.view_transition_name,
+        viewTransitionName: content?.view_transition_name,
       }}
     >
       <Typography tag="h3" variant="text-xl" shade="dark">

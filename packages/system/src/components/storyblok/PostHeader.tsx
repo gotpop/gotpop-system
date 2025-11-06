@@ -8,7 +8,11 @@ interface PostHeaderProps {
   style?: React.CSSProperties
 }
 
-export function PostHeader({ heading, publishedDate, style }: PostHeaderProps): unknown {
+export function PostHeader({
+  heading,
+  publishedDate,
+  style,
+}: PostHeaderProps): React.JSX.Element | null {
   const id = useId()
 
   if (!publishedDate || !heading) return null
@@ -16,7 +20,7 @@ export function PostHeader({ heading, publishedDate, style }: PostHeaderProps): 
   const formattedDate = formatDate(publishedDate)
 
   return (
-    <div aria-labelledby={id} style={style}>
+    <section aria-labelledby={id} style={style}>
       <Typography tag="h1" variant="text-xl" shade="dark" id={id}>
         {heading}
       </Typography>
@@ -28,6 +32,6 @@ export function PostHeader({ heading, publishedDate, style }: PostHeaderProps): 
       >
         {formattedDate}
       </Typography>
-    </div>
+    </section>
   )
 }

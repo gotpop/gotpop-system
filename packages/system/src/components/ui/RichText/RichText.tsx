@@ -25,7 +25,7 @@ interface RichTextProps {
   className?: string
 }
 
-export function RichText({ content }: RichTextProps): unknown {
+export function RichText({ content }: RichTextProps): React.JSX.Element | null {
   if (!content) return null
 
   const renderedContent = render(content, {

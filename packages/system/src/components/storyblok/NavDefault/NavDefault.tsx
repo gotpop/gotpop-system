@@ -2,6 +2,7 @@ import { useId } from "react"
 import type { NavDefaultStoryblok } from "../../../types/storyblok-components"
 import { ButtonToggleMenu } from "../../"
 import { StoryblokServerComponent } from "../../utils/StoryblokServerComponent"
+
 // Only import CSS when not in JSR/Deno environment
 if (typeof window !== "undefined") {
   await import("./NavDefault.css")
@@ -11,7 +12,7 @@ interface NavDefaultProps {
   blok: NavDefaultStoryblok
 }
 
-export function NavDefault({ blok }: NavDefaultProps): unknown {
+export function NavDefault({ blok }: NavDefaultProps): React.JSX.Element {
   const navId = useId()
 
   return (

@@ -1,6 +1,6 @@
 import { useId } from "react"
 
-export function IconFirefox(): unknown {
+export function IconFirefox(): React.JSX.Element {
   const gradientAId = useId()
   const clipMId = useId()
 

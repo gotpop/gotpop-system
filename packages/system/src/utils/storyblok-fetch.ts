@@ -1,6 +1,23 @@
 import "server-only"
 import { getStoryblokApi } from "../lib/storyblok"
 
+// Basic Story type for Storyblok stories
+interface StoryblokStory {
+  id: number
+  uuid: string
+  name: string
+  slug: string
+  full_slug: string
+  content: Record<string, unknown>
+  created_at: string
+  published_at: string
+  first_published_at: string
+  tag_list: string[]
+  lang: string
+  path: string | null
+  [key: string]: unknown
+}
+
 /**
  * Fetches a story by UUID from Storyblok
  * @param uuid - The UUID of the story to fetch
@@ -10,7 +27,7 @@ import { getStoryblokApi } from "../lib/storyblok"
 export async function fetchStoryByUuid(
   uuid: string,
   version: "draft" | "published" = "draft"
-): Promise<unknown> {
+): Promise<StoryblokStory | null> {
   if (!uuid) {
     console.log("fetchStoryByUuid: No UUID provided")
     return null
@@ -46,7 +63,7 @@ export async function fetchStoryByUuid(
 export async function fetchStoriesByUuids(
   uuids: string[],
   version: "draft" | "published" = "draft"
-): Promise<unknown[]> {
+): Promise<StoryblokStory[]> {
   if (!uuids || uuids.length === 0) {
     console.log("fetchStoriesByUuids: No UUIDs provided")
     return []
@@ -65,3 +82,6 @@ export async function fetchStoriesByUuids(
     return []
   }
 }
+
+// Export the type for use in other files
+export type { StoryblokStory }

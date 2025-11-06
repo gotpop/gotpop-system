@@ -40,6 +40,3 @@ declare module "*.sass?raw" {
   const content: string
   export default content
 }
-
-// Export an empty object to make this file a module
-export {}

@@ -10,7 +10,7 @@ interface LinkListProps {
   blok: LinkListStoryblok
 }
 
-export function LinkList({ blok }: LinkListProps): unknown {
+export function LinkList({ blok }: LinkListProps): React.JSX.Element {
   return (
     <div>
       <div className="link-list-heading">

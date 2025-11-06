@@ -1,5 +1,6 @@
 import type { CardsStoryblok } from "../../../types/storyblok-components"
 import { StoryblokServerComponent } from "../../utils/StoryblokServerComponent"
+
 // Only import CSS when not in JSR/Deno environment
 if (typeof window !== "undefined") {
   await import("./Cards.css")
@@ -9,7 +10,7 @@ interface CardsProps {
   blok: CardsStoryblok
 }
 
-export function Cards({ blok }: CardsProps): unknown {
+export function Cards({ blok }: CardsProps): React.JSX.Element {
   return (
     <div className="cards-grid">
       {blok.cards?.map((nestedBlok) => (

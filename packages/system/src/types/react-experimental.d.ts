@@ -6,7 +6,7 @@ declare module "react" {
     update?: string
   }
 
-  export const ViewTransition: React.ComponentType<ViewTransitionProps>
+  export const ViewTransition: React.FunctionComponent<ViewTransitionProps>
 
   // Export missing React 19 hooks and utilities that may not be in @types/react yet
   export function useId(): string
@@ -14,7 +14,7 @@ declare module "react" {
   export function Suspense(props: {
     children: React.ReactNode
     fallback?: React.ReactNode
-  }): JSX.Element
+  }): React.JSX.Element
   export function useMemo<T>(
     factory: () => T,
     deps: React.DependencyList | undefined
@@ -41,8 +41,6 @@ declare module "react" {
 
 // Fix react-icons types to include className
 declare module "react-icons/lib" {
-  import type { ComponentType } from "react"
-
   export interface IconBaseProps {
     children?: React.ReactNode
     size?: string | number
@@ -53,5 +51,5 @@ declare module "react-icons/lib" {
     attr?: React.SVGAttributes<SVGElement>
   }
 
-  export type IconType = ComponentType<IconBaseProps>
+  export type IconType = React.FunctionComponent<IconBaseProps>
 }

@@ -3,7 +3,7 @@ if (typeof window !== "undefined") {
   await import("./SnippetTextAlignA.css")
 }
 
-export function SnippetTextAlignA(): unknown {
+export function SnippetTextAlignA(): React.JSX.Element {
   return (
     <div className="snippet-text-align-a">
       <h1>Example aligned text</h1>

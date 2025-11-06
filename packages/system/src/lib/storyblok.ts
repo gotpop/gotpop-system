@@ -1,7 +1,5 @@
 import {
   apiPlugin,
-  ponentsMap,
-  storyblokInit,
   storyblokInit,
 } from "@storyblok/react/rsc"
 import {
@@ -24,7 +22,7 @@ import {
   SnippetBlock,
 } from "../components/storyblok"
 
-const components: SbReactComponentsMap = {
+const components = {
   baseline_status_block: BaselineStatusBlock,
   card: Card,
   cards: Cards,

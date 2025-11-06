@@ -38,12 +38,12 @@
     "directory": "packages/system"
   },
   "scripts": {
-    "build": "tsc --noCheck",
-    "dev": "tsc --watch --noCheck",
+    "build": "tsc",
+    "dev": "tsc --watch",
     "lint": "npx biome lint src/",
     "format:check": "npx biome check src/",
     "format:fix": "npx biome check --write src/",
-    "type-check": "tsc --noEmit --skipLibCheck",
+    "type-check": "tsc --noEmit",
     "jsr:publish": "npx jsr publish",
     "jsr:publish:dry": "npx jsr publish --dry-run"
   },

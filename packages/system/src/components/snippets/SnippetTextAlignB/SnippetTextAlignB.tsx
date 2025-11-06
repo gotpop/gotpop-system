@@ -3,7 +3,7 @@ if (typeof window !== "undefined") {
   await import("./SnippetTextAlignB.css")
 }
 
-export function SnippetTextAlignB(): unknown {
+export function SnippetTextAlignB(): React.JSX.Element {
   return (
     <div className="snippet-text-align-b">
       <div className="wrapper">
