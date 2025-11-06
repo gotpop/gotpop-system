@@ -2,10 +2,7 @@ import type { LogoDefaultStoryblok } from "../../../types/storyblok-components"
 import { getStoryblokLinkProps } from "../../../utils/storyblok"
 import { IconLogoSVG } from "../../icons"
 
-// Only import CSS when not in JSR/Deno environment
-if (typeof window !== "undefined") {
-  await import("./LogoDefault.css")
-}
+import("./LogoDefault.css")
 
 interface LogoDefaultProps {
   blok: LogoDefaultStoryblok
@@ -17,7 +14,7 @@ export function LogoDefault({
   const linkProps = getStoryblokLinkProps(link)
 
   return (
-    <div>
+    <div className="logo-main">
       <a
         className="link-logo"
         href={linkProps.href}

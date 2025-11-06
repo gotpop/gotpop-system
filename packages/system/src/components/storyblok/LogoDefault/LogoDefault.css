@@ -1,4 +1,4 @@
-@scope (logo-main) {
+@scope (.logo-main) {
   :scope {
     --morph-duration: 0.4s;
     --morph-rotation-duration: 0.5s;
