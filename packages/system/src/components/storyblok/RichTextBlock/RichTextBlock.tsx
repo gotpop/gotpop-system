@@ -1,4 +1,5 @@
 import type { RichTextBlockStoryblok } from "../../../types/storyblok-components"
+import { CustomElement } from "../../ui/CustomElement"
 import { RichText } from "../../ui/RichText"
 
 interface RichTextBlockProps {
@@ -8,5 +9,9 @@ interface RichTextBlockProps {
 export function RichTextBlock({ blok }: RichTextBlockProps): React.JSX.Element {
   const { content } = blok
 
-  return <div>{content && <RichText content={content} />}</div>
+  return (
+    <CustomElement tag="box-grid">
+      {content && <RichText content={content} />}
+    </CustomElement>
+  )
 }
