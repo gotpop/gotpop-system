@@ -9,20 +9,27 @@ type ValidTag =
   | "code-block"
   | "link-list"
   | "grid-master"
+  | "main-content"
 
 interface CustomElementProps {
   children: ReactNode
   tag: ValidTag
   className?: string
+  style?: React.CSSProperties
 }
 
 export function CustomElement({
   children,
   tag,
   className = "",
+  style = {},
 }: CustomElementProps) {
   const Tag = tag as ValidTag
 
-  // @ts-expect-error - Custom elements not recognized by TypeScript
-  return <Tag className={className}>{children}</Tag>
+  return (
+    // @ts-expect-error - Custom elements not recognized by TypeScript
+    <Tag className={className} style={style}>
+      {children}
+    </Tag>
+  )
 }

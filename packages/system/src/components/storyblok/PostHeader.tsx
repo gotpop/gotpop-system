@@ -1,5 +1,6 @@
 import { useId } from "react"
 import { formatDate } from "../../utils/date-formatter"
+import { CustomElement } from "../ui"
 import { Typography } from "./Typography"
 
 interface PostHeaderProps {
@@ -20,7 +21,7 @@ export function PostHeader({
   const formattedDate = formatDate(publishedDate)
 
   return (
-    <section aria-labelledby={id} style={style}>
+    <CustomElement tag="box-grid" aria-labelledby={id} style={style}>
       <Typography tag="h1" variant="text-xl" shade="dark" id={id}>
         {heading}
       </Typography>
@@ -32,6 +33,6 @@ export function PostHeader({
       >
         {formattedDate}
       </Typography>
-    </section>
+    </CustomElement>
   )
 }
