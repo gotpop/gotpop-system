@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react"
-import type { BaselineStatusData } from "./BaselineStatusView"
-import { BaselineStatusView } from "./BaselineStatusView"
+import type { BaselineStatusData } from "./BaselineStatus"
+import { BaselineStatus } from "./BaselineStatus"
 
-const meta: Meta<typeof BaselineStatusView> = {
-  title: "Storyblok/BaselineStatusView",
-  component: BaselineStatusView,
+const meta: Meta<typeof BaselineStatus> = {
+  title: "Storyblok/BaselineStatus",
+  component: BaselineStatus,
   parameters: {
     layout: "centered",
   },
