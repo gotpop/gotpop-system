@@ -4,28 +4,11 @@ import { formatMonthYear } from "../../../utils/date-formatter"
 import { fetchFeatureData } from "./api"
 import type { BaselineStatusData } from "./BaselineStatus"
 import { BaselineStatus } from "./BaselineStatus"
+import { getSupportStatus } from "./get-support-status"
 import { getStatusDisplay, normalizeFeatureName } from "./utils"
-
-export * from "./BaselineIcon"
-export * from "./BaselineStatus"
-export * from "./SupportStatusIcon"
 
 interface BaselineStatusBlockProps {
   blok: BaselineStatusBlockStoryblok
-}
-
-function getSupportStatus(
-  status: string | undefined,
-  baseline: string
-): "available" | "unavailable" | "no_data" {
-  if (baseline === "limited") {
-    if (status === "available" || status === "widely" || status === "newly")
-      return "available"
-    if (status === "unavailable") return "unavailable"
-    return "no_data"
-  }
-  if (baseline === "widely" || baseline === "newly") return "available"
-  return "no_data"
 }
 
 export async function BaselineStatusBlock({
