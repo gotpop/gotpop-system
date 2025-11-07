@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 
-type ValidTag = "section" | "logo-main" | "snippet-block"
+type ValidTag = "section" | "logo-main" | "snippet-block" | "baseline-status"
 
 interface CustomElementProps {
   children: ReactNode
