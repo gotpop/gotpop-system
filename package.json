@@ -19,8 +19,8 @@
     "changeset": "changeset",
     "changeset:version": "changeset version",
     "changeset:publish": "turbo run build && changeset publish",
-    "jsr:publish": "yarn workspace @gotpop/system run jsr:publish",
-    "jsr:publish:dry": "yarn workspace @gotpop/system run jsr:publish:dry"
+    "publish:github": "yarn workspace @gotpop/system run publish:github",
+    "publish:github:dry": "yarn workspace @gotpop/system run build"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.6",
