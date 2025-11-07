@@ -1,14 +1,18 @@
 import { join } from "node:path"
-import type { StorybookConfig } from "@storybook/react-vite"
+import type { StorybookConfig } from "@storybook/nextjs"
 
 const config: StorybookConfig = {
   stories: ["../../../packages/system/src/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
 
-  addons: ["@storybook/addon-essentials", "@storybook/addon-links"],
+  addons: [],
 
   framework: {
-    name: "@storybook/react-vite",
+    name: "@storybook/nextjs",
     options: {},
+  },
+
+  features: {
+    experimentalRSC: true,
   },
 
   typescript: {
@@ -16,7 +20,7 @@ const config: StorybookConfig = {
     reactDocgen: "react-docgen-typescript",
   },
 
-  async viteFinal(config) {
+  webpackFinal: async (config) => {
     if (config.resolve) {
       config.resolve.alias = {
         ...config.resolve.alias,
