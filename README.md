@@ -1,17 +1,17 @@
 # gotpop-system
 
-[![GitHub Package](https://img.shields.io/github/v/release/gotpop/gotpop-system?label=package&logo=github)](https://github.com/gotpop/gotpop-system/packages) [![npm version](https://img.shields.io/npm/v/@gotpop/system?logo=npm)](https://www.npmjs.com/package/@gotpop/system)
+[![GitHub Package](https://img.shields.io/github/package-json/v/gotpop/gotpop-system?label=version&logo=github)](https://github.com/gotpop/gotpop-system/pkgs/npm/system) [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 [![Lint](https://github.com/gotpop/gotpop-system/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/gotpop/gotpop-system/actions/workflows/lint.yml) [![Format Check](https://github.com/gotpop/gotpop-system/actions/workflows/format-check.yml/badge.svg?branch=main)](https://github.com/gotpop/gotpop-system/actions/workflows/format-check.yml) [![Type Check](https://github.com/gotpop/gotpop-system/actions/workflows/type-check.yml/badge.svg?branch=main)](https://github.com/gotpop/gotpop-system/actions/workflows/type-check.yml)
 
-Design system monorepo for gotpop projects with TypeScript-first distribution via GitHub Packages
+Design system monorepo for gotpop projects with TypeScript-first distribution via GitHub Packages (Public)
 
 ## 📦 Published Package
 
-**[@gotpop/system](https://github.com/gotpop/gotpop-system/packages)** - Available on GitHub Packages
+**[@gotpop/system](https://github.com/gotpop/gotpop-system/pkgs/npm/system)** - Available on GitHub Packages (Public)
 
 ```bash
-# Configure .npmrc to use GitHub Packages
+# Configure .npmrc to use GitHub Packages for @gotpop scope
 echo "@gotpop:registry=https://npm.pkg.github.com" >> .npmrc
 
 # Install via npm
@@ -48,7 +48,7 @@ See individual package READMEs for specific development instructions.
 
 ## Publishing
 
-The main package is published to **GitHub Packages** for private distribution:
+The main package is published to **GitHub Packages** as a public package:
 
 ### Manual Publishing
 
@@ -70,9 +70,9 @@ Publishing happens automatically via GitHub Actions when:
 
 ### GitHub Packages Features
 
-- **Private registry**: Secure package distribution within your organization
+- **Public registry**: Open-source package distribution via GitHub
 - **GitHub integration**: Seamless authentication with GitHub tokens
 - **Version management**: Full npm-compatible versioning
 - **TypeScript support**: Full TypeScript support with type definitions
 
-Visit [@gotpop/system on GitHub Packages](https://github.com/gotpop/gotpop-system/packages) for the published package.
+Visit [@gotpop/system on GitHub Packages](https://github.com/gotpop/gotpop-system/pkgs/npm/system) for the published package.
