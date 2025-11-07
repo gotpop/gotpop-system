@@ -1,5 +1,5 @@
-import { CustomElement } from "../../ui/CustomElement"
 import { IconChrome, IconEdge, IconFirefox, IconSafari } from "../../icons"
+import { CustomElement } from "../../ui/CustomElement"
 import { Typography } from "../Typography"
 import { BaselineIcon } from "./BaselineIcon"
 import { SupportStatusIcon } from "./SupportStatusIcon"
