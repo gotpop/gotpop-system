@@ -1,28 +1,11 @@
-import type { ReactNode } from "react"
 import type { LogoDefaultStoryblok } from "../../../types/storyblok-components"
 import { getStoryblokLinkProps } from "../../../utils/storyblok"
 import { IconLogoSVG } from "../../icons"
+import { CustomElement } from "../../ui/CustomElement"
 import "./LogoDefault.css"
-
-type ValidTag = "section" | "logo-main"
 
 interface LogoDefaultProps {
   blok: LogoDefaultStoryblok
-}
-
-const CustomElement = ({
-  children,
-  tag,
-  className = "",
-}: {
-  children: ReactNode
-  tag: ValidTag
-  className?: string
-}) => {
-  const Tag = tag as ValidTag
-
-  // @ts-expect-error - Custom elements not recognized by TypeScript
-  return <Tag className={className}>{children}</Tag>
 }
 
 export function LogoDefault({
