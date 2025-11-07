@@ -1,21 +1,24 @@
 # gotpop-system
 
-[![JSR](https://jsr.io/badges/@gotpop/system)](https://jsr.io/@gotpop/system) [![JSR Score](https://jsr.io/badges/@gotpop/system/score)](https://jsr.io/@gotpop/system)
+[![GitHub Package](https://img.shields.io/github/v/release/gotpop/gotpop-system?label=package&logo=github)](https://github.com/gotpop/gotpop-system/packages) [![npm version](https://img.shields.io/npm/v/@gotpop/system?logo=npm)](https://www.npmjs.com/package/@gotpop/system)
 
 [![Lint](https://github.com/gotpop/gotpop-system/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/gotpop/gotpop-system/actions/workflows/lint.yml) [![Format Check](https://github.com/gotpop/gotpop-system/actions/workflows/format-check.yml/badge.svg?branch=main)](https://github.com/gotpop/gotpop-system/actions/workflows/format-check.yml) [![Type Check](https://github.com/gotpop/gotpop-system/actions/workflows/type-check.yml/badge.svg?branch=main)](https://github.com/gotpop/gotpop-system/actions/workflows/type-check.yml)
 
-Design system monorepo for gotpop projects with TypeScript-first distribution via JSR
+Design system monorepo for gotpop projects with TypeScript-first distribution via GitHub Packages
 
 ## 📦 Published Package
 
-**[@gotpop/system](https://jsr.io/@gotpop/system)** - Available on JSR (JavaScript Registry)
+**[@gotpop/system](https://github.com/gotpop/gotpop-system/packages)** - Available on GitHub Packages
 
 ```bash
-# Install via JSR
-npx jsr add @gotpop/system
+# Configure .npmrc to use GitHub Packages
+echo "@gotpop:registry=https://npm.pkg.github.com" >> .npmrc
 
-# Or via npm
+# Install via npm
 npm install @gotpop/system
+
+# Or via yarn
+yarn add @gotpop/system
 ```
 
 ## Quick Start
@@ -45,20 +48,17 @@ See individual package READMEs for specific development instructions.
 
 ## Publishing
 
-The main package is published to **JSR** (JavaScript Registry) for modern TypeScript distribution:
+The main package is published to **GitHub Packages** for private distribution:
 
 ### Manual Publishing
 
 ```bash
 # From root directory
-yarn jsr:publish
+yarn publish:github
 
 # Or from packages/system directory
 cd packages/system
-npx jsr publish
-
-# Dry run to test
-yarn jsr:publish:dry
+npm publish
 ```
 
 ### Automated Publishing
@@ -66,13 +66,13 @@ yarn jsr:publish:dry
 Publishing happens automatically via GitHub Actions when:
 - Changes are pushed to `master` branch in `packages/system/`
 - Version is auto-incremented (patch version)
-- Package is published to JSR after successful type checking
+- Package is published to GitHub Packages after successful type checking
 
-### JSR Features
+### GitHub Packages Features
 
-- **Raw TypeScript**: No build step required, consume directly from TypeScript source
-- **Tree-shaking**: Import only what you need
-- **Type safety**: Full TypeScript support with strict checking
-- **Modern imports**: ESM-first with proper exports mapping
+- **Private registry**: Secure package distribution within your organization
+- **GitHub integration**: Seamless authentication with GitHub tokens
+- **Version management**: Full npm-compatible versioning
+- **TypeScript support**: Full TypeScript support with type definitions
 
-Visit [@gotpop/system on JSR](https://jsr.io/@gotpop/system) for the published package.
+Visit [@gotpop/system on GitHub Packages](https://github.com/gotpop/gotpop-system/packages) for the published package.
