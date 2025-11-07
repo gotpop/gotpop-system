@@ -6,6 +6,7 @@ type ValidTag =
   | "snippet-block"
   | "baseline-status"
   | "box-grid"
+  | "code-block"
 
 interface CustomElementProps {
   children: ReactNode

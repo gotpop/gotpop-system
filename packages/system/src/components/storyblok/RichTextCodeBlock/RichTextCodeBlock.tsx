@@ -1,4 +1,5 @@
 import type { RichTextCodeBlockStoryblok } from "../../../types/storyblok-components"
+import { CustomElement } from "../../ui/CustomElement"
 import { RichText } from "../../ui/RichText"
 import "./RichTextCodeBlock.css"
 
@@ -11,5 +12,9 @@ export function RichTextCodeBlock({
 }: RichTextCodeBlockProps): React.JSX.Element {
   const { content } = blok
 
-  return <div>{content && <RichText content={content} />}</div>
+  return (
+    <CustomElement tag="code-block">
+      {content && <RichText content={content} />}
+    </CustomElement>
+  )
 }
