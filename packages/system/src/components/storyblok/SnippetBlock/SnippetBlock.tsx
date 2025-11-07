@@ -1,3 +1,4 @@
+import { CustomElement } from "@/components/ui"
 import type { SnippetBlockStoryblok } from "../../../types/storyblok-components"
 import { SnippetTextAlignA } from "../../snippets/SnippetTextAlignA/SnippetTextAlignA"
 import { SnippetTextAlignB } from "../../snippets/SnippetTextAlignB/SnippetTextAlignB"
@@ -25,5 +26,7 @@ function renderSnippet(snippetType?: string) {
 export function SnippetBlock({ blok }: SnippetBlockProps): React.JSX.Element {
   const { snippet } = blok
 
-  return <div>{renderSnippet(snippet)}</div>
+  return (
+    <CustomElement tag="snippet-block">{renderSnippet(snippet)}</CustomElement>
+  )
 }
