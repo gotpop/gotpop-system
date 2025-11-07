@@ -1,9 +1,7 @@
 /**
  * Storyblok Components Barrel Export
  *
- * This file exports individual components for use in server-side contexts.
- *
- * For the component registry mapping, see storyblok-registry.ts
+ * This file exports individual components for direct imports.
  * For stories, import view components directly from their component folders.
  */
 

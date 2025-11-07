@@ -4,6 +4,11 @@ interface StoryblokServerComponentProps {
   blok: SbBlokData | null | undefined
 }
 
+/**
+ * Placeholder for server-side component rendering.
+ * In a design system, components are imported directly.
+ * This is kept for compatibility with existing code.
+ */
 export function StoryblokServerComponent({
   blok,
 }: StoryblokServerComponentProps): React.JSX.Element | null {
@@ -15,18 +20,9 @@ export function StoryblokServerComponent({
     return null
   }
 
-  // Lazy-load components to avoid circular dependency
-  // This import happens at runtime, not at module initialization
-  const { components } = require("../storyblok/storyblok-registry")
-  const Component = components[blok.component as keyof typeof components]
+  console.warn(
+    `StoryblokServerComponent: Component ${blok.component} cannot be dynamically rendered. Import components directly.`
+  )
 
-  if (!Component) {
-    console.warn(`Component ${blok.component} doesn't exist.`)
-
-    return null
-  }
-
-  // TypeScript can't infer the correct blok type for each component
-  // Safe to cast since we're checking the component exists
-  return <Component blok={blok as never} />
+  return null
 }
