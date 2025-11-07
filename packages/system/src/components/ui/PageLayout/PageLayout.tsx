@@ -1,7 +1,9 @@
+import "server-only"
 import type { ReactNode } from "react"
-import { FooterDefault } from "../../storyblok/FooterDefault/FooterDefault"
+import { FooterDefaultBlock } from "../../storyblok/FooterDefaultBlock/FooterDefaultBlockHOC"
 import { HeaderDefault } from "../../storyblok/HeaderDefault/HeaderDefault"
 import "./PageLayout.css"
+import { GridMaster } from "../GridMaster"
 
 interface PageLayoutProps {
   children?: ReactNode
@@ -16,12 +18,12 @@ export function PageLayout({
   footer,
 }: PageLayoutProps): React.JSX.Element {
   return (
-    <div className="page-layout">
+    <GridMaster>
       <HeaderDefault uuid={header} />
       <main>
         <div className="box-crosshatch">{children}</div>
       </main>
-      <FooterDefault uuid={footer} />
-    </div>
+      <FooterDefaultBlock uuid={footer} />
+    </GridMaster>
   )
 }

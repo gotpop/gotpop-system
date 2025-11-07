@@ -1,14 +1,15 @@
 import type {
+  LinkListStoryblok,
   LogoDefaultStoryblok,
-  NavItemDefaultStoryblok,
 } from "../../../types/storyblok-components"
-import { StoryblokServerComponent } from "../../"
+import { LinkList } from "../LinkList/LinkList"
+import { LogoDefault } from "../LogoDefault/LogoDefault"
 import { Typography } from "../Typography"
 import "./FooterDefault.css"
 
 export interface FooterData {
   logo: LogoDefaultStoryblok | null
-  nav: NavItemDefaultStoryblok[]
+  nav: LinkListStoryblok[]
   copyright: string
 }
 
@@ -24,11 +25,11 @@ export function FooterDefault({ data }: FooterDefaultProps): React.JSX.Element {
   return (
     <footer className="footer">
       <div className="footer-content">
-        {hasLogo && <StoryblokServerComponent blok={logo} />}
+        {hasLogo && <LogoDefault blok={logo} />}
         {hasNav && (
           <nav className="footer-nav">
-            {nav.map((navItem) => (
-              <StoryblokServerComponent key={navItem._huid} blok={navItem} />
+            {nav.map((linkList) => (
+              <LinkList key={linkList._uid} blok={linkList} />
             ))}
           </nav>
         )}

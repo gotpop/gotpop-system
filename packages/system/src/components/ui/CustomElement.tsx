@@ -7,6 +7,8 @@ type ValidTag =
   | "baseline-status"
   | "box-grid"
   | "code-block"
+  | "link-list"
+  | "grid-master"
 
 interface CustomElementProps {
   children: ReactNode

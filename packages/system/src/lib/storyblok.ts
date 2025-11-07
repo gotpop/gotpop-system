@@ -1,49 +1,17 @@
 import { apiPlugin, storyblokInit } from "@storyblok/react/rsc"
-import {
-  BaselineStatusBlock,
-  Card,
-  Cards,
-  FilterContent,
-  FooterDefaultBlock,
-  HeaderDefault,
-  HeroDefault,
-  LinkList,
-  LogoDefault,
-  NavDefault,
-  NavItemDefault,
-  PageDefault,
-  PageFilter,
-  PagePost,
-  RichTextBlock,
-  RichTextCodeBlock,
-  SnippetBlock,
-} from "../components/storyblok"
 
-const components = {
-  baseline_status_block: BaselineStatusBlock,
-  card: Card,
-  cards: Cards,
-  filter_content: FilterContent,
-  footer_default: FooterDefaultBlock,
-  header_default: HeaderDefault,
-  hero_default: HeroDefault,
-  link_list: LinkList,
-  logo_default: LogoDefault,
-  nav_default: NavDefault,
-  nav_item_default: NavItemDefault,
-  page_default: PageDefault,
-  page_filter: PageFilter,
-  page_post: PagePost,
-  rich_text_block: RichTextBlock,
-  rich_text_code_block: RichTextCodeBlock,
-  snippet_block: SnippetBlock,
+// Lazy-load components to avoid circular dependency
+// The registry imports components, which may import utilities that depend on this file
+function getComponents() {
+  const { components } = require("../components/storyblok/storyblok-registry")
+  return components
 }
 
 // Server-side initialization
 export const getStoryblokApi: ReturnType<typeof storyblokInit> = storyblokInit({
   accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
   use: [apiPlugin],
-  components,
+  components: getComponents(),
   apiOptions: {
     region: "eu",
   },

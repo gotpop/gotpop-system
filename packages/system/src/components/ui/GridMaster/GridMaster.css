@@ -1,4 +1,4 @@
-@scope (page-layout) {
+@scope (grid-master) {
   :scope {
     --col-width: 21rem;
     --grid-horizontal-color: --opacity(var(--secondary-600), 0.2);

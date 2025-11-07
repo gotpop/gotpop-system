@@ -1,5 +1,4 @@
 import type { SbBlokData } from "@storyblok/react/rsc"
-import { components } from "../storyblok"
 
 interface StoryblokServerComponentProps {
   blok: SbBlokData | null | undefined
@@ -16,6 +15,9 @@ export function StoryblokServerComponent({
     return null
   }
 
+  // Lazy-load components to avoid circular dependency
+  // This import happens at runtime, not at module initialization
+  const { components } = require("../storyblok/storyblok-registry")
   const Component = components[blok.component as keyof typeof components]
 
   if (!Component) {

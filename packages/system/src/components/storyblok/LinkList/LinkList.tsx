@@ -8,7 +8,7 @@ interface LinkListProps {
 
 export function LinkList({ blok }: LinkListProps): React.JSX.Element {
   return (
-    <div>
+    <div className="link-list">
       <div className="link-list-heading">
         <Typography tag="h4" variant="text-xl" shade="light">
           {blok.heading}

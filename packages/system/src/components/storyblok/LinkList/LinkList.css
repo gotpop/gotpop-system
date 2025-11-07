@@ -1,4 +1,4 @@
-@scope (link-list) {
+@scope (.link-list) {
   :scope {
     display: grid;
     grid-column: span 2;
