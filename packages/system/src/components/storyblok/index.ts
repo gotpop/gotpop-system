@@ -19,6 +19,7 @@ import { PostHeader } from "./PostHeader"
 import { RichTextBlock } from "./RichTextBlock"
 import { RichTextCodeBlock } from "./RichTextCodeBlock"
 import { SnippetBlock } from "./SnippetBlock"
+import { Typography } from "./Typography"
 
 export {
   BaselineStatusBlock,
@@ -39,4 +40,5 @@ export {
   RichTextBlock,
   RichTextCodeBlock,
   SnippetBlock,
+  Typography,
 }
