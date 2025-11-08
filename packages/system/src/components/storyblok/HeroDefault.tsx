@@ -1,5 +1,6 @@
 import { useId } from "react"
 import type { HeroDefaultStoryblok } from "../../types/storyblok-components"
+import { CustomElement } from "../ui"
 import { RichText } from "../ui/RichText"
 import { Typography } from "./Typography"
 
@@ -12,7 +13,7 @@ export function HeroDefault({ blok }: HeroDefaultProps): React.JSX.Element {
   const id = useId()
 
   return (
-    <section aria-labelledby={id}>
+    <CustomElement tag="box-grid" aria-labelledby={id}>
       <Typography
         className="hero-home-heading"
         id={id}
@@ -23,6 +24,6 @@ export function HeroDefault({ blok }: HeroDefaultProps): React.JSX.Element {
         {heading}
       </Typography>
       {subheading && <RichText content={subheading} />}
-    </section>
+    </CustomElement>
   )
 }
