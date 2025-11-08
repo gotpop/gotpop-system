@@ -10,9 +10,11 @@ type ValidTag =
   | "link-list"
   | "grid-master"
   | "main-content"
+  | "button-toggle"
+  | "icon-hamburger"
 
 interface CustomElementProps {
-  children: ReactNode
+  children?: ReactNode
   tag: ValidTag
   className?: string
   style?: React.CSSProperties
