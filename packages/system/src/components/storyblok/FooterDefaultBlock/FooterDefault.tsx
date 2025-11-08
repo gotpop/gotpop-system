@@ -1,4 +1,5 @@
 import type {
+  FooterDefaultStoryblok,
   LinkListStoryblok,
   LogoDefaultStoryblok,
 } from "../../../types/storyblok-components"
@@ -14,21 +15,34 @@ export interface FooterData {
 }
 
 interface FooterDefaultProps {
-  data: FooterData
+  data: FooterDefaultStoryblok
 }
 
 export function FooterDefault({ data }: FooterDefaultProps): React.JSX.Element {
-  const { logo, nav, copyright } = data
-  const hasNav = nav.length > 0
-  const hasLogo = logo !== null
+  const { logo, nav } = data
+  const copyright = `© GotPop ${new Date().getFullYear()}`
+
+  const viewData: FooterData = {
+    logo: (logo?.[0] as FooterData["logo"]) || null,
+    nav: (nav as FooterData["nav"]) || [],
+    copyright,
+  }
+
+  const {
+    logo: processedLogo,
+    nav: processedNav,
+    copyright: processedCopyright,
+  } = viewData
+  const hasNav = processedNav.length > 0
+  const hasLogo = processedLogo !== null
 
   return (
     <footer className="footer">
       <div className="footer-content">
-        {hasLogo && <LogoDefault blok={logo} />}
+        {hasLogo && <LogoDefault blok={processedLogo} />}
         {hasNav && (
           <nav className="footer-nav">
-            {nav.map((linkList) => (
+            {processedNav.map((linkList) => (
               <LinkList key={linkList._uid} blok={linkList} />
             ))}
           </nav>
@@ -41,7 +55,7 @@ export function FooterDefault({ data }: FooterDefaultProps): React.JSX.Element {
         variant="text-xs"
         shade="dimmed"
       >
-        {copyright}
+        {processedCopyright}
       </Typography>
     </footer>
   )

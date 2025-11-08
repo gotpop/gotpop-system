@@ -8,5 +8,4 @@
 export * from "./ButtonToggleMenu"
 export * from "./CustomElement"
 export * from "./Icon"
-export * from "./PageLayout"
 // export * from "./RichText"

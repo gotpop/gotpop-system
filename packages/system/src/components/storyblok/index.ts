@@ -8,13 +8,12 @@
 import { BaselineStatusBlock } from "./BaselineStatusBlock"
 import { Card, Cards } from "./Cards"
 import { FilterContent } from "./FilterContent"
-import { FooterDefaultBlock } from "./FooterDefaultBlock/FooterDefaultBlockHOC"
+import { FooterDefault } from "./FooterDefaultBlock"
 import { HeaderDefault } from "./HeaderDefault"
 import { HeroDefault } from "./HeroDefault"
 import { LinkList } from "./LinkList"
 import { LogoDefault } from "./LogoDefault"
 import { NavDefault, NavItemDefault } from "./NavDefault"
-import { PageDefault, PageFilter, PagePost } from "./Pages"
 import { PostHeader } from "./PostHeader"
 import { RichTextBlock } from "./RichTextBlock"
 import { RichTextCodeBlock } from "./RichTextCodeBlock"
@@ -26,16 +25,13 @@ export {
   Card,
   Cards,
   FilterContent,
-  FooterDefaultBlock,
+  FooterDefault,
   HeaderDefault,
   HeroDefault,
   LinkList,
   LogoDefault,
   NavDefault,
   NavItemDefault,
-  PageDefault,
-  PageFilter,
-  PagePost,
   PostHeader,
   RichTextBlock,
   RichTextCodeBlock,
