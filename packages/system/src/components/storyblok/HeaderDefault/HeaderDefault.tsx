@@ -1,9 +1,9 @@
-import { LogoDefault, NavDefault } from "@/components"
 import type {
   HeaderDefaultStoryblok,
   LogoDefaultStoryblok,
   NavDefaultStoryblok,
-} from "@/types/storyblok-components"
+} from "../../../types/storyblok-components"
+import { LogoDefault, NavDefault } from "../../"
 import "./HeaderDefault.css"
 
 interface HeaderDefaultProps {
