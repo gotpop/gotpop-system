@@ -1,6 +1,6 @@
 {
   "name": "@gotpop/system",
-  "version": "0.1.96",
+  "version": "0.1.100",
   "description": "React design system components for gotpop",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,6 +15,14 @@
     "./components/*": {
       "types": "./dist/components/*/index.d.ts",
       "default": "./dist/components/*/index.js"
+    },
+    "./components/storyblok/*/FooterDefaultBlockHOC": {
+      "types": "./dist/components/storyblok/*/FooterDefaultBlockHOC.d.ts",
+      "default": "./dist/components/storyblok/*/FooterDefaultBlockHOC.js"
+    },
+    "./components/storyblok/*/BaselineStatusBlockHOC": {
+      "types": "./dist/components/storyblok/*/BaselineStatusBlockHOC.d.ts",
+      "default": "./dist/components/storyblok/*/BaselineStatusBlockHOC.js"
     },
     "./utils/*": {
       "types": "./dist/utils/*/index.d.ts",
