@@ -1,5 +1,3 @@
 export * from "./cn"
 export * from "./date-formatter"
-// export * from "./inline-styles"
 export * from "./storyblok"
-export * from "./tags"

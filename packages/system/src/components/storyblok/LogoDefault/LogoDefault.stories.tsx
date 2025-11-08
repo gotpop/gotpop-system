@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react"
+import { StorybookBackground } from "../../../components/storybook"
 import type { LogoDefaultStoryblok } from "../../../types/storyblok-components"
-import { StorybookBackground } from "../../../utils/storybook"
 import { LogoDefault } from "./LogoDefault"
 
 const meta: Meta<typeof LogoDefault> = {
