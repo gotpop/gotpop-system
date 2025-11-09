@@ -1,6 +1,7 @@
 "use client"
 
 import { startTransition, ViewTransition } from "react"
+import { CustomElement } from "../../ui/CustomElement"
 import type { PostProps } from "../Card"
 import { Card } from "../Card"
 import { CardsControl } from "../CardsControl"
@@ -63,7 +64,7 @@ export function CardsFilterClient({
 
   return (
     <div className="filters-with-output">
-      <box-grid auto-columns>
+      <CustomElement tag="box-grid">
         <CardsControl
           label="Filter"
           value={currentTag}
@@ -76,7 +77,7 @@ export function CardsFilterClient({
           onChange={handleSortChange}
           options={SORT_OPTIONS}
         />
-      </box-grid>
+      </CustomElement>
       <ViewTransition update="reorder-list">
         <output className="grid-cards" aria-live="polite">
           {output}
