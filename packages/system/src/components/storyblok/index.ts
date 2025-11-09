@@ -6,6 +6,8 @@
  */
 
 import { Card } from "./Card"
+import { CardsControl } from "./CardsControl"
+import { CardsFilterClient } from "./CardsFilter/CardsFilterClient"
 import { FooterDefault } from "./FooterDefaultBlock"
 import { HeaderDefault } from "./HeaderDefault"
 import { HeroDefault } from "./HeroDefault"
@@ -20,6 +22,8 @@ import { Typography } from "./Typography"
 
 export {
   Card,
+  CardsControl,
+  CardsFilterClient,
   FooterDefault,
   HeaderDefault,
   HeroDefault,
