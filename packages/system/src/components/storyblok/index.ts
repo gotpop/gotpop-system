@@ -5,6 +5,7 @@
  * For stories, import view components directly from their component folders.
  */
 
+import { BaselineStatusBlock } from "./BaselineStatusBlock"
 import { Card } from "./Card"
 import { CardsControl } from "./CardsControl"
 import { CardsFilterClient } from "./CardsFilter/CardsFilterClient"
@@ -21,6 +22,7 @@ import { SnippetBlock } from "./SnippetBlock"
 import { Typography } from "./Typography"
 
 export {
+  BaselineStatusBlock,
   Card,
   CardsControl,
   CardsFilterClient,

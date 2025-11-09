@@ -1,8 +1,6 @@
 import { render } from "storyblok-rich-text-react-renderer"
 import type {
-  // BaselineStatusBlockStoryblok,
-  // CardStoryblok,
-  // CardsStoryblok,
+  BaselineStatusBlockStoryblok,
   HeroDefaultStoryblok,
   LogoDefaultStoryblok,
   RichTextBlockStoryblok,
@@ -10,9 +8,7 @@ import type {
   RichtextStoryblok,
   SnippetBlockStoryblok,
 } from "../../../types/storyblok-components"
-// import { BaselineStatusBlock } from "../../storyblok/BaselineStatusBlock"
-// import { Card, Cards } from "../../storyblok/Cards"
-// import { FilterContent } from "../../storyblok/FilterContent"
+import { BaselineStatusBlock } from "../../storyblok/BaselineStatusBlock"
 import { HeroDefault } from "../../storyblok/HeroDefault"
 import { LogoDefault } from "../../storyblok/LogoDefault"
 import { RichTextBlock } from "../../storyblok/RichTextBlock"
@@ -30,12 +26,9 @@ export function RichText({ content }: RichTextProps): React.JSX.Element | null {
 
   const renderedContent = render(content, {
     blokResolvers: {
-      // baseline_status_block: (props) => (
-      //   <BaselineStatusBlock blok={props as BaselineStatusBlockStoryblok} />
-      // ),
-      // card: (props) => <Card blok={props as CardStoryblok} />,
-      // cards: (props) => <Cards blok={props as CardsStoryblok} />,
-      // filter_content: () => <FilterContent />,
+      baseline_status_block: (props) => (
+        <BaselineStatusBlock blok={props as BaselineStatusBlockStoryblok} />
+      ),
       hero_default: (props) => (
         <HeroDefault blok={props as HeroDefaultStoryblok} />
       ),
