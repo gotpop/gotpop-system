@@ -7,6 +7,7 @@
 
 import { BaselineStatusBlock } from "./BaselineStatusBlock"
 import { Card } from "./Card"
+import { Cards } from "./Cards"
 import { CardsControl } from "./CardsControl"
 import { CardsFilterClient } from "./CardsFilter/CardsFilterClient"
 import { FooterDefault } from "./FooterDefaultBlock"
@@ -24,6 +25,7 @@ import { Typography } from "./Typography"
 export {
   BaselineStatusBlock,
   Card,
+  Cards,
   CardsControl,
   CardsFilterClient,
   FooterDefault,
