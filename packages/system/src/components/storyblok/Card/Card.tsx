@@ -4,14 +4,16 @@ import { formatDate } from "../../../utils/date-formatter"
 import { getStoryPath } from "../../../utils/storyblok-utils"
 import "./Card.css"
 
-interface CardProps {
-  post: {
-    uuid: string
-    full_slug: string
-    name: string
-    published_at: string
-    content: PagePostStoryblok
-  }
+export interface PostProps {
+  uuid: string
+  full_slug: string
+  name: string
+  published_at: string
+  content: PagePostStoryblok
+}
+
+export interface CardProps {
+  post: PostProps
 }
 
 export function Card({ post }: CardProps) {
