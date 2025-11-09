@@ -18,7 +18,13 @@ export interface CardProps {
 
 export function Card({ post }: CardProps) {
   const { full_slug, name, published_at, content } = post
-  const { Heading, description, published_date, tags = [] } = content || {}
+  const {
+    Heading,
+    description,
+    published_date,
+    tags = [],
+    view_transition_name: viewTransitionName,
+  } = content || {}
 
   const dateToUse = published_date || published_at
   const formattedDate = formatDate(dateToUse)
@@ -35,7 +41,7 @@ export function Card({ post }: CardProps) {
     <CustomElement
       tag="box-grid"
       style={{
-        viewTransitionName: `post-${post.uuid}`,
+        viewTransitionName: viewTransitionName,
       }}
     >
       <div className="meta">
