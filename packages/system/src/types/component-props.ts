@@ -6,7 +6,4 @@
  */
 
 export type { CardProps, PostProps } from "../components/storyblok/Card/Card"
-
-// Add other component prop types here as needed
-// export type { ButtonProps } from "../components/ui/Button/Button"
-// export type { TypographyProps } from "../components/storyblok/Typography/Typography"
+export type { TagDatasourceEntry } from "../components/storyblok/CardsFilter/CardsFilterClient"
