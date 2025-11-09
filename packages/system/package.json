@@ -1,6 +1,6 @@
 {
   "name": "@gotpop/system",
-  "version": "0.1.120",
+  "version": "0.1.121",
   "description": "React design system components for gotpop",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
