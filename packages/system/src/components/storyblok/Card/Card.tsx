@@ -1,11 +1,17 @@
 import { CustomElement, Typography } from "@gotpop/system"
-import { getStoryPath } from "@/lib/storyblok-utils"
-import { formatDate } from "@/utils/date-formatter"
-import type { PostStory } from "@/utils/tags"
+import type { PagePostStoryblok } from "../../../types/storyblok-components"
+import { formatDate } from "../../../utils/date-formatter"
+import { getStoryPath } from "../../../utils/storyblok-utils"
 import "./Card.css"
 
 interface CardProps {
-  post: PostStory
+  post: {
+    uuid: string
+    full_slug: string
+    name: string
+    published_at: string
+    content: PagePostStoryblok
+  }
 }
 
 export function Card({ post }: CardProps) {
