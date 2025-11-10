@@ -15,11 +15,11 @@ export interface FooterData {
 }
 
 interface FooterDefaultProps {
-  data: FooterDefaultStoryblok
+  blok: FooterDefaultStoryblok
 }
 
-export function FooterDefault({ data }: FooterDefaultProps): React.JSX.Element {
-  const { logo, nav } = data
+export function FooterDefault({ blok }: FooterDefaultProps): React.JSX.Element {
+  const { logo, nav } = blok
   const copyright = `© GotPop ${new Date().getFullYear()}`
 
   const viewData: FooterData = {
