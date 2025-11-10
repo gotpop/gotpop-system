@@ -16,6 +16,7 @@ import { HeroDefault } from "./HeroDefault"
 import { LinkList } from "./LinkList"
 import { LogoDefault } from "./LogoDefault"
 import { NavDefault, NavItemDefault } from "./NavDefault"
+import { PageLayout } from "./PageLayout"
 import { PostHeader } from "./PostHeader"
 import { RichTextBlock } from "./RichTextBlock"
 import { RichTextCodeBlock } from "./RichTextCodeBlock"
@@ -35,6 +36,7 @@ export {
   LogoDefault,
   NavDefault,
   NavItemDefault,
+  PageLayout,
   PostHeader,
   RichTextBlock,
   RichTextCodeBlock,
