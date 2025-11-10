@@ -16,7 +16,10 @@ import { HeroDefault } from "./HeroDefault"
 import { LinkList } from "./LinkList"
 import { LogoDefault } from "./LogoDefault"
 import { NavDefault, NavItemDefault } from "./NavDefault"
+import { PageDefault } from "./PageDefault"
+import { PageFilter } from "./PageFilter"
 import { PageLayout } from "./PageLayout"
+import { PagePost } from "./PagePost"
 import { PostHeader } from "./PostHeader"
 import { RichTextBlock } from "./RichTextBlock"
 import { RichTextCodeBlock } from "./RichTextCodeBlock"
@@ -36,7 +39,10 @@ export {
   LogoDefault,
   NavDefault,
   NavItemDefault,
+  PageDefault,
+  PageFilter,
   PageLayout,
+  PagePost,
   PostHeader,
   RichTextBlock,
   RichTextCodeBlock,
