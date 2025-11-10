@@ -8,7 +8,7 @@ export function StoryNotFound({
   path,
   errorMessage,
   availableStories = [],
-}: StoryNotFoundProps): unknown {
+}: StoryNotFoundProps) {
   return (
     <div style={{ padding: "2rem", fontFamily: "monospace" }}>
       <h1>Story not found</h1>
