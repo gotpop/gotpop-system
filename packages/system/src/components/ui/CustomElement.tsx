@@ -12,6 +12,8 @@ type ValidTag =
   | "main-content"
   | "button-toggle"
   | "icon-hamburger"
+  | "box-crosshatch"
+  | "page-layout"
 
 interface CustomElementProps {
   children?: ReactNode
