@@ -1,15 +1,11 @@
-import { CustomElement, FooterDefault, HeaderDefault } from "@gotpop/system"
+import { CustomElement } from "@gotpop/system"
 import "./PageLayout.css"
-import type {
-  FooterDefaultStoryblok,
-  HeaderDefaultStoryblok,
-} from "@/types/storyblok-components"
 
 interface PageLayoutProps {
   children?: React.ReactNode
   className?: string
-  header: HeaderDefaultStoryblok
-  footer: FooterDefaultStoryblok
+  header: React.ReactNode
+  footer: React.ReactNode
 }
 
 export async function PageLayout({
@@ -19,11 +15,11 @@ export async function PageLayout({
 }: PageLayoutProps) {
   return (
     <CustomElement tag="page-layout">
-      <HeaderDefault blok={header} />
+      {header}
       <main>
         <CustomElement tag="box-crosshatch">{children}</CustomElement>
       </main>
-      <FooterDefault blok={footer} />
+      {footer}
     </CustomElement>
   )
 }

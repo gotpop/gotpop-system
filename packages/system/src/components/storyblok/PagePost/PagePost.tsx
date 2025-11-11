@@ -1,15 +1,11 @@
-import type {
-  FooterDefaultStoryblok,
-  HeaderDefaultStoryblok,
-  PagePostStoryblok,
-} from "../../../types/storyblok-components"
+import type { PagePostStoryblok } from "../../../types/storyblok-components"
 import { CustomElement } from "../../ui/CustomElement"
 import { PageLayout } from "../PageLayout/PageLayout"
 import { PostHeader } from "../PostHeader"
 
 interface PagePostProps {
-  header: HeaderDefaultStoryblok
-  footer: FooterDefaultStoryblok
+  header: React.ReactNode
+  footer: React.ReactNode
   blok: PagePostStoryblok
   blocks: React.ReactNode
 }

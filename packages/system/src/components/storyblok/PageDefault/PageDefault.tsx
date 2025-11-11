@@ -1,13 +1,9 @@
-import type {
-  FooterDefaultStoryblok,
-  HeaderDefaultStoryblok,
-  PageDefaultStoryblok,
-} from "../../../types/storyblok-components"
+import type { PageDefaultStoryblok } from "../../../types/storyblok-components"
 import { PageLayout } from "../PageLayout/PageLayout"
 
 interface PageDefaultProps {
-  header: HeaderDefaultStoryblok
-  footer: FooterDefaultStoryblok
+  header: React.ReactNode
+  footer: React.ReactNode
   blok: PageDefaultStoryblok
   blocks: React.ReactNode
 }

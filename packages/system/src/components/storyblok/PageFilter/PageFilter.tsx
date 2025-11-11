@@ -1,13 +1,9 @@
-import type {
-  FooterDefaultStoryblok,
-  HeaderDefaultStoryblok,
-  PageFilterStoryblok,
-} from "../../../types/storyblok-components"
+import type { PageFilterStoryblok } from "../../../types/storyblok-components"
 import { PageLayout } from "../PageLayout/PageLayout"
 
 interface PageFilterViewProps {
-  header: HeaderDefaultStoryblok
-  footer: FooterDefaultStoryblok
+  header: React.ReactNode
+  footer: React.ReactNode
   blok: PageFilterStoryblok
   blocks: React.ReactNode
 }
