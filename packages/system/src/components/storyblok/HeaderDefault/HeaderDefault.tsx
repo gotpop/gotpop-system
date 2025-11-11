@@ -1,22 +1,26 @@
 import type {
+  ConfigStoryblok,
   HeaderDefaultStoryblok,
-  LogoDefaultStoryblok,
-  NavDefaultStoryblok,
 } from "../../../types/storyblok-components"
-import { LogoDefault, NavDefault } from "../../"
 import "./HeaderDefault.css"
 
 interface HeaderDefaultProps {
-  blok?: HeaderDefaultStoryblok | null
+  blok: HeaderDefaultStoryblok
+  nav?: React.ReactNode
+  logo?: React.ReactNode
+  config?: ConfigStoryblok | null
 }
 
-export async function HeaderDefault({ blok }: HeaderDefaultProps) {
-  const { nav, logo } = blok || {}
-
+export async function HeaderDefault({
+  blok: _blok,
+  nav,
+  logo,
+  config: _config,
+}: HeaderDefaultProps) {
   return (
     <header className="header">
-      {logo?.[0] && <LogoDefault blok={logo[0] as LogoDefaultStoryblok} />}
-      {nav?.[0] && <NavDefault blok={nav[0] as NavDefaultStoryblok} />}
+      {logo}
+      {nav}
     </header>
   )
 }

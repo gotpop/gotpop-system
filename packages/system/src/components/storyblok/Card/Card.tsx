@@ -1,7 +1,11 @@
-import { CustomElement, Typography } from "@gotpop/system"
-import type { PagePostStoryblok } from "../../../types/storyblok-components"
+import type {
+  ConfigStoryblok,
+  PagePostStoryblok,
+} from "../../../types/storyblok-components"
 import { formatDate } from "../../../utils/date-formatter"
 import { getStoryPath } from "../../../utils/storyblok-utils"
+import { CustomElement } from "../../ui/CustomElement"
+import { Typography } from "../Typography"
 import "./Card.css"
 
 export interface PostProps {
@@ -14,6 +18,7 @@ export interface PostProps {
 
 export interface CardProps {
   post: PostProps
+  config?: ConfigStoryblok | null
 }
 
 export function Card({ post }: CardProps) {
