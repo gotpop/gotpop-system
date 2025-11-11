@@ -17,12 +17,12 @@ export interface PostProps {
 }
 
 export interface CardProps {
-  post: PostProps
+  blok: PostProps
   config?: ConfigStoryblok | null
 }
 
-export function Card({ post }: CardProps) {
-  const { full_slug, name, published_at, content } = post
+export function Card({ blok }: CardProps) {
+  const { full_slug, name, published_at, content } = blok
   const {
     Heading,
     description,

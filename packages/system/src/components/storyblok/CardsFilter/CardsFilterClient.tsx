@@ -60,7 +60,7 @@ export function CardsFilterClient({
 
   const output =
     filteredAndSortedPosts.length > 0 &&
-    filteredAndSortedPosts.map((post) => <Card key={post.uuid} post={post} />)
+    filteredAndSortedPosts.map((blok) => <Card key={blok.uuid} blok={blok} />)
 
   return (
     <div className="filters-with-output">
