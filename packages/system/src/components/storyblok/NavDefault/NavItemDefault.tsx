@@ -1,4 +1,7 @@
-import type { NavItemDefaultStoryblok } from "../../../types/storyblok-components"
+import type {
+  ConfigStoryblok,
+  NavItemDefaultStoryblok,
+} from "../../../types/storyblok-components"
 import { cn } from "../../../utils/cn"
 import { getStoryblokLinkProps } from "../../../utils/storyblok"
 import { Icon } from "../../"
@@ -6,10 +9,12 @@ import type { IconName } from "../../ui/Icon/Icon"
 
 interface NavItemDefaultProps {
   blok: NavItemDefaultStoryblok
+  config?: ConfigStoryblok | null
 }
 
 export function NavItemDefault({
   blok,
+  config,
 }: NavItemDefaultProps): React.JSX.Element {
   const linkProps = getStoryblokLinkProps(blok.link)
   const { href, target, rel } = linkProps
@@ -19,6 +24,9 @@ export function NavItemDefault({
   const hasBoth = hasText && hasIcon
   const hasTextOnly = hasText && !hasIcon
   const hasIconOnly = hasIcon && !hasText
+
+  // log config for debugging
+  console.log("NavItemDefault config:", config)
 
   if (!blok.link || href === "#") {
     return <span className="nav-item">{blok.text}</span>

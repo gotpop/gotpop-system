@@ -31,21 +31,19 @@ export interface RichtextStoryblok {
 
 export type StoryblokComponent =
   | PageFilterStoryblok
-  | FilterContentStoryblok
+  | CardsStoryblok
   | PageDefaultStoryblok
   | HeroDefaultStoryblok
-  | CardsStoryblok
-  | CardStoryblok
   | ConfigStoryblok
+  | PagePostStoryblok
+  | BaselineStatusBlockStoryblok
+  | RichTextBlockStoryblok
+  | SnippetBlockStoryblok
+  | RichTextCodeBlockStoryblok
   | FooterDefaultStoryblok
   | LinkListStoryblok
   | LinkListItemStoryblok
   | LogoDefaultStoryblok
-  | PagePostStoryblok
-  | RichTextBlockStoryblok
-  | SnippetBlockStoryblok
-  | RichTextCodeBlockStoryblok
-  | BaselineStatusBlockStoryblok
   | HeaderDefaultStoryblok
   | NavDefaultStoryblok
   | NavItemDefaultStoryblok
@@ -59,10 +57,11 @@ export interface PageFilterStoryblok extends SbBlokData {
   [k: string]: any
 }
 
-export interface FilterContentStoryblok extends SbBlokData {
-  component: "filter_content"
+export interface CardsStoryblok extends SbBlokData {
+  component: "cards"
   heading?: string
   subheading?: string
+  use_filters?: boolean
   _uid: string
   [k: string]: any
 }
@@ -84,24 +83,54 @@ export interface HeroDefaultStoryblok extends SbBlokData {
   [k: string]: any
 }
 
-export interface CardsStoryblok extends SbBlokData {
-  component: "cards"
-  cards?: StoryblokComponent[]
-  _uid: string
-  [k: string]: any
-}
-
-export interface CardStoryblok extends SbBlokData {
-  component: "card"
-  cards?: string[]
-  type?: string
-  _uid: string
-  [k: string]: any
-}
-
 export interface ConfigStoryblok extends SbBlokData {
   component: "Config"
   app_name?: string
+  root_name_space?: string
+  primary_content_name_space?: string
+  _uid: string
+  [k: string]: any
+}
+
+export interface PagePostStoryblok extends SbBlokData {
+  component: "page_post"
+  body?: StoryblokComponent[]
+  tags?: string[]
+  Footer?: string
+  Header?: string
+  Heading?: string
+  content?: any[]
+  description?: string
+  published_date?: string
+  view_transition_name?: string
+  _uid: string
+  [k: string]: any
+}
+
+export interface BaselineStatusBlockStoryblok extends SbBlokData {
+  component: "baseline_status_block"
+  feature?: string
+  _uid: string
+  [k: string]: any
+}
+
+export interface RichTextBlockStoryblok extends SbBlokData {
+  component: "rich_text_block"
+  content?: RichtextStoryblok
+  _uid: string
+  [k: string]: any
+}
+
+export interface SnippetBlockStoryblok extends SbBlokData {
+  component: "snippet_block"
+  snippet?: string
+  _uid: string
+  [k: string]: any
+}
+
+export interface RichTextCodeBlockStoryblok extends SbBlokData {
+  component: "rich_text_code_block"
+  content?: RichtextStoryblok
   _uid: string
   [k: string]: any
 }
@@ -139,49 +168,6 @@ export interface LogoDefaultStoryblok extends SbBlokData {
   [k: string]: any
 }
 
-export interface PagePostStoryblok extends SbBlokData {
-  component: "page_post"
-  body?: StoryblokComponent[]
-  tags?: string[]
-  Footer?: string
-  Header?: string
-  Heading?: string
-  content?: any[]
-  description?: string
-  published_date?: string
-  view_transition_name?: string
-  _uid: string
-  [k: string]: any
-}
-
-export interface RichTextBlockStoryblok extends SbBlokData {
-  component: "rich_text_block"
-  content?: RichtextStoryblok
-  _uid: string
-  [k: string]: any
-}
-
-export interface SnippetBlockStoryblok extends SbBlokData {
-  component: "snippet_block"
-  snippet?: string
-  _uid: string
-  [k: string]: any
-}
-
-export interface RichTextCodeBlockStoryblok extends SbBlokData {
-  component: "rich_text_code_block"
-  content?: RichtextStoryblok
-  _uid: string
-  [k: string]: any
-}
-
-export interface BaselineStatusBlockStoryblok extends SbBlokData {
-  component: "baseline_status_block"
-  feature?: string
-  _uid: string
-  [k: string]: any
-}
-
 export interface HeaderDefaultStoryblok extends SbBlokData {
   component: "header_default"
   nav?: StoryblokComponent[]
@@ -204,6 +190,7 @@ export interface NavItemDefaultStoryblok extends SbBlokData {
   link?: MultilinkStoryblok
   text?: string
   type?: string
+  config?: string[]
   _uid: string
   [k: string]: any
 }

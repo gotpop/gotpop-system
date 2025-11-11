@@ -1,5 +1,6 @@
 import { useId } from "react"
 import type {
+  ConfigStoryblok,
   NavDefaultStoryblok,
   NavItemDefaultStoryblok,
 } from "../../../types/storyblok-components"
@@ -8,10 +9,16 @@ import "./NavDefault.css"
 
 interface NavDefaultProps {
   blok: NavDefaultStoryblok
+  config?: ConfigStoryblok | null
 }
 
-export function NavDefault({ blok }: NavDefaultProps): React.JSX.Element {
+export function NavDefault({
+  blok,
+  config,
+}: NavDefaultProps): React.JSX.Element {
   const navId = useId()
+
+  console.log("NavDefault config:", config)
 
   return (
     <>
