@@ -1122,7 +1122,7 @@
   integrity sha512-N3zl+lxHCifgIlcMUP5016ESkeQjLj/959RxxNYIthIg+CQHInujFuXeWbWMgnTo4cp5XVHqFPmpyu9J65C1Yg==
 
 "@gotpop/system@*", "@gotpop/system@file:/Users/minivan/web/sites/gotpop-system/packages/system":
-  version "0.1.137"
+  version "0.1.138"
   resolved "file:packages/system"
   dependencies:
     "@next/font" "^14.2.15"
