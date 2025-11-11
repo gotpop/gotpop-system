@@ -21,7 +21,7 @@ export interface CardProps {
   contentPrefix?: string
 }
 
-export function Card({ blok, contentPrefix, config }: CardProps) {
+export function Card({ blok, config }: CardProps) {
   const { full_slug, name, published_at, content } = blok
   const {
     Heading,
@@ -31,23 +31,16 @@ export function Card({ blok, contentPrefix, config }: CardProps) {
     view_transition_name: viewTransitionName,
   } = content || {}
 
-  console.log("Card config:", config)
+  let linkPath = `/${full_slug}`
+
+  const root = config?.root_name_space
+
+  if (root && linkPath.startsWith(`/${root}/`)) {
+    linkPath = linkPath.slice(root.length + 1)
+  }
 
   const dateToUse = published_date || published_at
   const formattedDate = formatDate(dateToUse)
-
-  // Generate link path, removing the content prefix
-  let linkPath = full_slug || "/"
-  const prefix = contentPrefix || "blog"
-  if (linkPath.startsWith(`${prefix}/`)) {
-    linkPath = linkPath.slice(prefix.length + 1)
-  }
-  if (linkPath === "home" || linkPath === "") {
-    linkPath = "/"
-  }
-  if (!linkPath.startsWith("/")) {
-    linkPath = `/${linkPath}`
-  }
 
   const title = Heading || name || "Untitled"
 
