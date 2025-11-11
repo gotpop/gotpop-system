@@ -4,7 +4,8 @@ import type {
   NavDefaultStoryblok,
   NavItemDefaultStoryblok,
 } from "../../../types/storyblok-components"
-import { ButtonToggleMenu, NavItemDefault } from "../../"
+import { ButtonToggleMenu } from "../../"
+import { NavItemDefault } from "../NavItemDefault"
 import "./NavDefault.css"
 
 interface NavDefaultProps {
