@@ -1,6 +1,7 @@
 import { Suspense } from "react"
 import type {
   CardsStoryblok,
+  ConfigStoryblok,
   PostProps,
   TagDatasourceEntry,
 } from "../../../types"
@@ -12,19 +13,25 @@ interface CardsProps {
   blocks?: React.ReactNode
   posts: PostProps[]
   availableTags: TagDatasourceEntry[]
+  config?: ConfigStoryblok | null
 }
 
 export async function Cards({
-  blok,
-  blocks,
-  posts,
   availableTags,
+  blocks,
+  blok,
+  config,
+  posts,
 }: CardsProps) {
   const { use_filters: useClientSideFilters } = blok
 
   return useClientSideFilters ? (
     <Suspense fallback={<div>Loading posts...</div>}>
-      <CardsFilterClient posts={posts} availableTags={availableTags} />
+      <CardsFilterClient
+        availableTags={availableTags}
+        config={config}
+        posts={posts}
+      />
     </Suspense>
   ) : (
     <div className="grid-cards">{blocks}</div>

@@ -3,7 +3,6 @@ import type {
   PagePostStoryblok,
 } from "../../../types/storyblok-components"
 import { formatDate } from "../../../utils/date-formatter"
-import { getStoryPath } from "../../../utils/storyblok-utils"
 import { CustomElement } from "../../ui/CustomElement"
 import { Typography } from "../Typography"
 import "./Card.css"
@@ -19,9 +18,10 @@ export interface PostProps {
 export interface CardProps {
   blok: PostProps
   config?: ConfigStoryblok | null
+  contentPrefix?: string
 }
 
-export function Card({ blok }: CardProps) {
+export function Card({ blok, contentPrefix, config }: CardProps) {
   const { full_slug, name, published_at, content } = blok
   const {
     Heading,
@@ -31,9 +31,24 @@ export function Card({ blok }: CardProps) {
     view_transition_name: viewTransitionName,
   } = content || {}
 
+  console.log("Card config:", config)
+
   const dateToUse = published_date || published_at
   const formattedDate = formatDate(dateToUse)
-  const linkPath = getStoryPath(full_slug)
+
+  // Generate link path, removing the content prefix
+  let linkPath = full_slug || "/"
+  const prefix = contentPrefix || "blog"
+  if (linkPath.startsWith(`${prefix}/`)) {
+    linkPath = linkPath.slice(prefix.length + 1)
+  }
+  if (linkPath === "home" || linkPath === "") {
+    linkPath = "/"
+  }
+  if (!linkPath.startsWith("/")) {
+    linkPath = `/${linkPath}`
+  }
+
   const title = Heading || name || "Untitled"
 
   const tagList = tags.map((tag) => (

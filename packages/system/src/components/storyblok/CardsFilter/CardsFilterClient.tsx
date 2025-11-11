@@ -1,6 +1,7 @@
 "use client"
 
 import { startTransition, ViewTransition } from "react"
+import type { ConfigStoryblok } from "@/index"
 import { CustomElement } from "../../ui/CustomElement"
 import type { PostProps } from "../Card"
 import { Card } from "../Card"
@@ -23,11 +24,13 @@ export interface TagDatasourceEntry {
 interface CardsFilterClientProps {
   posts: PostProps[]
   availableTags: TagDatasourceEntry[]
+  config?: ConfigStoryblok | null
 }
 
 export function CardsFilterClient({
-  posts,
   availableTags,
+  config,
+  posts,
 }: CardsFilterClientProps) {
   const {
     currentSort,
@@ -60,7 +63,9 @@ export function CardsFilterClient({
 
   const output =
     filteredAndSortedPosts.length > 0 &&
-    filteredAndSortedPosts.map((blok) => <Card key={blok.uuid} blok={blok} />)
+    filteredAndSortedPosts.map((blok) => (
+      <Card key={blok.uuid} blok={blok} config={config} />
+    ))
 
   return (
     <div className="filters-with-output">
