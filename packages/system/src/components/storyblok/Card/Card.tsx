@@ -18,7 +18,6 @@ export interface PostProps {
 export interface CardProps {
   blok: PostProps
   config?: ConfigStoryblok | null
-  contentPrefix?: string
 }
 
 export function Card({ blok, config }: CardProps) {
