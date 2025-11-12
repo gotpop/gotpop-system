@@ -1,6 +1,6 @@
 {
   "name": "@gotpop/system",
-  "version": "0.1.158",
+  "version": "0.1.159",
   "description": "React design system components for gotpop",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,6 +14,10 @@
     },
     "./styles": {
       "default": "./src/styles/index.css"
+    },
+    "./fonts": {
+      "types": "./src/fonts/index.ts",
+      "default": "./src/fonts/index.ts"
     },
     "./fonts/inter": {
       "default": "./src/fonts/inter/Inter.woff2"
