@@ -1,0 +1,28 @@
+{
+  "name": "@gotpop/scripts",
+  "version": "0.1.0",
+  "description": "Shared scripts for Storyblok projects",
+  "type": "module",
+  "bin": {
+    "generate-icon-list": "./src/generate-icon-list.js",
+    "generate-storyblok-types": "./src/generate-storyblok-types.js",
+    "kill-ports": "./src/kill-ports.sh",
+    "setup-https": "./src/setup-https.sh",
+    "start-proxy": "./src/start-proxy.sh",
+    "sync-baseline-datasource": "./src/sync-baseline-datasource.js",
+    "sync-icon-datasource": "./src/sync-icon-datasource.js"
+  },
+  "scripts": {
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": [
+    "storyblok",
+    "scripts",
+    "utilities"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0"
+  }
+}
