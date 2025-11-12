@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const fs = require("node:fs")
-const path = require("node:path")
+import fs from "node:fs"
+import path from "node:path"
 
 // Node.js 22+ handles .env loading via --env-file-if-exists flag
 // Environment variables take precedence over .env file values

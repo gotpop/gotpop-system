@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const fs = require("node:fs")
-const path = require("node:path")
+import fs from "node:fs"
+import path from "node:path"
 
 function getAvailableIcons() {
   const iconPath = path.join(process.cwd(), "src/components/ui/Icon/Icon.tsx")

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const fs = require("node:fs")
-const path = require("node:path")
+import fs from "node:fs"
+import path from "node:path"
 
 // Extract available icons from your Icon component
 function getAvailableIcons() {
