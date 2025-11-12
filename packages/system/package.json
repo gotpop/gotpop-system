@@ -1,6 +1,6 @@
 {
   "name": "@gotpop/system",
-  "version": "0.1.160",
+  "version": "0.1.164",
   "description": "React design system components for gotpop",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -60,7 +60,9 @@
     "format:check": "npx biome check src/",
     "format:fix": "npx biome check --write src/",
     "type-check": "tsc --noEmit",
-    "publish:github": "npm version patch && yarn build && npm publish"
+    "prepublishOnly": "yarn generate:types && yarn build",
+    "generate:types": "node --env-file=../../.env node_modules/.bin/generate-storyblok-types",
+    "publish:github": "npm version patch && npm publish"
   },
   "dependencies": {
     "@next/font": "^14.2.15",
@@ -72,6 +74,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.6",
+    "@gotpop/scripts": "^0.1.1",
     "@types/node": "^20.0.0",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
