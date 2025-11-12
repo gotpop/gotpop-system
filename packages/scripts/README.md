@@ -43,28 +43,6 @@ Kills processes running on ports 3000 and 3010.
 npx kill-ports
 ```
 
-### setup-https.sh
-Sets up HTTPS certificates for local development with Storyblok Visual Editor.
-
-**Usage:**
-```bash
-npx setup-https
-```
-
-**Requirements:**
-- `mkcert` installed (`brew install mkcert`)
-
-### start-proxy.sh
-Starts HTTPS proxy for Storyblok Visual Editor.
-
-**Usage:**
-```bash
-npx start-proxy
-```
-
-**Requirements:**
-- `local-ssl-proxy` installed globally or in project
-
 ### sync-baseline-datasource.js
 Syncs baseline browser support data to Storyblok datasource.
 
