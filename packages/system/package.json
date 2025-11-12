@@ -1,6 +1,6 @@
 {
   "name": "@gotpop/system",
-  "version": "0.1.164",
+  "version": "0.1.166",
   "description": "React design system components for gotpop",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,8 +16,8 @@
       "default": "./src/styles/index.css"
     },
     "./fonts": {
-      "types": "./src/fonts/index.ts",
-      "default": "./src/fonts/index.ts"
+      "types": "./dist/fonts/index.d.ts",
+      "default": "./dist/fonts/index.js"
     },
     "./fonts/inter": {
       "default": "./src/fonts/inter/Inter.woff2"
@@ -54,15 +54,13 @@
     "directory": "packages/system"
   },
   "scripts": {
-    "build": "tsc && rsync -a --include='*/' --include='*.css' --exclude='*' src/ dist/",
+    "build": "tsc && rsync -a --include='*/' --include='*.css' --include='*.woff2' --exclude='*' src/ dist/",
     "dev": "tsc --watch",
     "lint": "npx biome lint src/",
     "format:check": "npx biome check src/",
     "format:fix": "npx biome check --write src/",
     "type-check": "tsc --noEmit",
-    "prepublishOnly": "yarn generate:types && yarn build",
-    "generate:types": "node --env-file=../../.env node_modules/.bin/generate-storyblok-types",
-    "publish:github": "npm version patch && npm publish"
+    "publish:github": "npm version patch && yarn build && npm publish"
   },
   "dependencies": {
     "@next/font": "^14.2.15",

@@ -1128,7 +1128,7 @@
     dotenv "^16.0.0"
 
 "@gotpop/system@*", "@gotpop/system@file:/Users/minivan/web/sites/gotpop-system/packages/system":
-  version "0.1.164"
+  version "0.1.166"
   resolved "file:packages/system"
   dependencies:
     "@next/font" "^14.2.15"
