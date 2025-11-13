@@ -16,7 +16,8 @@
     "sync-icon-datasource": "./src/sync-icon-datasource.js"
   },
   "scripts": {
-    "test": "echo \"No tests yet\""
+    "test": "echo \"No tests yet\"",
+    "publish:github": "npm version patch && yarn build && npm publish"
   },
   "repository": {
     "type": "git",

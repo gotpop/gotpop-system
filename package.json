@@ -20,9 +20,8 @@
     "changeset:version": "changeset version",
     "changeset:publish": "turbo run build && changeset publish",
     "publish:system": "yarn workspace @gotpop/system run publish:github",
-    "publish:storyblok": "yarn workspace @gotpop/storyblok run publish:github",
-    "publish:github": "yarn workspace @gotpop/system run publish:github",
-    "publish:github:dry": "yarn workspace @gotpop/system run build"
+    "publish:scripts": "yarn workspace @gotpop/scripts run publish:github",
+    "publish:storyblok": "yarn workspace @gotpop/storyblok run publish:github"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.6",
