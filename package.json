@@ -13,14 +13,12 @@
     "dev": "turbo run dev",
     "format:check": "turbo run format:check",
     "format:fix": "turbo run format:fix",
-    "link": "yarn workspace @gotpop/system link && yarn workspace @gotpop/storyblok link && yarn workspace @gotpop/scripts link",
     "lint": "turbo run lint",
     "publish:scripts": "yarn workspace @gotpop/scripts run publish:github",
     "publish:storyblok": "yarn workspace @gotpop/storyblok run publish:github",
     "publish:system": "yarn workspace @gotpop/system run publish:github",
     "test": "turbo run test",
-    "type-check": "turbo run type-check",
-    "unlink": "yarn workspace @gotpop/system unlink && yarn workspace @gotpop/storyblok unlink && yarn workspace @gotpop/scripts unlink"
+    "type-check": "turbo run type-check"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.6",
