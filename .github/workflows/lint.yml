@@ -3,10 +3,8 @@ name: Lint
 on:
   push:
     branches: [master]
-    paths: ['packages/**', 'apps/**']
   pull_request:
     branches: [master]
-    paths: ['packages/**', 'apps/**']
 
 jobs:
   lint:

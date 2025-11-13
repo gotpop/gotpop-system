@@ -3,10 +3,8 @@ name: Type Check
 on:
   push:
     branches: [master]
-    paths: ['packages/**', 'apps/**']
   pull_request:
     branches: [master]
-    paths: ['packages/**', 'apps/**']
 
 jobs:
   type-check:
