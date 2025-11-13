@@ -1,6 +1,6 @@
 # GotPop System
 
-(https://github.com/gotpop/gotpop-system/pkgs/npm/system) [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Lint](https://github.com/gotpop/gotpop-system/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/gotpop/gotpop-system/actions/workflows/lint.yml) [![Format Check](https://github.com/gotpop/gotpop-system/actions/workflows/format-check.yml/badge.svg?branch=main)](https://github.com/gotpop/gotpop-system/actions/workflows/format-check.yml) [![Type Check](https://github.com/gotpop/gotpop-system/actions/workflows/type-check.yml/badge.svg?branch=main)](https://github.com/gotpop/gotpop-system/actions/workflows/type-check.yml)
 
 Design system monorepo for gotpop projects with TypeScript-first distribution via GitHub Packages (Public)
