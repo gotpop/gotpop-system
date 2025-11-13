@@ -1,8 +1,6 @@
 /**
  * Storyblok Components Barrel Export
  *
- * This file exports individual components for direct imports.
- * For stories, import view components directly from their component folders.
  */
 
 import { BaselineStatusBlock } from "./BaselineStatusBlock"
@@ -17,6 +15,7 @@ import { LinkList } from "./LinkList"
 import { LogoDefault } from "./LogoDefault"
 import { NavDefault } from "./NavDefault"
 import { NavItemDefault } from "./NavItemDefault"
+import { NotFoundPage } from "./NotFoundPage"
 import { PageDefault } from "./PageDefault"
 import { PageFilter } from "./PageFilter"
 import { PageLayout } from "./PageLayout"
@@ -40,6 +39,7 @@ export {
   LogoDefault,
   NavDefault,
   NavItemDefault,
+  NotFoundPage,
   PageDefault,
   PageFilter,
   PageLayout,
