@@ -1,7 +1,7 @@
 import "server-only"
 
 import type { PostProps, TagDatasourceEntry } from "@gotpop/system"
-import { getStoryblokApi } from "../storyblok"
+import { getStoryblokApi } from "@storyblok/react/rsc"
 import type {
   BaseConfig,
   DatasourceEntriesConfig,

@@ -1,7 +1,7 @@
 import "server-only"
 
 import type { ConfigStoryblok } from "@gotpop/system"
-import { getStoryblokApi } from "../storyblok"
+import { getStoryblokApi } from "@storyblok/react/rsc"
 
 /** Cached config instance to prevent redundant API calls - single source of truth for Storyblok configuration */
 let cachedConfig: ConfigStoryblok | null = null
