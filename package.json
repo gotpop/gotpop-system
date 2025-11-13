@@ -8,24 +8,20 @@
     "apps/*"
   ],
   "scripts": {
-    "dev": "turbo run dev",
     "build": "turbo run build",
-    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "dev": "turbo run dev",
     "format:check": "turbo run format:check",
     "format:fix": "turbo run format:fix",
-    "type-check": "turbo run type-check",
-    "test": "turbo run test",
-    "clean": "turbo run clean",
-    "changeset": "changeset",
-    "changeset:version": "changeset version",
-    "changeset:publish": "turbo run build && changeset publish",
-    "publish:system": "yarn workspace @gotpop/system run publish:github",
+    "lint": "turbo run lint",
     "publish:scripts": "yarn workspace @gotpop/scripts run publish:github",
-    "publish:storyblok": "yarn workspace @gotpop/storyblok run publish:github"
+    "publish:storyblok": "yarn workspace @gotpop/storyblok run publish:github",
+    "publish:system": "yarn workspace @gotpop/system run publish:github",
+    "test": "turbo run test",
+    "type-check": "turbo run type-check"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.6",
-    "@changesets/cli": "^2.27.1",
     "@types/node": "^20.0.0",
     "next": "16.0.0",
     "prettier": "^3.6.2",
