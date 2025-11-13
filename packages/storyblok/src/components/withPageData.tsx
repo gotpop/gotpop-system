@@ -25,9 +25,15 @@ interface WithPageDataProps<T extends PageBlok> {
   blocks: ReactNode
 }
 
+type ComponentMap = Record<
+  string,
+  React.ComponentType<{ blok: SbBlokData; config?: ConfigStoryblok | null }>
+>
+
 /** Higher-Order Component that fetches and renders header and footer components for a page */
 export function withPageData<T extends PageBlok>(
-  ViewComponent: React.ComponentType<WithPageDataProps<T>>
+  ViewComponent: React.ComponentType<WithPageDataProps<T>>,
+  components: ComponentMap
 ) {
   return async ({
     blok,
@@ -52,11 +58,19 @@ export function withPageData<T extends PageBlok>(
     )
 
     const header = (
-      <StoryblokServerComponent blok={headerData.content} config={config} />
+      <StoryblokServerComponent
+        blok={headerData.content}
+        config={config}
+        components={components}
+      />
     )
 
     const footer = (
-      <StoryblokServerComponent blok={footerData.content} config={config} />
+      <StoryblokServerComponent
+        blok={footerData.content}
+        config={config}
+        components={components}
+      />
     )
 
     const blocks = blok.body?.map((nestedBlok) => (
@@ -64,6 +78,7 @@ export function withPageData<T extends PageBlok>(
         blok={nestedBlok}
         key={nestedBlok._uid}
         config={config}
+        components={components}
       />
     ))
 

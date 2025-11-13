@@ -2,16 +2,22 @@ import "server-only"
 
 import type { ConfigStoryblok } from "@gotpop/system"
 import type { SbBlokData } from "@storyblok/react/rsc"
-import { components } from "../storyblok"
+
+type ComponentMap = Record<
+  string,
+  React.ComponentType<{ blok: SbBlokData; config?: ConfigStoryblok | null }>
+>
 
 interface StoryblokServerComponentProps {
   blok: SbBlokData | null | undefined
   config: ConfigStoryblok | null
+  components: ComponentMap
 }
 
 export function StoryblokServerComponent({
   blok,
   config,
+  components,
 }: StoryblokServerComponentProps): React.JSX.Element | null {
   if (!blok) {
     return null

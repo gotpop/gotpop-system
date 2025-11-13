@@ -1,6 +1,7 @@
 import "server-only"
 
 import type { ConfigStoryblok, NavDefaultStoryblok } from "@gotpop/system"
+import type { SbBlokData } from "@storyblok/react/rsc"
 import type { ReactNode } from "react"
 import { getConfig } from "../config/runtime-config"
 import { StoryblokServerComponent } from "./StoryblokServerComponent"
@@ -16,9 +17,15 @@ interface WithNavDataProps<T extends NavBlok> {
   config: ConfigStoryblok | null
 }
 
+type ComponentMap = Record<
+  string,
+  React.ComponentType<{ blok: SbBlokData; config?: ConfigStoryblok | null }>
+>
+
 /** Higher-Order Component that renders navigation items for the Nav component */
 export function withNavData<T extends NavBlok>(
-  ViewComponent: React.ComponentType<WithNavDataProps<T>>
+  ViewComponent: React.ComponentType<WithNavDataProps<T>>,
+  components: ComponentMap
 ) {
   return async ({
     blok,
@@ -35,6 +42,7 @@ export function withNavData<T extends NavBlok>(
         blok={nestedBlok}
         key={nestedBlok._uid}
         config={config}
+        components={components}
       />
     ))
 

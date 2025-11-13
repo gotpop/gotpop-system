@@ -20,6 +20,11 @@ interface WithCardsDataProps {
   config: ConfigStoryblok | null
 }
 
+type ComponentMap = Record<
+  string,
+  React.ComponentType<{ blok: SbBlokData; config?: ConfigStoryblok | null }>
+>
+
 /** Transforms PostProps data to SbBlokData format for StoryblokServerComponent */
 function transformPostToBlok(post: PostProps): SbBlokData {
   return {
@@ -31,7 +36,8 @@ function transformPostToBlok(post: PostProps): SbBlokData {
 
 /** Higher-Order Component that fetches posts and tags data for the Cards component */
 export function withCardsData(
-  ViewComponent: React.ComponentType<WithCardsDataProps>
+  ViewComponent: React.ComponentType<WithCardsDataProps>,
+  components: ComponentMap
 ) {
   return async ({
     blok,
@@ -63,6 +69,7 @@ export function withCardsData(
         key={post.uuid}
         blok={transformPostToBlok(post)}
         config={config}
+        components={components}
       />
     ))
 
