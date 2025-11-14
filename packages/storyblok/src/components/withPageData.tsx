@@ -6,10 +6,10 @@ import type {
   HeaderDefaultStoryblok,
 } from "@gotpop/system"
 import type { SbBlokData } from "@storyblok/react/rsc"
+import { StoryblokServerComponent } from "@storyblok/react/rsc"
 import type { ReactNode } from "react"
 import { getConfig } from "../config/runtime-config"
 import { getStoryblokData } from "../data/get-storyblok-data"
-import { StoryblokServerComponent } from "./StoryblokServerComponent"
 
 interface PageBlok {
   Header?: string

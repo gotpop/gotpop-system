@@ -1,4 +1,3 @@
-export * from "./StoryblokServerComponent"
 export * from "./withCardsData"
 export * from "./withHeaderData"
 export * from "./withNavData"
