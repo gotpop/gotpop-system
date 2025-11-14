@@ -57,3 +57,6 @@ package-lock.json
 
 # .github
 .github/*.md
+
+# Generated types for Storyblok components
+**/storyblok-components.ts
