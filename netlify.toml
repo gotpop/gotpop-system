@@ -7,6 +7,12 @@ command = "yarn install --frozen-lockfile && yarn workspace @gotpop/system build
 NODE_VERSION = "22"
 YARN_VERSION = "1.22.22"
 
+# Disable Next.js plugin - this is a Storybook deployment
+[[plugins]]
+package = "@netlify/plugin-nextjs"
+[plugins.inputs]
+disable = true
+
 [[redirects]]
 from = "/*"
 to = "/index.html"
