@@ -14,7 +14,7 @@ export function PagePost({ header, footer, blok, blocks }: PagePostProps) {
   return (
     <PageLayout header={header} footer={footer}>
       <PostHeader
-        heading={blok.Heading}
+        heading={blok.heading}
         publishedDate={blok.published_date}
         style={{ viewTransitionName: blok.view_transition_name }}
       />
