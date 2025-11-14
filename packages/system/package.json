@@ -60,6 +60,7 @@
     "format:check": "npx biome check src/",
     "format:fix": "npx biome check --write src/",
     "type-check": "tsc --noEmit",
+    "generate:types": "node --env-file-if-exists=.env ../../node_modules/.bin/generate-storyblok-types -o src/types/storyblok-components.ts",
     "publish:github": "npm version patch && yarn build && npm publish"
   },
   "dependencies": {
