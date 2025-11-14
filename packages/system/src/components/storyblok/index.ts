@@ -19,6 +19,7 @@ import { NotFoundPage } from "./NotFoundPage"
 import { PageDefault } from "./PageDefault"
 import { PageFilter } from "./PageFilter"
 import { PageLayout } from "./PageLayout"
+import { PageNotFound } from "./PageNotFound"
 import { PagePost } from "./PagePost"
 import { PostHeader } from "./PostHeader"
 import { RichTextBlock } from "./RichTextBlock"
@@ -42,6 +43,7 @@ export {
   NotFoundPage,
   PageDefault,
   PageFilter,
+  PageNotFound,
   PageLayout,
   PagePost,
   PostHeader,
