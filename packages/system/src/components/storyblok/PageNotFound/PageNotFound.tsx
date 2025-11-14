@@ -2,6 +2,9 @@ import Link from "next/link"
 import type { NotFoundStoryblok } from "../../../types/storyblok-components"
 import { PageLayout } from "../PageLayout/PageLayout"
 import "./PageNotFound.css"
+import { useId } from "react"
+import { CustomElement } from "../../ui/CustomElement"
+import { Typography } from "../Typography"
 
 interface PageNotFoundProps {
   header: React.ReactNode
@@ -18,29 +21,37 @@ export function PageNotFound({
   blocks,
   availableStories,
 }: PageNotFoundProps) {
-  return (
-    <PageLayout header={header} footer={footer}>
-      <div className="page-not-found">
-        <div className="page-not-found__content">
-          {blok.title && (
-            <h1 className="page-not-found__title">{blok.title}</h1>
-          )}
-          {blocks}
+  const id = useId()
+  const { title } = blok
 
-          {availableStories && availableStories.length > 0 && (
-            <div style={{ marginTop: "3rem" }}>
-              <h2>Available Pages:</h2>
-              <ul>
-                {availableStories.map((slug) => (
-                  <li key={slug}>
-                    <Link href={`/${slug}`}>{slug}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+  const list = availableStories?.map((slug) => (
+    <li key={slug}>
+      <Link href={`/${slug}`}>{slug}</Link>
+    </li>
+  ))
+
+  return (
+    <PageLayout header={header} footer={footer} aria-labelledby={id}>
+      <CustomElement tag="box-grid">
+        <div className="page-not-found">
+          <div className="page-not-found__content">
+            {title && (
+              <Typography tag="h1" variant="text-6xl" shade="dark" id={id}>
+                {title}
+              </Typography>
+            )}
+            {blocks}
+            {availableStories && availableStories.length > 0 && (
+              <>
+                <Typography tag="h2" variant="text-lg" shade="dark" id={id}>
+                  Available Pages:
+                </Typography>
+                <ul>{list}</ul>
+              </>
+            )}
+          </div>
         </div>
-      </div>
+      </CustomElement>
     </PageLayout>
   )
 }
