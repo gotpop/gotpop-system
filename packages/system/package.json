@@ -54,6 +54,7 @@
     "directory": "packages/system"
   },
   "scripts": {
+    "prebuild": "yarn generate:types",
     "build": "tsc && rsync -a --include='*/' --include='*.css' --include='*.woff2' --exclude='*' src/ dist/",
     "dev": "tsc --watch",
     "lint": "npx biome lint src/",
