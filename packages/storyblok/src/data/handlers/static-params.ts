@@ -28,7 +28,14 @@ export async function handleStaticParams(
     starts_with: `${prefix}/`,
   })) as { data: StoryblokStoryResponse[] }
 
-  const excluded = ["header", "footer", "site-config", "config", "global"]
+  const excluded = [
+    "header",
+    "footer",
+    "site-config",
+    "config",
+    "global",
+    "not-found",
+  ]
 
   const storyParams = allStories
     .filter((story: StoryblokStoryResponse) => {

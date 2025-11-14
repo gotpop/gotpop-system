@@ -10,6 +10,7 @@ const EXCLUDED_STORIES = new Set([
   "site-config",
   "config",
   "global",
+  "not-found",
 ])
 
 /** Determines if a story should be included in static generation */
