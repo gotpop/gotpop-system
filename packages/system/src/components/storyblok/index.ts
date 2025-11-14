@@ -15,7 +15,6 @@ import { LinkList } from "./LinkList"
 import { LogoDefault } from "./LogoDefault"
 import { NavDefault } from "./NavDefault"
 import { NavItemDefault } from "./NavItemDefault"
-import { NotFoundPage } from "./NotFoundPage"
 import { PageDefault } from "./PageDefault"
 import { PageFilter } from "./PageFilter"
 import { PageLayout } from "./PageLayout"
@@ -40,7 +39,6 @@ export {
   LogoDefault,
   NavDefault,
   NavItemDefault,
-  NotFoundPage,
   PageDefault,
   PageFilter,
   PageNotFound,
