@@ -12,8 +12,8 @@ import { getConfig } from "../config/runtime-config"
 import { getStoryblokData } from "../data/get-storyblok-data"
 
 interface PageBlok {
-  Header?: string
-  Footer?: string
+  header?: string
+  footer?: string
   body?: SbBlokData[]
   [key: string]: unknown
 }
@@ -36,19 +36,19 @@ export function withPageData<T extends PageBlok>(
     blok: T
     config?: ConfigStoryblok | null
   }) => {
-    const { Header = "", Footer = "" } = blok
+    const { header: headerUuid = "", footer: footerUuid = "" } = blok
 
     // Use provided config or fetch from cache
     const config = providedConfig ?? (await getConfig())
 
     const { data: headerData } = await getStoryblokData<HeaderDefaultStoryblok>(
       "storyByUuid",
-      { uuid: Header }
+      { uuid: headerUuid }
     )
 
     const { data: footerData } = await getStoryblokData<FooterDefaultStoryblok>(
       "storyByUuid",
-      { uuid: Footer }
+      { uuid: footerUuid }
     )
 
     const header = (
