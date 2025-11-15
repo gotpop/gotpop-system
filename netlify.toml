@@ -6,12 +6,12 @@ command = "yarn install --frozen-lockfile && yarn workspace @gotpop/system build
 [build.environment]
 NODE_VERSION = "22"
 YARN_VERSION = "1.22.22"
+# Force framework detection to static site
+NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
-# Disable Next.js plugin - this is a Storybook deployment
-[[plugins]]
-package = "@netlify/plugin-nextjs"
-[plugins.inputs]
-disable = true
+# Override framework detection completely
+[build.processing]
+skip_processing = false
 
 [[redirects]]
 from = "/*"
